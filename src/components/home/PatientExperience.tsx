@@ -24,11 +24,11 @@ export function PatientExperience() {
     <section id="patient-experience" className="scroll-mt-20 bg-cream py-16 md:py-24">
       <Container>
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-wide text-primary-600">
+          <p className="text-sm font-semibold tracking-wide text-rose-600">
             Birth Stories
           </p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-            Patient experience, by stage of care.
+            Trust grows when patients can see the experience, not just the treatment.
           </h2>
           <p className="mt-4 text-base leading-relaxed text-ink/65">
             We&rsquo;re building a collection of real, consented birth stories. Browse by
@@ -40,7 +40,7 @@ export function PatientExperience() {
           {categories.map((c) => (
             <div key={c.title} className="rounded-2xl bg-white p-6">
               <div
-                className="h-32 w-full rounded-xl bg-gradient-to-br from-primary-200 via-primary-300 to-blue-500/40"
+                className="h-32 w-full rounded-xl bg-gradient-to-br from-rose-200 via-rose-300 to-blue/40"
                 aria-hidden="true"
               />
               <h3 className="mt-5 text-lg font-bold text-ink">{c.title}</h3>

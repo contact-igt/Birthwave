@@ -36,11 +36,11 @@ export function Services() {
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-xl">
-            <p className="text-sm font-semibold tracking-wide text-primary-600">
+            <p className="text-sm font-semibold tracking-wide text-rose-600">
               Services
             </p>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-              Every stage of care, under one roof.
+              Specialist care, designed around your journey.
             </h2>
           </div>
         </div>
@@ -51,7 +51,7 @@ export function Services() {
               key={service.title}
               className="flex flex-col rounded-2xl bg-white p-6 shadow-[0_1px_2px_rgba(58,38,32,0.06)] transition-shadow hover:shadow-[0_8px_24px_rgba(58,38,32,0.08)]"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary-100 text-xs font-bold text-primary-700">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full bg-rose-100 text-xs font-bold text-rose-700">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-4 text-lg font-bold text-ink">{service.title}</h3>
@@ -60,7 +60,7 @@ export function Services() {
               </p>
               <a
                 href="#conversion-cta"
-                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700"
+                className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-rose-600 transition-colors hover:text-rose-700"
               >
                 Explore service
                 <span aria-hidden="true">&rarr;</span>

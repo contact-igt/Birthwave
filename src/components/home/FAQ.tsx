@@ -30,13 +30,13 @@ export function FAQ() {
     <section id="faq" className="scroll-mt-20 bg-white py-16 md:py-24">
       <Container className="max-w-3xl">
         <div>
-          <p className="text-sm font-semibold tracking-wide text-primary-600">FAQ</p>
+          <p className="text-sm font-semibold tracking-wide text-rose-600">FAQ</p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-            Questions, answered.
+            Questions patients often have before they book.
           </h2>
         </div>
 
-        <dl className="mt-10 divide-y divide-primary-100 border-y border-primary-100">
+        <dl className="mt-10 divide-y divide-rose-100 border-y border-rose-100">
           {faqs.map((item, i) => {
             const open = openIndex === i;
             return (
@@ -51,7 +51,7 @@ export function FAQ() {
                   >
                     {item.q}
                     <span
-                      className={`shrink-0 text-primary-500 transition-transform duration-200 ${
+                      className={`shrink-0 text-rose-500 transition-transform duration-200 ${
                         open ? "rotate-45" : ""
                       }`}
                       aria-hidden="true"

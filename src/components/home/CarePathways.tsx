@@ -23,11 +23,11 @@ export function CarePathways() {
     <section id="care-pathways" className="scroll-mt-20 bg-white py-16 md:py-24">
       <Container>
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-wide text-primary-600">
+          <p className="text-sm font-semibold tracking-wide text-rose-600">
             Care Pathways
           </p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-            One practice, connecting pregnancy, birth and recovery.
+            Start with what you need today.
           </h2>
         </div>
 
@@ -35,9 +35,9 @@ export function CarePathways() {
           {pathways.map((p, i) => (
             <div
               key={p.label}
-              className="rounded-2xl border border-primary-100 bg-cream p-7"
+              className="rounded-2xl border border-rose-100 bg-blush p-7"
             >
-              <span className="text-xs font-bold text-coral-500">
+              <span className="text-xs font-bold text-coral">
                 0{i + 1}
               </span>
               <h3 className="mt-3 text-xl font-bold text-ink">{p.label}</h3>

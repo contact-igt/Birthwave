@@ -27,21 +27,21 @@ const steps = [
 
 export function PatientJourney() {
   return (
-    <section className="bg-ink py-16 text-cream md:py-24">
+    <section id="patient-journey" className="scroll-mt-20 bg-brown py-16 text-cream md:py-24">
       <Container>
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-wide text-primary-300">
+          <p className="text-sm font-semibold tracking-wide text-rose-300">
             Patient Journey
           </p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
-            Birthwave closes the gaps between pregnancy, birth and recovery.
+            A simpler care journey, with fewer gaps between steps.
           </h2>
         </div>
 
         <ol className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
-            <li key={step.n} className="rounded-2xl bg-ink-soft p-6">
-              <span className="text-xs font-bold text-coral-500">{step.n}</span>
+            <li key={step.n} className="rounded-2xl bg-white/10 p-6">
+              <span className="text-xs font-bold text-coral">{step.n}</span>
               <h3 className="mt-3 text-lg font-bold">{step.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-cream/70">{step.body}</p>
             </li>

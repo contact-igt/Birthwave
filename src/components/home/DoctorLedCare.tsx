@@ -7,7 +7,7 @@ export function DoctorLedCare() {
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="relative mx-auto aspect-[4/5] w-full max-w-sm order-2 lg:order-1">
           <div
-            className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-blue-500/30 via-primary-300/35 to-primary-500/45"
+            className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-blue/30 via-rose-300/35 to-rose-500/45"
             aria-hidden="true"
           />
           <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white p-4 shadow-lg">
@@ -15,7 +15,7 @@ export function DoctorLedCare() {
             <p className="text-xs text-ink/60">{site.doctor.title}</p>
             <a
               href="#conversion-cta"
-              className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-primary-600"
+              className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-rose-600"
             >
               Explore service <span aria-hidden="true">&rarr;</span>
             </a>
@@ -23,7 +23,7 @@ export function DoctorLedCare() {
         </div>
 
         <div className="order-1 lg:order-2">
-          <p className="text-sm font-semibold tracking-wide text-primary-600">
+          <p className="text-sm font-semibold tracking-wide text-rose-600">
             Doctor-led, patient-centred
           </p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
@@ -34,12 +34,19 @@ export function DoctorLedCare() {
             questions, preferences, preparation and follow-up.
           </p>
 
-          <blockquote className="mt-8 rounded-2xl bg-cream p-6">
+          <blockquote className="mt-8 rounded-2xl bg-blush p-6">
             <p className="text-lg font-medium leading-relaxed text-ink/85">
               &ldquo;Patients should understand their options and feel supported
               through every stage of care.&rdquo;
             </p>
           </blockquote>
+
+          <a
+            href="#conversion-cta"
+            className="mt-8 inline-flex rounded-full bg-brown px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
+          >
+            Meet {site.doctor.name}
+          </a>
         </div>
       </Container>
     </section>

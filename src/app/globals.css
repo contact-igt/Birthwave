@@ -1,51 +1,55 @@
 @import "tailwindcss";
 
 :root {
-  /* Brand palette — sourced from Birthwave Brand Guideline PDF (Color Palette, R202/G149/B133 etc.) */
-  --color-primary-50: #fbf3f0;
-  --color-primary-100: #f5e3dd;
-  --color-primary-200: #e9c7bb;
-  --color-primary-300: #dcaa99;
-  --color-primary-400: #d49d8c;
-  --color-primary-500: #ca9585; /* brand primary — exact from guideline */
-  --color-primary-600: #b57a69;
-  --color-primary-700: #8f5f51;
-  --color-primary-800: #6b4740;
-  --color-primary-900: #452d29;
-  --color-primary-950: #2a1c19;
+  /* Brand palette — exact values verified against Figma (node 10:2/11:2) and the
+     Birthwave Brand Guideline PDF. Do not substitute approximate Tailwind colors. */
+  --color-cream: #fbf7f4; /* page background */
+  --color-blush: #f5e6de; /* alt section surface */
+  --color-white: #ffffff;
 
-  --color-ink: #3a2620; /* deep maroon surface — matches dark sections in approved Figma */
-  --color-ink-soft: #4a3129;
+  --color-ink: #2e2421; /* primary text color */
 
-  --color-cream: #fbf3ef; /* light section surface */
-  --color-cream-deep: #f5e6df;
+  --color-brown: #613e37; /* primary dark brown — CTAs, dark sections, footer */
+  --color-brown-600: #52332d; /* hover */
+  --color-brown-700: #432a25; /* active */
 
-  --color-blue-500: #5daedb; /* brand secondary — exact from guideline */
-  --color-coral-500: #f88379; /* brand tertiary — exact from guideline */
+  --color-rose-50: #fbf3f0;
+  --color-rose-100: #f5e3dd;
+  --color-rose-200: #e9c7bb;
+  --color-rose-300: #dcaa99;
+  --color-rose-400: #d49d8c;
+  --color-rose-500: #ca9585; /* exact brand dusty rose */
+  --color-rose-600: #b57a69;
+  --color-rose-700: #8f5f51;
 
-  --background: #ffffff;
+  --color-coral: #f88379; /* exact brand coral accent */
+  --color-blue: #5daedb; /* exact brand blue accent */
+
+  --background: var(--color-cream);
   --foreground: var(--color-ink);
 }
 
 @theme inline {
-  --color-primary-50: var(--color-primary-50);
-  --color-primary-100: var(--color-primary-100);
-  --color-primary-200: var(--color-primary-200);
-  --color-primary-300: var(--color-primary-300);
-  --color-primary-400: var(--color-primary-400);
-  --color-primary-500: var(--color-primary-500);
-  --color-primary-600: var(--color-primary-600);
-  --color-primary-700: var(--color-primary-700);
-  --color-primary-800: var(--color-primary-800);
-  --color-primary-900: var(--color-primary-900);
-  --color-primary-950: var(--color-primary-950);
-
-  --color-ink: var(--color-ink);
-  --color-ink-soft: var(--color-ink-soft);
   --color-cream: var(--color-cream);
-  --color-cream-deep: var(--color-cream-deep);
-  --color-blue-500: var(--color-blue-500);
-  --color-coral-500: var(--color-coral-500);
+  --color-blush: var(--color-blush);
+  --color-white: var(--color-white);
+  --color-ink: var(--color-ink);
+
+  --color-brown: var(--color-brown);
+  --color-brown-600: var(--color-brown-600);
+  --color-brown-700: var(--color-brown-700);
+
+  --color-rose-50: var(--color-rose-50);
+  --color-rose-100: var(--color-rose-100);
+  --color-rose-200: var(--color-rose-200);
+  --color-rose-300: var(--color-rose-300);
+  --color-rose-400: var(--color-rose-400);
+  --color-rose-500: var(--color-rose-500);
+  --color-rose-600: var(--color-rose-600);
+  --color-rose-700: var(--color-rose-700);
+
+  --color-coral: var(--color-coral);
+  --color-blue: var(--color-blue);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -83,7 +87,7 @@ a:focus-visible,
 button:focus-visible,
 summary:focus-visible,
 input:focus-visible {
-  outline: 2px solid var(--color-coral-500);
+  outline: 2px solid var(--color-coral);
   outline-offset: 3px;
   border-radius: 4px;
 }
