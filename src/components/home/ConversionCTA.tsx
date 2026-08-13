@@ -3,29 +3,37 @@ import { site } from "@/lib/site";
 
 export function ConversionCTA() {
   return (
-    <section id="conversion-cta" className="scroll-mt-20 bg-brown py-16 text-cream md:py-20">
-      <Container className="flex flex-col items-center gap-6 text-center">
-        <h2 className="max-w-xl text-3xl font-extrabold leading-tight sm:text-4xl">
-          Not sure which service to choose?
-        </h2>
-        <p className="max-w-md text-base leading-relaxed text-cream/70">
-          Reach out by phone or WhatsApp and we&rsquo;ll help you book a time with{" "}
-          {site.doctor.name}.
-        </p>
-        <div className="mt-2 flex flex-wrap items-center justify-center gap-4">
+    <section
+      id="conversion-cta"
+      className="scroll-mt-[100px] flex min-h-[300px] items-center bg-blush py-12"
+    >
+      <Container className="flex flex-col items-start justify-between gap-8 xl:flex-row xl:items-center">
+        <div className="max-w-lg">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+            Need Help Choosing?
+          </p>
+          <h2 className="mt-2 font-display text-[31px] font-bold leading-tight text-ink">
+            Not sure which service to choose?
+          </h2>
+          <p className="mt-2 text-[13.5px] leading-relaxed text-muted">
+            Tell us what you need help with. We&rsquo;ll guide you to the right
+            appointment pathway.
+          </p>
+        </div>
+        <div className="flex shrink-0 flex-wrap items-center gap-4">
           <a
             href={site.phoneHref}
-            className="rounded-full bg-rose-500 px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-rose-600 active:bg-rose-700"
+            className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
           >
-            Call Now: {site.phone}
+            Book Appointment
           </a>
           <a
             href={site.whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-cream/30 px-7 py-3.5 text-sm font-semibold text-cream transition-colors hover:border-cream/60"
+            className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-colors hover:border-brown hover:text-brown"
           >
-            Message on WhatsApp
+            Chat on WhatsApp
           </a>
         </div>
       </Container>

@@ -1,50 +1,51 @@
 import { Container } from "@/components/Container";
 
-// No verified patient testimonials exist yet. Per project guidance we keep a
-// story-ready structural treatment (categories, not quotes) rather than inventing
-// names, quotes or outcomes. Swap in real stories as they're collected — see
-// HUMAN REVIEW in the delivery report.
+// No verified patient testimonials exist yet — copy locked to the approved PDF,
+// which itself keeps this story-ready rather than inventing quotes/names.
 const categories = [
   {
-    title: "First-time mothers",
-    body: "Stories from patients navigating their first pregnancy, start to finish.",
+    label: "Pregnancy Care",
+    body: "Clear guidance across scans, appointments and birth preparation.",
   },
   {
-    title: "High-risk pregnancy",
-    body: "How closer monitoring and a consistent care team shaped the journey.",
+    label: "Birth Support",
+    body: "Conversations that help patients understand preferences and options.",
   },
   {
-    title: "Postpartum recovery",
-    body: "What follow-up and lactation support looked like after birth.",
+    label: "Postpartum + Baby",
+    body: "Continuity from recovery into newborn and pediatric care.",
   },
 ] as const;
 
 export function PatientExperience() {
   return (
-    <section id="patient-experience" className="scroll-mt-20 bg-cream py-16 md:py-24">
+    <section id="patient-experience" className="scroll-mt-[100px] bg-white py-14 md:py-16">
       <Container>
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-wide text-rose-600">
-            Birth Stories
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+            Patient Experience
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+          <h2 className="mt-3 font-display text-[35px] font-bold leading-tight text-ink">
             Trust grows when patients can see the experience, not just the treatment.
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-ink/65">
-            We&rsquo;re building a collection of real, consented birth stories. Browse by
-            what&rsquo;s closest to your own journey.
+          <p className="mt-3 text-[14.5px] leading-relaxed text-muted">
+            Use verified patient stories, birth experiences and care journeys here
+            once approved for publication.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-3">
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {categories.map((c) => (
-            <div key={c.title} className="rounded-2xl bg-white p-6">
-              <div
-                className="h-32 w-full rounded-xl bg-gradient-to-br from-rose-200 via-rose-300 to-blue/40"
-                aria-hidden="true"
-              />
-              <h3 className="mt-5 text-lg font-bold text-ink">{c.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink/65">{c.body}</p>
+            <div key={c.label} className="min-h-[182px] rounded-[22px] bg-cream p-6">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-rose">
+                {c.label}
+              </p>
+              <p className="mt-3 text-[16.5px] font-medium leading-snug text-ink">
+                {c.body}
+              </p>
+              <p className="mt-4 text-xs italic text-muted">
+                Verified patient story / video can be placed here
+              </p>
             </div>
           ))}
         </div>

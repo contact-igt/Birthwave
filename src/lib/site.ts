@@ -3,7 +3,7 @@
 export const site = {
   name: "The Birth Wave",
   shortName: "Birthwave",
-  tagline: "Obstetrician & Gynaecologist in Nungambakkam, Chennai",
+  byline: "By Dr. Santoshi Nandigam",
   doctor: {
     name: "Dr. Santoshi Nandigam",
     title: "Obstetrics & Gynaecology",
@@ -20,10 +20,14 @@ export const site = {
   },
 } as const;
 
+// Nav labels are locked to the approved PDF. These point to the closest matching
+// in-page section since dedicated sub-pages (About, Pregnancy, Fertility, etc.)
+// don't exist yet — avoids introducing broken links this pass.
 export const nav = [
-  { label: "Care Pathways", href: "#care-pathways" },
-  { label: "Services", href: "#services" },
-  { label: "Doctor-Led Care", href: "#doctor-led-care" },
-  { label: "Birth Stories", href: "#patient-experience" },
-  { label: "FAQ", href: "#faq" },
+  { label: "About", href: "#doctor-led-care" },
+  { label: "Care & Services", href: "#services" },
+  { label: "Pregnancy", href: "#care-pathways" },
+  { label: "Fertility", href: "#care-pathways" },
+  { label: "Pediatrics", href: "#services" },
+  { label: "Resources", href: "#faq" },
 ] as const;

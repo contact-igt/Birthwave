@@ -2,8 +2,14 @@
 // mark, per the brand guideline). The guideline's hand-lettered logo is a raster/vector
 // asset we don't have an exported file for — swap in the real SVG when available.
 // See HUMAN REVIEW in the delivery report.
-export function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
-  const color = variant === "dark" ? "text-ink" : "text-cream";
+export function Logo({
+  variant = "dark",
+  textClassName = "text-lg",
+}: {
+  variant?: "dark" | "light";
+  textClassName?: string;
+}) {
+  const color = variant === "dark" ? "text-ink" : "text-white";
   return (
     <span className={`inline-flex items-center gap-2 ${color}`}>
       <svg
@@ -22,7 +28,7 @@ export function Logo({ variant = "dark" }: { variant?: "dark" | "light" }) {
           strokeLinejoin="round"
         />
       </svg>
-      <span className="font-display text-lg font-bold tracking-tight">
+      <span className={`font-display font-bold tracking-tight ${textClassName}`}>
         The Birth Wave
       </span>
     </span>

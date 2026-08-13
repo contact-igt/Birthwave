@@ -1,51 +1,58 @@
 import { Container } from "@/components/Container";
 import { site } from "@/lib/site";
 
+const trustBullets = [
+  "Clear explanations before decisions",
+  "Care plans that connect pregnancy, birth and recovery",
+  "Support for sensitive conversations without judgement",
+] as const;
+
 export function DoctorLedCare() {
   return (
-    <section id="doctor-led-care" className="scroll-mt-20 bg-white py-16 md:py-24">
-      <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div className="relative mx-auto aspect-[4/5] w-full max-w-sm order-2 lg:order-1">
-          <div
-            className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-blue/30 via-rose-300/35 to-rose-500/45"
-            aria-hidden="true"
-          />
-          <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white p-4 shadow-lg">
+    <section id="doctor-led-care" className="scroll-mt-[100px] bg-white py-16 md:py-28">
+      <Container className="grid items-center gap-12 xl:grid-cols-[500px_1fr] xl:gap-16">
+        <div className="relative order-2 mx-auto h-[460px] w-full max-w-[500px] xl:order-1 xl:h-[580px]">
+          <div className="absolute inset-0 rounded-[32px] bg-sky" aria-hidden="true" />
+          <div className="absolute bottom-6 left-6 rounded-2xl bg-white p-4 shadow-[0_8px_24px_rgba(46,36,33,0.08)]">
             <p className="font-display text-sm font-bold text-ink">{site.doctor.name}</p>
-            <p className="text-xs text-ink/60">{site.doctor.title}</p>
-            <a
-              href="#conversion-cta"
-              className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-rose-600"
-            >
-              Explore service <span aria-hidden="true">&rarr;</span>
-            </a>
+            <p className="text-xs text-muted">{site.doctor.title}</p>
           </div>
         </div>
 
-        <div className="order-1 lg:order-2">
-          <p className="text-sm font-semibold tracking-wide text-rose-600">
-            Doctor-led, patient-centred
+        <div className="order-1 xl:order-2">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+            Doctor Led, Patient Centred
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+          <h2 className="mt-3 font-display text-[37px] font-bold leading-tight text-ink">
             Clinical care and the birth experience can belong together.
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-ink/70">
-            Birthwave is designed as one continuous care journey, with space for
-            questions, preferences, preparation and follow-up.
+          <p className="mt-5 max-w-xl text-[14.5px] leading-relaxed text-muted">
+            Birthwave is designed to feel less like moving between disconnected
+            appointments and more like one continuous care journey, with space for
+            questions, preferences, preparation and follow up.
           </p>
 
-          <blockquote className="mt-8 rounded-2xl bg-blush p-6">
-            <p className="text-lg font-medium leading-relaxed text-ink/85">
+          <blockquote className="mt-6 rounded-2xl border border-border bg-quote p-6">
+            <p className="text-[13.5px] font-medium leading-relaxed text-ink/85">
               &ldquo;Patients should understand their options and feel supported
               through every stage of care.&rdquo;
             </p>
           </blockquote>
 
+          <ul className="mt-6 space-y-2.5">
+            {trustBullets.map((point) => (
+              <li key={point} className="flex items-start gap-2.5 text-xs font-medium text-ink/80">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" aria-hidden="true" />
+                {point}
+              </li>
+            ))}
+          </ul>
+
           <a
             href="#conversion-cta"
-            className="mt-8 inline-flex rounded-full bg-brown px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
+            className="mt-7 inline-flex rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
           >
-            Meet {site.doctor.name}
+            Meet Dr. Santoshi
           </a>
         </div>
       </Container>

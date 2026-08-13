@@ -1,53 +1,110 @@
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
-import { nav, site } from "@/lib/site";
+import { site } from "@/lib/site";
+
+const columns = [
+  {
+    heading: "Care",
+    links: [
+      { label: "Pregnancy", href: "#care-pathways" },
+      { label: "Fertility", href: "#care-pathways" },
+      { label: "VBAC & Birth", href: "#services" },
+      { label: "Women’s Wellness", href: "#services" },
+      { label: "Pediatrics", href: "#services" },
+    ],
+  },
+  {
+    heading: "Explore",
+    links: [
+      { label: "About", href: "#doctor-led-care" },
+      { label: "Doctor", href: "#doctor-led-care" },
+      { label: "Patient Stories", href: "#patient-experience" },
+      { label: "Resources", href: "#faq" },
+      { label: "Contact", href: "#conversion-cta" },
+    ],
+  },
+] as const;
+
+const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+  `${site.address.line1}, ${site.address.line2}`
+)}`;
 
 export function Footer() {
   return (
-    <footer className="bg-brown py-12 text-cream md:py-16">
+    <footer className="flex min-h-[400px] flex-col justify-between bg-footer py-14 text-white">
       <Container>
-        <div className="flex flex-col gap-10 md:flex-row md:justify-between">
+        <div className="flex flex-col gap-10 xl:flex-row xl:justify-between">
           <div className="max-w-xs">
-            <Logo variant="light" />
-            <p className="mt-4 text-sm leading-relaxed text-cream/60">
-              {site.address.line1}
-              <br />
-              {site.address.line2}
+            <Logo variant="light" textClassName="text-[23px]" />
+            <p className="mt-4 text-[11px] leading-relaxed text-footer-secondary">
+              Women&rsquo;s health, pregnancy, birth, postpartum and newborn care,
+              connected in one patient journey.
             </p>
           </div>
 
-          <nav aria-label="Footer" className="flex flex-col gap-2.5">
-            {nav.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-sm text-cream/75 transition-colors hover:text-rose-300"
-              >
-                {item.label}
-              </a>
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
+            {columns.map((col) => (
+              <nav key={col.heading} aria-label={col.heading}>
+                <p className="text-[11.5px] font-semibold text-white">{col.heading}</p>
+                <ul className="mt-3 flex flex-col gap-2.5">
+                  {col.links.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        className="text-[10.5px] text-footer-secondary transition-colors hover:text-white"
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
             ))}
-          </nav>
 
-          <div className="flex flex-col gap-2.5">
-            <a href={site.phoneHref} className="text-sm font-semibold text-cream/85 hover:text-rose-300">
-              {site.phone}
-            </a>
-            <a href={`mailto:${site.email}`} className="text-sm text-cream/75 hover:text-rose-300">
-              {site.email}
-            </a>
-            <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-cream/75 hover:text-rose-300"
-            >
-              WhatsApp
-            </a>
+            <nav aria-label="Contact">
+              <p className="text-[11.5px] font-semibold text-white">Contact</p>
+              <ul className="mt-3 flex flex-col gap-2.5">
+                <li className="text-[10.5px] text-footer-secondary">
+                  Nungambakkam, Chennai
+                </li>
+                <li>
+                  <a
+                    href="#conversion-cta"
+                    className="text-[10.5px] text-footer-secondary transition-colors hover:text-white"
+                  >
+                    Book an appointment
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={site.whatsappHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10.5px] text-footer-secondary transition-colors hover:text-white"
+                  >
+                    WhatsApp
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={mapsHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10.5px] text-footer-secondary transition-colors hover:text-white"
+                  >
+                    Google Maps
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
+      </Container>
 
-        <div className="mt-10 border-t border-cream/15 pt-6 text-xs text-cream/50">
-          &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+      <Container>
+        <div className="mt-10 border-t border-footer-divider pt-6 text-[9.5px] text-footer-legal">
+          &copy; Birthwave. All rights reserved. Privacy Policy &bull; Terms &amp;
+          Conditions &bull; Medical Disclaimer
         </div>
       </Container>
     </footer>

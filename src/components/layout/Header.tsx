@@ -9,38 +9,33 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-rose-100 bg-cream/90 backdrop-blur">
-      <Container className="flex h-18 items-center justify-between py-3.5">
-        <a href="#top" className="shrink-0">
-          <Logo />
+    <header className="sticky top-0 z-50 h-[88px] border-b border-border bg-white">
+      <Container className="flex h-full items-center justify-between">
+        <a href="#top" className="flex shrink-0 flex-col gap-0.5 leading-none">
+          <Logo textClassName="text-[22px]" />
+          <span className="pl-[34px] text-[8.5px] font-semibold uppercase tracking-[0.14em] text-muted">
+            {site.byline}
+          </span>
         </a>
 
-        <nav className="hidden items-center gap-8 xl:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary">
           {nav.map((item) => (
             <a
-              key={item.href}
+              key={`desktop-${item.label}`}
               href={item.href}
-              className="text-sm font-medium text-ink/80 transition-colors hover:text-rose-600"
+              className="text-[12.5px] font-medium text-ink/80 transition-colors hover:text-brown"
             >
               {item.label}
             </a>
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 xl:flex">
-          <a
-            href={site.phoneHref}
-            className="text-sm font-semibold text-ink/80 transition-colors hover:text-rose-600"
-          >
-            {site.phone}
-          </a>
-          <a
-            href="#conversion-cta"
-            className="rounded-full bg-brown px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
-          >
-            Book Appointment
-          </a>
-        </div>
+        <a
+          href="#conversion-cta"
+          className="hidden rounded-full bg-brown px-5 py-2.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700 xl:inline-block"
+        >
+          Book Appointment
+        </a>
 
         <button
           type="button"
@@ -72,14 +67,14 @@ export function Header() {
 
       <div
         id="mobile-nav"
-        className={`overflow-hidden border-t border-rose-100 bg-cream transition-[max-height,opacity] duration-300 ease-out xl:hidden ${
+        className={`overflow-hidden border-t border-border bg-white transition-[max-height,opacity] duration-300 ease-out xl:hidden ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <Container className="flex flex-col gap-1 py-4">
           {nav.map((item) => (
             <a
-              key={item.href}
+              key={`mobile-${item.label}`}
               href={item.href}
               onClick={() => setOpen(false)}
               className="min-h-11 py-2.5 text-base font-medium text-ink/85"
@@ -90,7 +85,7 @@ export function Header() {
           <div className="mt-3 flex flex-col gap-3">
             <a
               href={site.phoneHref}
-              className="min-h-11 rounded-full border border-rose-300 bg-white py-2.5 text-center text-sm font-semibold text-ink"
+              className="min-h-11 rounded-full border border-border bg-white py-2.5 text-center text-sm font-semibold text-ink"
             >
               Call {site.phone}
             </a>

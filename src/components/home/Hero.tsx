@@ -1,47 +1,90 @@
 import { Container } from "@/components/Container";
-import { site } from "@/lib/site";
+
+const trustPoints = ["Pregnancy & birth", "Women's wellness", "Newborn & pediatric"];
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-cream pt-14 pb-20 md:pt-20 md:pb-28">
-      <Container className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+    <section
+      id="top"
+      className="scroll-mt-[100px] flex min-h-[760px] items-center bg-cream py-16"
+    >
+      <Container className="grid items-center gap-12 xl:grid-cols-[585px_564px] xl:gap-16">
         <div>
-          <p className="text-sm font-semibold tracking-wide text-rose-600">
-            {site.name} &middot; Nungambakkam, Chennai
+          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-rose">
+            Women&rsquo;s Health &bull; Pregnancy &bull; Newborn Care
           </p>
-          <h1 className="mt-4 text-4xl font-extrabold leading-[1.08] text-ink sm:text-5xl lg:text-[3.25rem]">
-            Care that connects pregnancy, birth and recovery.
+          <h1 className="mt-4 max-w-[585px] font-display text-[54px] font-bold leading-[1.08] text-ink">
+            Care that sees the
+            <br />
+            whole woman &mdash;
+            <br />
+            before, during and
+            <br />
+            after birth.
           </h1>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-ink/70 sm:text-lg">
-            Doctor-led obstetrics &amp; gynaecology care in Nungambakkam — one continuous
-            journey from your first consult through birth and postpartum follow-up.
+
+          <ul className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+            {trustPoints.map((point) => (
+              <li
+                key={point}
+                className="flex items-center gap-1.5 text-[10.5px] font-medium text-muted"
+              >
+                <span className="h-1.5 w-1.5 rounded-full border border-rose" aria-hidden="true" />
+                {point}
+              </li>
+            ))}
+          </ul>
+
+          <p className="mt-5 max-w-[560px] text-[17px] leading-[1.58] text-muted">
+            From fertility and pregnancy to birth preparation, postpartum recovery and
+            newborn care, Birthwave brings your care journey together with clarity,
+            warmth and clinical guidance.
           </p>
+
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#conversion-cta"
-              className="rounded-full bg-brown px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
+              className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
             >
-              Book Appointment
+              Book an Appointment
             </a>
             <a
-              href={site.whatsappHref}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-rose-300 bg-white px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:border-brown hover:text-brown"
+              href="#services"
+              className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-colors hover:border-brown hover:text-brown"
             >
-              Message on WhatsApp
+              Explore Our Care
             </a>
           </div>
         </div>
 
-        <div className="relative mx-auto aspect-square w-full max-w-sm">
+        <div className="relative mx-auto h-[500px] w-full max-w-[564px] xl:h-[604px]">
           <div
-            className="absolute inset-0 rounded-[2.5rem] bg-gradient-to-br from-blue/35 via-rose-300/40 to-rose-500/50"
+            className="absolute inset-0 overflow-hidden rounded-[34px] bg-blush"
             aria-hidden="true"
-          />
-          <div className="absolute bottom-6 left-6 right-6 rounded-2xl bg-white/90 p-4 shadow-lg backdrop-blur">
-            <p className="font-display text-sm font-bold text-ink">{site.doctor.name}</p>
-            <p className="text-xs text-ink/60">{site.doctor.title}</p>
+          >
+            <div className="absolute -left-10 top-16 h-64 w-64 rounded-full bg-rose/30" />
+            <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-brown/15" />
+            <div className="absolute bottom-10 left-16 h-72 w-72 rounded-full bg-blue/25" />
+            <div className="absolute bottom-0 right-10 h-40 w-40 rounded-full bg-coral/20" />
+          </div>
+
+          <div className="absolute right-5 top-5 rounded-full bg-white px-4 py-2 shadow-sm">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.1em] text-rose">
+              Appointments
+            </p>
+            <p className="text-[11px] font-medium text-ink">In-clinic + guided care</p>
+          </div>
+
+          <div className="absolute bottom-6 left-6 right-6 w-auto max-w-[318px] rounded-[20px] bg-white p-5 shadow-[0_8px_24px_rgba(46,36,33,0.08)]">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.1em] text-rose">
+              Your Care Journey
+            </p>
+            <p className="mt-1.5 font-display text-base font-bold text-ink">
+              One place for every chapter
+            </p>
+            <p className="mt-1 text-[11px] text-muted">
+              Fertility &bull; Pregnancy &bull; Birth &bull; Postpartum &bull; Baby
+            </p>
           </div>
         </div>
       </Container>

@@ -2,48 +2,71 @@ import { Container } from "@/components/Container";
 
 const pathways = [
   {
-    label: "Pregnancy",
-    description:
-      "Regular prenatal visits, screening and guidance from your first trimester onward.",
+    n: "01",
+    bg: "bg-blush",
+    title: "Planning a pregnancy",
+    body: "Fertility, preconception and cycle guidance",
+    link: "Fertility & Preconception",
   },
   {
-    label: "Birth",
-    description:
-      "A birthing plan built around your preferences, with the same doctor you already know.",
+    n: "02",
+    bg: "bg-sky",
+    title: "I’m pregnant",
+    body: "Antenatal care, scans, birth planning and support",
+    link: "Pregnancy Care",
   },
   {
-    label: "Recovery",
-    description:
-      "Postpartum check-ins, lactation support and a clear path back to full health.",
+    n: "03",
+    bg: "bg-sand",
+    title: "I want birth options",
+    body: "Normal birth, VBAC conversations and preparation",
+    link: "Birth & VBAC",
+  },
+  {
+    n: "04",
+    bg: "bg-pink",
+    title: "I need women’s care",
+    body: "Gynaecology, vaginismus and wellness support",
+    link: "Women’s Wellness",
   },
 ] as const;
 
 export function CarePathways() {
   return (
-    <section id="care-pathways" className="scroll-mt-20 bg-white py-16 md:py-24">
+    <section id="care-pathways" className="scroll-mt-[100px] bg-white py-16 md:py-24">
       <Container>
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-wide text-rose-600">
-            Care Pathways
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+            Start With Your Need
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+          <h2 className="mt-3 font-display text-[36px] font-bold leading-tight text-ink">
             Start with what you need today.
           </h2>
+          <p className="mt-3 text-[14.5px] leading-relaxed text-muted">
+            Choose a care path and reach the right service without searching through
+            the whole website.
+          </p>
         </div>
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
-          {pathways.map((p, i) => (
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+          {pathways.map((p) => (
             <div
-              key={p.label}
-              className="rounded-2xl border border-rose-100 bg-blush p-7"
+              key={p.title}
+              className={`flex min-h-[214px] flex-col rounded-[22px] ${p.bg} p-6`}
             >
-              <span className="text-xs font-bold text-coral">
-                0{i + 1}
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[11px] font-bold text-coral">
+                {p.n}
               </span>
-              <h3 className="mt-3 text-xl font-bold text-ink">{p.label}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink/65">
-                {p.description}
-              </p>
+              <h3 className="mt-4 font-display text-[17px] font-semibold text-ink">
+                {p.title}
+              </h3>
+              <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">{p.body}</p>
+              <a
+                href="#services"
+                className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+              >
+                {p.link} <span aria-hidden="true">&rarr;</span>
+              </a>
             </div>
           ))}
         </div>

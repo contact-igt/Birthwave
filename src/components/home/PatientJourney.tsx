@@ -1,17 +1,15 @@
 import { Container } from "@/components/Container";
 
-// Steps 03 & 04 copy verified against the approved Figma. Steps 01 & 02 follow the
-// same tone/pattern (kept minimal, no fabricated outcomes) to complete the flow.
 const steps = [
   {
     n: "01",
     title: "Discover",
-    body: "Explore care pathways and understand what to expect at each stage.",
+    body: "Find the care path that matches your concern.",
   },
   {
     n: "02",
     title: "Book",
-    body: "Choose a time that fits, by phone or WhatsApp.",
+    body: "Choose appointment or WhatsApp as the next step.",
   },
   {
     n: "03",
@@ -21,29 +19,38 @@ const steps = [
   {
     n: "04",
     title: "Continue",
-    body: "Receive follow-up guidance and move into the next stage of care.",
+    body: "Receive follow up guidance and move into the next stage of care.",
   },
 ] as const;
 
 export function PatientJourney() {
   return (
-    <section id="patient-journey" className="scroll-mt-20 bg-brown py-16 text-cream md:py-24">
+    <section
+      id="patient-journey"
+      className="scroll-mt-[100px] flex min-h-[600px] flex-col justify-center bg-brown py-16 text-white"
+    >
       <Container>
         <div className="max-w-2xl">
-          <p className="text-sm font-semibold tracking-wide text-rose-300">
-            Patient Journey
+          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-journey-eyebrow">
+            From First Question To Follow Up
           </p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
+          <h2 className="mt-3 font-display text-[37px] font-bold leading-tight text-white">
             A simpler care journey, with fewer gaps between steps.
           </h2>
+          <p className="mt-3 text-[14.5px] leading-relaxed text-border">
+            The homepage should help patients understand what happens next, not just
+            list services.
+          </p>
         </div>
 
-        <ol className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <ol className="mt-10 grid gap-3.5 sm:grid-cols-2 xl:grid-cols-4">
           {steps.map((step) => (
-            <li key={step.n} className="rounded-2xl bg-white/10 p-6">
+            <li key={step.n} className="min-h-[172px] rounded-[22px] bg-journey-card p-6">
               <span className="text-xs font-bold text-coral">{step.n}</span>
-              <h3 className="mt-3 text-lg font-bold">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-cream/70">{step.body}</p>
+              <h3 className="mt-3 font-display text-[17.5px] font-semibold text-white">
+                {step.title}
+              </h3>
+              <p className="mt-2 text-[11.5px] leading-relaxed text-border">{step.body}</p>
             </li>
           ))}
         </ol>
