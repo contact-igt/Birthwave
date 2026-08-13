@@ -33,7 +33,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="scroll-mt-[100px] bg-cream py-16 md:py-24">
+    <section id="services" className="scroll-mt-[100px] bg-cream py-16 md:py-[110px]">
       <Container>
         <div className="max-w-2xl">
           <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">

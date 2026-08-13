@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/Container";
 
 const trustPoints = ["Pregnancy & birth", "Women's wellness", "Newborn & pediatric"];
@@ -66,6 +67,21 @@ export function Hero() {
             <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-brown/15" />
             <div className="absolute bottom-10 left-16 h-72 w-72 rounded-full bg-blue/25" />
             <div className="absolute bottom-0 right-10 h-40 w-40 rounded-full bg-coral/20" />
+
+            <Image
+              src="/images/hero-flourish-left.png"
+              alt=""
+              width={233}
+              height={236}
+              className="absolute left-3 top-3 h-28 w-28"
+            />
+            <Image
+              src="/images/hero-flourish-right.png"
+              alt=""
+              width={193}
+              height={267}
+              className="absolute bottom-32 right-3 h-32 w-24"
+            />
           </div>
 
           <div className="absolute right-5 top-5 rounded-full bg-white px-4 py-2 shadow-sm">

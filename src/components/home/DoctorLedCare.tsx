@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Container } from "@/components/Container";
 import { site } from "@/lib/site";
 
@@ -9,10 +10,17 @@ const trustBullets = [
 
 export function DoctorLedCare() {
   return (
-    <section id="doctor-led-care" className="scroll-mt-[100px] bg-white py-16 md:py-28">
+    <section id="doctor-led-care" className="scroll-mt-[100px] bg-white py-16 md:py-[100px]">
       <Container className="grid items-center gap-12 xl:grid-cols-[500px_1fr] xl:gap-16">
-        <div className="relative order-2 mx-auto h-[460px] w-full max-w-[500px] xl:order-1 xl:h-[580px]">
-          <div className="absolute inset-0 rounded-[32px] bg-sky" aria-hidden="true" />
+        <div className="relative order-2 mx-auto h-[460px] w-full max-w-[500px] overflow-hidden rounded-[32px] bg-sky xl:order-1 xl:h-[580px]">
+          <Image
+            src="/images/dr-santoshi-nandigam.png"
+            alt={`${site.doctor.name}, ${site.doctor.title}`}
+            fill
+            sizes="(min-width: 1280px) 500px, 90vw"
+            className="object-contain"
+            priority
+          />
           <div className="absolute bottom-6 left-6 rounded-2xl bg-white p-4 shadow-[0_8px_24px_rgba(46,36,33,0.08)]">
             <p className="font-display text-sm font-bold text-ink">{site.doctor.name}</p>
             <p className="text-xs text-muted">{site.doctor.title}</p>

@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw supplied asset archive — source material only; selected files are
+# copied into public/images/ with semantic names, not referenced at runtime
+stitch_birthwave_asset_extractor/
+stitch_birthwave_asset_extractor.zip
