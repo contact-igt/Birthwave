@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { site } from "@/lib/site";
 
@@ -56,12 +57,12 @@ export function DoctorLedCare() {
             ))}
           </ul>
 
-          <a
-            href="#conversion-cta"
+          <Link
+            href="/doctors"
             className="mt-7 inline-flex rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
           >
             Meet Dr. Santoshi
-          </a>
+          </Link>
         </div>
       </Container>
     </section>

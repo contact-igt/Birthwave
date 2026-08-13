@@ -9,12 +9,15 @@ import { PageFAQ } from "@/components/page/PageFAQ";
 import { PageCTA } from "@/components/page/PageCTA";
 import { EnquiryForm } from "@/components/page/EnquiryForm";
 import type { ServiceContent } from "@/lib/services";
+import { getTeamMember, team } from "@/lib/team";
 
 // Shared structure for all six priority landing pages (patient-intent hero →
 // explanation → who it's for → doctor trust → journey → related support →
 // FAQ → CTA → form). Per-page copy, imagery and accent color come from
 // lib/services.ts so pages share a system without being visual clones.
 export function ServiceLandingPage({ service }: { service: ServiceContent }) {
+  const expert = getTeamMember(service.expertSlug) ?? team[0];
+
   return (
     <main>
       <PageHero
@@ -54,6 +57,7 @@ export function ServiceLandingPage({ service }: { service: ServiceContent }) {
       <WhoItsFor points={service.whoItsFor} />
 
       <DoctorTrust
+        member={expert}
         heading={service.doctorTrust.heading}
         body={service.doctorTrust.body}
         bullets={service.doctorTrust.bullets}

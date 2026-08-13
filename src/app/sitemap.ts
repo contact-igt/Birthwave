@@ -4,7 +4,7 @@ import { services } from "@/lib/services";
 const BASE_URL = "https://thebirthwave.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/about", "/services", "/contact"].map((path) => ({
+  const staticRoutes = ["", "/about", "/doctors", "/services", "/contact"].map((path) => ({
     url: `${BASE_URL}${path}`,
   }));
 

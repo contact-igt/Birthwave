@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { BrandMark } from "@/components/BrandMark";
 import { Container } from "@/components/Container";
-import { Logo } from "@/components/Logo";
 import { nav, site } from "@/lib/site";
 
 export function Header() {
@@ -12,9 +12,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 h-[88px] border-b border-border bg-white">
       <Container className="flex h-full items-center justify-between">
-        <Link href="/" className="flex shrink-0 flex-col gap-0.5 leading-none">
-          <Logo textClassName="text-[22px]" />
-          <span className="pl-[34px] text-[8.5px] font-semibold uppercase tracking-[0.14em] text-muted">
+        <Link href="/" className="flex shrink-0 flex-col gap-1 leading-none">
+          <BrandMark size="sm" />
+          <span className="pl-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-muted">
             {site.byline}
           </span>
         </Link>

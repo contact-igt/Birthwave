@@ -18,8 +18,8 @@ const columns = [
     heading: "Explore",
     links: [
       { label: "About", href: "/about" },
+      { label: "Our Team", href: "/doctors" },
       { label: "Services", href: "/services" },
-      { label: "Normal Birth", href: "/normal-birth-delivery" },
       { label: "Contact", href: "/contact" },
     ],
   },

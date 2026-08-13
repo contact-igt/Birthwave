@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/Container";
@@ -7,6 +8,13 @@ import { PageHero } from "@/components/page/PageHero";
 import { DoctorTrust } from "@/components/page/DoctorTrust";
 import { VideoSlot } from "@/components/page/VideoSlot";
 import { PageCTA } from "@/components/page/PageCTA";
+import { TeamAvatar } from "@/components/TeamAvatar";
+import { getTeamMember } from "@/lib/team";
+
+const santoshi = getTeamMember("santoshi-nandigam")!;
+const teamPreview = ["bharathy-kandasamy", "sheethal-sathya", "deepika-sivathanu"]
+  .map(getTeamMember)
+  .filter((m): m is NonNullable<typeof m> => Boolean(m));
 
 export const metadata: Metadata = {
   title: "About The Birth Wave — Dr. Santoshi Nandigam, Nungambakkam, Chennai",
@@ -63,6 +71,7 @@ export default function AboutPage() {
         </section>
 
         <DoctorTrust
+          member={santoshi}
           heading="Led by Dr. Santoshi Nandigam"
           body="Dr. Santoshi Nandigam is an obstetrician & gynaecologist practising in Nungambakkam, Chennai, with care built around continuity — the same doctor across your pregnancy, birth and follow-up care."
           bullets={[
@@ -71,6 +80,37 @@ export default function AboutPage() {
             "Support for sensitive conversations without judgement",
           ]}
         />
+
+        <section className="bg-cream py-16 md:py-20">
+          <Container>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <h2 className="max-w-xl font-display text-[28px] font-bold leading-tight text-ink">
+                Meet our care team
+              </h2>
+              <Link
+                href="/doctors"
+                className="text-[11px] font-semibold text-link"
+              >
+                See the full team &rarr;
+              </Link>
+            </div>
+            <div className="mt-8 grid gap-5 sm:grid-cols-3">
+              {teamPreview.map((member) => (
+                <Link
+                  key={member.slug}
+                  href="/doctors"
+                  className="group rounded-[22px] bg-white p-5 transition-shadow hover:shadow-[0_8px_24px_rgba(46,36,33,0.08)]"
+                >
+                  <TeamAvatar member={member} className="aspect-[4/3] w-full" />
+                  <p className="mt-4 font-display text-base font-bold text-ink">
+                    {member.name}
+                  </p>
+                  <p className="mt-1 text-xs text-muted">{member.role}</p>
+                </Link>
+              ))}
+            </div>
+          </Container>
+        </section>
 
         <section className="bg-cream py-16 md:py-20">
           <Container>

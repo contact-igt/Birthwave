@@ -2,6 +2,7 @@ import type { LineArtVariant } from "@/components/illustrations/LineArt";
 
 export type ServiceContent = {
   slug: string;
+  expertSlug: string;
   title: string;
   shortDescription: string;
   accent: "rose" | "blue" | "coral";
@@ -43,6 +44,7 @@ export type ServiceContent = {
 export const services: readonly ServiceContent[] = [
   {
     slug: "pregnancy-care",
+    expertSlug: "santoshi-nandigam",
     title: "Pregnancy & Antenatal Care",
     shortDescription:
       "Routine and high-touch pregnancy care with a clear plan for each trimester.",
@@ -119,6 +121,7 @@ export const services: readonly ServiceContent[] = [
   },
   {
     slug: "normal-birth-delivery",
+    expertSlug: "santoshi-nandigam",
     title: "Normal Birth & Delivery Care",
     shortDescription:
       "Personalised discussions around birth preferences, eligibility and preparation.",
@@ -195,6 +198,7 @@ export const services: readonly ServiceContent[] = [
   },
   {
     slug: "vbac",
+    expertSlug: "santoshi-nandigam",
     title: "VBAC (Vaginal Birth After Caesarean)",
     shortDescription:
       "Individual assessment and planning for patients considering VBAC.",
@@ -287,6 +291,7 @@ export const services: readonly ServiceContent[] = [
   },
   {
     slug: "fertility-preconception",
+    expertSlug: "bharathy-kandasamy",
     title: "Fertility & Preconception",
     shortDescription: "Evaluation, counselling and planning before pregnancy.",
     accent: "blue",
@@ -358,6 +363,7 @@ export const services: readonly ServiceContent[] = [
   },
   {
     slug: "vaginismus",
+    expertSlug: "adithi-nair",
     title: "Vaginismus & Intimate Wellness",
     shortDescription: "Private, sensitive support for pain, fear and intimacy-related concerns.",
     accent: "rose",
@@ -429,6 +435,7 @@ export const services: readonly ServiceContent[] = [
   },
   {
     slug: "newborn-pediatric-care",
+    expertSlug: "deepika-sivathanu",
     title: "Newborn & Pediatric Care",
     shortDescription: "Newborn review, vaccination guidance and continuing pediatric care.",
     accent: "coral",

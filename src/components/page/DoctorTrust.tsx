@@ -1,13 +1,16 @@
-import Image from "next/image";
+import Link from "next/link";
+import { TeamAvatar } from "@/components/TeamAvatar";
 import { Container } from "@/components/Container";
-import { site } from "@/lib/site";
+import type { TeamMember } from "@/lib/team";
 
 export function DoctorTrust({
+  member,
   eyebrow = "Doctor Led, Patient Centred",
   heading,
   body,
   bullets,
 }: {
+  member: TeamMember;
   eyebrow?: string;
   heading: string;
   body: string;
@@ -16,17 +19,11 @@ export function DoctorTrust({
   return (
     <section className="bg-white py-16 md:py-20">
       <Container className="grid items-center gap-12 xl:grid-cols-[420px_1fr] xl:gap-16">
-        <div className="relative mx-auto h-[380px] w-full max-w-sm overflow-hidden rounded-[28px] bg-sky xl:h-[440px]">
-          <Image
-            src="/images/dr-santoshi-nandigam.png"
-            alt={`${site.doctor.name}, ${site.doctor.title}`}
-            fill
-            sizes="(min-width: 1280px) 420px, 90vw"
-            className="object-contain"
-          />
+        <div className="relative mx-auto h-[380px] w-full max-w-sm xl:h-[440px]">
+          <TeamAvatar member={member} className="h-full w-full" />
           <div className="absolute bottom-5 left-5 rounded-2xl bg-white p-4 shadow-[0_8px_24px_rgba(46,36,33,0.08)]">
-            <p className="font-display text-sm font-bold text-ink">{site.doctor.name}</p>
-            <p className="text-xs text-muted">{site.doctor.title}</p>
+            <p className="font-display text-sm font-bold text-ink">{member.name}</p>
+            <p className="text-xs text-muted">{member.role}</p>
           </div>
         </div>
 
@@ -53,6 +50,13 @@ export function DoctorTrust({
               </li>
             ))}
           </ul>
+
+          <Link
+            href="/doctors"
+            className="mt-6 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+          >
+            Meet the care team <span aria-hidden="true">&rarr;</span>
+          </Link>
         </div>
       </Container>
     </section>

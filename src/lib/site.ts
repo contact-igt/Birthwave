@@ -27,5 +27,5 @@ export const nav = [
   { label: "Pregnancy", href: "/pregnancy-care" },
   { label: "Fertility", href: "/fertility-preconception" },
   { label: "Pediatrics", href: "/newborn-pediatric-care" },
-  { label: "Resources", href: "/services" },
+  { label: "Our Team", href: "/doctors" },
 ] as const;
