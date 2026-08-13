@@ -1,26 +1,26 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Container } from "@/components/Container";
-import { Logo } from "@/components/Logo";
 import { site } from "@/lib/site";
 
 const columns = [
   {
     heading: "Care",
     links: [
-      { label: "Pregnancy", href: "#care-pathways" },
-      { label: "Fertility", href: "#care-pathways" },
-      { label: "VBAC & Birth", href: "#services" },
-      { label: "Women’s Wellness", href: "#services" },
-      { label: "Pediatrics", href: "#services" },
+      { label: "Pregnancy", href: "/pregnancy-care" },
+      { label: "Fertility", href: "/fertility-preconception" },
+      { label: "VBAC & Birth", href: "/vbac" },
+      { label: "Women’s Wellness", href: "/vaginismus" },
+      { label: "Pediatrics", href: "/newborn-pediatric-care" },
     ],
   },
   {
     heading: "Explore",
     links: [
-      { label: "About", href: "#doctor-led-care" },
-      { label: "Doctor", href: "#doctor-led-care" },
-      { label: "Patient Stories", href: "#patient-experience" },
-      { label: "Resources", href: "#faq" },
-      { label: "Contact", href: "#conversion-cta" },
+      { label: "About", href: "/about" },
+      { label: "Services", href: "/services" },
+      { label: "Normal Birth", href: "/normal-birth-delivery" },
+      { label: "Contact", href: "/contact" },
     ],
   },
 ] as const;
@@ -35,7 +35,15 @@ export function Footer() {
       <Container>
         <div className="flex flex-col gap-10 xl:flex-row xl:justify-between">
           <div className="max-w-xs">
-            <Logo variant="light" textClassName="text-[23px]" />
+            <Link href="/" className="inline-block">
+              <Image
+                src="/images/birthwave/birthwave-logo-white.png"
+                alt="The Birth Wave"
+                width={150}
+                height={100}
+                className="h-10 w-auto"
+              />
+            </Link>
             <p className="mt-4 text-[11px] leading-relaxed text-footer-secondary">
               Women&rsquo;s health, pregnancy, birth, postpartum and newborn care,
               connected in one patient journey.
@@ -49,12 +57,12 @@ export function Footer() {
                 <ul className="mt-3 flex flex-col gap-2.5">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <a
+                      <Link
                         href={link.href}
                         className="text-[10.5px] text-footer-secondary transition-colors hover:text-white"
                       >
                         {link.label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -68,12 +76,12 @@ export function Footer() {
                   Nungambakkam, Chennai
                 </li>
                 <li>
-                  <a
-                    href="#conversion-cta"
+                  <Link
+                    href="/contact"
                     className="text-[10.5px] text-footer-secondary transition-colors hover:text-white"
                   >
                     Book an appointment
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a

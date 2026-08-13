@@ -20,14 +20,12 @@ export const site = {
   },
 } as const;
 
-// Nav labels are locked to the approved PDF. These point to the closest matching
-// in-page section since dedicated sub-pages (About, Pregnancy, Fertility, etc.)
-// don't exist yet — avoids introducing broken links this pass.
+// Nav labels are locked to the approved PDF, now pointing to real routes.
 export const nav = [
-  { label: "About", href: "#doctor-led-care" },
-  { label: "Care & Services", href: "#services" },
-  { label: "Pregnancy", href: "#care-pathways" },
-  { label: "Fertility", href: "#care-pathways" },
-  { label: "Pediatrics", href: "#services" },
-  { label: "Resources", href: "#faq" },
+  { label: "About", href: "/about" },
+  { label: "Care & Services", href: "/services" },
+  { label: "Pregnancy", href: "/pregnancy-care" },
+  { label: "Fertility", href: "/fertility-preconception" },
+  { label: "Pediatrics", href: "/newborn-pediatric-care" },
+  { label: "Resources", href: "/services" },
 ] as const;

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Container } from "@/components/Container";
 import { Logo } from "@/components/Logo";
@@ -11,31 +12,31 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 h-[88px] border-b border-border bg-white">
       <Container className="flex h-full items-center justify-between">
-        <a href="#top" className="flex shrink-0 flex-col gap-0.5 leading-none">
+        <Link href="/" className="flex shrink-0 flex-col gap-0.5 leading-none">
           <Logo textClassName="text-[22px]" />
           <span className="pl-[34px] text-[8.5px] font-semibold uppercase tracking-[0.14em] text-muted">
             {site.byline}
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary">
           {nav.map((item) => (
-            <a
+            <Link
               key={`desktop-${item.label}`}
               href={item.href}
               className="text-[12.5px] font-medium text-ink/80 transition-colors hover:text-brown"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
-          href="#conversion-cta"
+        <Link
+          href="/contact#contact-form"
           className="hidden rounded-full bg-brown px-5 py-2.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700 xl:inline-block"
         >
           Book Appointment
-        </a>
+        </Link>
 
         <button
           type="button"
@@ -73,14 +74,14 @@ export function Header() {
       >
         <Container className="flex flex-col gap-1 py-4">
           {nav.map((item) => (
-            <a
+            <Link
               key={`mobile-${item.label}`}
               href={item.href}
               onClick={() => setOpen(false)}
               className="min-h-11 py-2.5 text-base font-medium text-ink/85"
             >
               {item.label}
-            </a>
+            </Link>
           ))}
           <div className="mt-3 flex flex-col gap-3">
             <a
@@ -89,13 +90,13 @@ export function Header() {
             >
               Call {site.phone}
             </a>
-            <a
-              href="#conversion-cta"
+            <Link
+              href="/contact#contact-form"
               onClick={() => setOpen(false)}
-              className="min-h-11 rounded-full bg-brown py-2.5 text-center text-sm font-semibold text-white"
+              className="min-h-11 rounded-full bg-brown py-2.5 text-center text-sm font-semibold text-white flex items-center justify-center"
             >
               Book Appointment
-            </a>
+            </Link>
           </div>
         </Container>
       </div>
