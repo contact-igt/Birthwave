@@ -27,7 +27,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="bg-white py-16 md:py-24">
+    <section id="faq" className="scroll-mt-20 bg-white py-16 md:py-24">
       <Container className="max-w-3xl">
         <div>
           <p className="text-sm font-semibold tracking-wide text-primary-600">FAQ</p>

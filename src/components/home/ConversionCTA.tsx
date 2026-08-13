@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 export function ConversionCTA() {
   return (
-    <section id="conversion-cta" className="bg-ink py-16 text-cream md:py-20">
+    <section id="conversion-cta" className="scroll-mt-20 bg-ink py-16 text-cream md:py-20">
       <Container className="flex flex-col items-center gap-6 text-center">
         <h2 className="max-w-xl text-3xl font-extrabold leading-tight sm:text-4xl">
           Ready to start your care journey?

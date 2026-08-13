@@ -3,7 +3,7 @@ import { site } from "@/lib/site";
 
 export function DoctorLedCare() {
   return (
-    <section id="doctor-led-care" className="bg-white py-16 md:py-24">
+    <section id="doctor-led-care" className="scroll-mt-20 bg-white py-16 md:py-24">
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div className="relative mx-auto aspect-[4/5] w-full max-w-sm order-2 lg:order-1">
           <div

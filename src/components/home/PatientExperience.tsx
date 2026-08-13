@@ -21,7 +21,7 @@ const categories = [
 
 export function PatientExperience() {
   return (
-    <section id="patient-experience" className="bg-cream py-16 md:py-24">
+    <section id="patient-experience" className="scroll-mt-20 bg-cream py-16 md:py-24">
       <Container>
         <div className="max-w-2xl">
           <p className="text-sm font-semibold tracking-wide text-primary-600">

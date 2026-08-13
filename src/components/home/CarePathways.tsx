@@ -20,7 +20,7 @@ const pathways = [
 
 export function CarePathways() {
   return (
-    <section id="care-pathways" className="bg-white py-16 md:py-24">
+    <section id="care-pathways" className="scroll-mt-20 bg-white py-16 md:py-24">
       <Container>
         <div className="max-w-2xl">
           <p className="text-sm font-semibold tracking-wide text-primary-600">

@@ -15,7 +15,7 @@ export function Header() {
           <Logo />
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 xl:flex" aria-label="Primary">
           {nav.map((item) => (
             <a
               key={item.href}
@@ -27,7 +27,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <a
             href={site.phoneHref}
             className="text-sm font-semibold text-ink/80 transition-colors hover:text-primary-600"
@@ -48,7 +48,7 @@ export function Header() {
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-11 w-11 items-center justify-center rounded-full text-ink lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-full text-ink xl:hidden"
         >
           <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
             {open ? (
@@ -72,7 +72,7 @@ export function Header() {
 
       <div
         id="mobile-nav"
-        className={`overflow-hidden border-t border-primary-100 bg-cream transition-[max-height,opacity] duration-300 ease-out lg:hidden ${
+        className={`overflow-hidden border-t border-primary-100 bg-cream transition-[max-height,opacity] duration-300 ease-out xl:hidden ${
           open ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
