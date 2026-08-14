@@ -4,6 +4,7 @@ import { Hero } from "@/components/home/Hero";
 import { CarePathways } from "@/components/home/CarePathways";
 import { Services } from "@/components/home/Services";
 import { DoctorLedCare } from "@/components/home/DoctorLedCare";
+import { VideoSection } from "@/components/home/VideoSection";
 import { PatientJourney } from "@/components/home/PatientJourney";
 import { PatientExperience } from "@/components/home/PatientExperience";
 import { FAQ } from "@/components/home/FAQ";
@@ -18,6 +19,7 @@ export default function Home() {
         <CarePathways />
         <Services />
         <DoctorLedCare />
+        <VideoSection />
         <PatientJourney />
         <PatientExperience />
         <FAQ />

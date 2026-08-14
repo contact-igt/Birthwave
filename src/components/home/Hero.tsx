@@ -7,14 +7,14 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="scroll-mt-[100px] flex min-h-[760px] items-center bg-cream py-16"
+      className="scroll-mt-[100px] flex min-h-[680px] items-center bg-cream py-14 md:py-16"
     >
-      <Container className="grid items-center gap-12 xl:grid-cols-[585px_564px] xl:gap-16">
+      <Container className="grid items-center gap-12 xl:grid-cols-[1.02fr_0.98fr] xl:gap-14">
         <div>
           <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-rose">
             Women&rsquo;s Health &bull; Pregnancy &bull; Newborn Care
           </p>
-          <h1 className="mt-4 max-w-[585px] font-display text-[54px] font-bold leading-[1.08] text-ink">
+          <h1 className="mt-4 max-w-[560px] font-display text-[52px] font-bold leading-[1.08] text-ink">
             Care that sees the
             <br />
             whole woman &mdash;
@@ -36,7 +36,7 @@ export function Hero() {
             ))}
           </ul>
 
-          <p className="mt-5 max-w-[560px] text-[17px] leading-[1.58] text-muted">
+          <p className="mt-5 max-w-[540px] text-[17px] leading-[1.58] text-muted">
             From fertility and pregnancy to birth preparation, postpartum recovery and
             newborn care, Birthwave brings your care journey together with clarity,
             warmth and clinical guidance.
@@ -58,40 +58,34 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto h-[500px] w-full max-w-[564px] xl:h-[604px]">
+        <div className="relative mx-auto h-[460px] w-full max-w-[520px] sm:h-[520px]">
           <div
-            className="absolute inset-0 overflow-hidden rounded-[34px] bg-blush"
+            className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-blue/20"
             aria-hidden="true"
-          >
-            <div className="absolute -left-10 top-16 h-64 w-64 rounded-full bg-rose/30" />
-            <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-brown/15" />
-            <div className="absolute bottom-10 left-16 h-72 w-72 rounded-full bg-blue/25" />
-            <div className="absolute bottom-0 right-10 h-40 w-40 rounded-full bg-coral/20" />
-
+          />
+          <div className="absolute inset-0 overflow-hidden rounded-[34px] bg-blush shadow-[0_20px_60px_rgba(97,62,55,0.15)]">
+            <Image
+              src="/images/birthwave/birthwave-workshop-facilitator.png"
+              alt="Dr. Santoshi Nandigam leading a Birthwave childbirth education session"
+              fill
+              sizes="(min-width: 1280px) 520px, 90vw"
+              className="object-cover object-top"
+              priority
+            />
+            <div
+              className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink/50 to-transparent"
+              aria-hidden="true"
+            />
             <Image
               src="/images/hero-flourish-left.png"
               alt=""
               width={233}
               height={236}
-              className="absolute left-3 top-3 h-28 w-28"
-            />
-            <Image
-              src="/images/hero-flourish-right.png"
-              alt=""
-              width={193}
-              height={267}
-              className="absolute bottom-32 right-3 h-32 w-24"
+              className="absolute right-4 top-4 h-20 w-20 opacity-90"
             />
           </div>
 
-          <div className="absolute right-5 top-5 rounded-full bg-white px-4 py-2 shadow-sm">
-            <p className="text-[9px] font-semibold uppercase tracking-[0.1em] text-rose">
-              Appointments
-            </p>
-            <p className="text-[11px] font-medium text-ink">In-clinic + guided care</p>
-          </div>
-
-          <div className="absolute bottom-6 left-6 right-6 w-auto max-w-[318px] rounded-[20px] bg-white p-5 shadow-[0_8px_24px_rgba(46,36,33,0.08)]">
+          <div className="absolute bottom-6 left-6 right-6 rounded-[20px] bg-white p-5 shadow-[0_8px_24px_rgba(46,36,33,0.1)]">
             <p className="text-[9px] font-semibold uppercase tracking-[0.1em] text-rose">
               Your Care Journey
             </p>

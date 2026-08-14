@@ -74,14 +74,14 @@ export function PageHero({
         </div>
 
         <div
-          className={`relative mx-auto flex h-[320px] w-full max-w-md items-center justify-center overflow-hidden rounded-[32px] ${ACCENT_BG[accent]} sm:h-[380px]`}
+          className={`relative mx-auto flex h-[380px] w-full max-w-lg items-center justify-center overflow-hidden rounded-[32px] ${ACCENT_BG[accent]} sm:h-[460px]`}
         >
           {image ? (
             <Image
               src={image.src}
               alt={image.alt}
               fill
-              sizes="(min-width: 1280px) 420px, 90vw"
+              sizes="(min-width: 1280px) 500px, 90vw"
               className="object-cover"
               priority
             />
@@ -101,7 +101,7 @@ export function PageHero({
               />
               <LineArtIllustration
                 variant={illustration ?? "pregnancy"}
-                className="relative h-56 w-56 opacity-90"
+                className="relative h-64 w-64 opacity-90 sm:h-72 sm:w-72"
               />
             </>
           )}

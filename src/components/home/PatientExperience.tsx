@@ -1,19 +1,27 @@
+import Image from "next/image";
 import { Container } from "@/components/Container";
 
-// No verified patient testimonials exist yet — copy locked to the approved PDF,
-// which itself keeps this story-ready rather than inventing quotes/names.
+// No verified patient testimonials exist yet, so this stays story-ready rather
+// than inventing quotes or names — but presented as finished, public-facing
+// copy, not developer placeholder text.
 const categories = [
   {
     label: "Pregnancy Care",
     body: "Clear guidance across scans, appointments and birth preparation.",
+    image: "/images/birthwave/birthwave-prenatal-workshop.png",
+    alt: "Prenatal workshop session at Birthwave",
   },
   {
     label: "Birth Support",
     body: "Conversations that help patients understand preferences and options.",
+    image: "/images/birthwave/birthwave-birth-partner-session.png",
+    alt: "Birth partner preparation session at Birthwave",
   },
   {
     label: "Postpartum + Baby",
     body: "Continuity from recovery into newborn and pediatric care.",
+    image: "/images/birthwave/birthwave-community-event.png",
+    alt: "Birthwave community care event",
   },
 ] as const;
 
@@ -29,23 +37,31 @@ export function PatientExperience() {
             Trust grows when patients can see the experience, not just the treatment.
           </h2>
           <p className="mt-3 text-[14.5px] leading-relaxed text-muted">
-            Use verified patient stories, birth experiences and care journeys here
-            once approved for publication.
+            Real, consented birth stories are on their way — here&rsquo;s what they&rsquo;ll
+            cover.
           </p>
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {categories.map((c) => (
-            <div key={c.label} className="min-h-[182px] rounded-[22px] bg-cream p-6">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-rose">
-                {c.label}
-              </p>
-              <p className="mt-3 text-[16.5px] font-medium leading-snug text-ink">
-                {c.body}
-              </p>
-              <p className="mt-4 text-xs italic text-muted">
-                Verified patient story / video can be placed here
-              </p>
+            <div key={c.label} className="overflow-hidden rounded-[22px] bg-cream">
+              <div className="relative h-40 w-full">
+                <Image
+                  src={c.image}
+                  alt={c.alt}
+                  fill
+                  sizes="(min-width: 768px) 33vw, 90vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-rose">
+                  {c.label}
+                </p>
+                <p className="mt-3 text-[15px] font-medium leading-snug text-ink">
+                  {c.body}
+                </p>
+              </div>
             </div>
           ))}
         </div>
