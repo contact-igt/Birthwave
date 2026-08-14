@@ -1,0 +1,65 @@
+"use client";
+
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { getService } from "@/lib/services";
+import { site } from "@/lib/site";
+
+export function ThankYouContent() {
+  const searchParams = useSearchParams();
+  const serviceSlug = searchParams.get("service");
+  const service = serviceSlug ? getService(serviceSlug) : undefined;
+
+  const whatsappHref = `https://wa.me/919840798472?text=${encodeURIComponent(
+    `Hi, I just submitted an enquiry through the Birthwave website${
+      service ? ` for ${service.title}` : ""
+    }.`
+  )}`;
+
+  return (
+    <>
+      <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-rose">
+        Request Received
+      </p>
+      <h1 className="mt-4 font-display text-[36px] font-bold leading-[1.15] text-ink sm:text-[42px]">
+        Thank you. We&rsquo;ve received your enquiry.
+      </h1>
+      <p className="mt-5 text-[16px] leading-[1.6] text-muted">
+        Birthwave&rsquo;s team will review the request and contact you using the
+        details you submitted.
+      </p>
+
+      {service && (
+        <div className="mt-6 inline-flex flex-col items-center rounded-2xl border border-border bg-white px-6 py-4">
+          <p className="text-[10px] font-semibold uppercase tracking-wide text-rose">
+            Your enquiry
+          </p>
+          <p className="mt-1 font-display text-base font-bold text-ink">{service.title}</p>
+        </div>
+      )}
+
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
+        >
+          Continue on WhatsApp
+        </a>
+        <a
+          href={site.phoneHref}
+          className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-colors hover:border-brown hover:text-brown"
+        >
+          Call {site.phone}
+        </a>
+        <Link
+          href="/"
+          className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-colors hover:border-brown hover:text-brown"
+        >
+          Return Home
+        </Link>
+      </div>
+    </>
+  );
+}

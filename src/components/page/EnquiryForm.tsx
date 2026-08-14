@@ -1,25 +1,37 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { services } from "@/lib/services";
 import { site } from "@/lib/site";
+import { ensureFirstTouchCaptured, getAttribution } from "@/lib/leads/attribution";
+import { trackEvent } from "@/lib/analytics";
 
-// No backend exists yet, so this form does the one honest thing it can:
-// build a WhatsApp message from what the patient entered and open it in a
-// new tab. No fake "message sent" success state.
+type Status = "idle" | "submitting" | "error";
+
 export function EnquiryForm() {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const preselected = searchParams.get("service") ?? "";
+
+  useEffect(() => {
+    ensureFirstTouchCaptured();
+  }, []);
 
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [service, setService] = useState(preselected);
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [consent, setConsent] = useState(false);
+  const [honeypot, setHoneypot] = useState("");
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const serviceLabel = services.find((s) => s.slug === service)?.title ?? service;
+  const serviceLabel = services.find((s) => s.slug === service)?.title ?? service;
+
+  function whatsappFallbackHref() {
     const lines = [
       `Hi, I'd like to book an appointment with The Birth Wave.`,
       name && `Name: ${name}`,
@@ -27,16 +39,75 @@ export function EnquiryForm() {
       serviceLabel && `Interested in: ${serviceLabel}`,
       message && `Message: ${message}`,
     ].filter(Boolean);
-    const href = `https://wa.me/919840798472?text=${encodeURIComponent(lines.join("\n"))}`;
-    window.open(href, "_blank", "noopener,noreferrer");
+    return `https://wa.me/919840798472?text=${encodeURIComponent(lines.join("\n"))}`;
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (status === "submitting") return; // double-submit guard
+
+    setStatus("submitting");
+    setErrorMessage(null);
+    setFieldErrors({});
+
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          phone,
+          email: email || undefined,
+          service,
+          message: message || undefined,
+          consent,
+          honeypot,
+          attribution: getAttribution(),
+        }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) {
+        setStatus("error");
+        setErrorMessage(data.error ?? "Something went wrong. Please try again.");
+        if (data.fields) setFieldErrors(data.fields);
+        return;
+      }
+
+      trackEvent("birthwave_lead_submitted", {
+        lead_id: data.lead_id,
+        service,
+        page: window.location.pathname,
+      });
+
+      router.push(`/thank-you?service=${encodeURIComponent(service)}`);
+    } catch {
+      setStatus("error");
+      setErrorMessage("We couldn't reach the server. Please try again, or use WhatsApp below.");
+    }
   }
 
   return (
     <form
       id="contact-form"
       onSubmit={handleSubmit}
-      className="scroll-mt-[100px] grid gap-4 rounded-[24px] border border-border bg-white p-6 sm:p-8"
+      className="relative scroll-mt-[100px] grid gap-4 rounded-[24px] border border-border bg-white p-6 sm:p-8"
     >
+      {/* Honeypot — hidden from real users, bots often fill every field */}
+      <div className="absolute -left-[9999px]" aria-hidden="true">
+        <label htmlFor="company">Company</label>
+        <input
+          id="company"
+          name="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
+
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="flex flex-col gap-1.5">
           <span className="text-xs font-semibold text-ink">Name</span>
@@ -47,6 +118,7 @@ export function EnquiryForm() {
             onChange={(e) => setName(e.target.value)}
             className="min-h-11 rounded-xl border border-border bg-cream px-4 text-sm text-ink outline-none focus:border-brown"
           />
+          {fieldErrors.name && <span className="text-[11px] text-coral">{fieldErrors.name}</span>}
         </label>
         <label className="flex flex-col gap-1.5">
           <span className="text-xs font-semibold text-ink">Phone</span>
@@ -57,12 +129,16 @@ export function EnquiryForm() {
             onChange={(e) => setPhone(e.target.value)}
             className="min-h-11 rounded-xl border border-border bg-cream px-4 text-sm text-ink outline-none focus:border-brown"
           />
+          {fieldErrors.phone && (
+            <span className="text-[11px] text-coral">{fieldErrors.phone}</span>
+          )}
         </label>
       </div>
 
       <label className="flex flex-col gap-1.5">
         <span className="text-xs font-semibold text-ink">What do you need help with?</span>
         <select
+          required
           value={service}
           onChange={(e) => setService(e.target.value)}
           className="min-h-11 rounded-xl border border-border bg-cream px-4 text-sm text-ink outline-none focus:border-brown"
@@ -77,6 +153,17 @@ export function EnquiryForm() {
       </label>
 
       <label className="flex flex-col gap-1.5">
+        <span className="text-xs font-semibold text-ink">Email (optional)</span>
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="min-h-11 rounded-xl border border-border bg-cream px-4 text-sm text-ink outline-none focus:border-brown"
+        />
+        {fieldErrors.email && <span className="text-[11px] text-coral">{fieldErrors.email}</span>}
+      </label>
+
+      <label className="flex flex-col gap-1.5">
         <span className="text-xs font-semibold text-ink">Message (optional)</span>
         <textarea
           value={message}
@@ -86,14 +173,52 @@ export function EnquiryForm() {
         />
       </label>
 
+      <label className="flex items-start gap-2.5 text-xs leading-relaxed text-ink/80">
+        <input
+          type="checkbox"
+          required
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          className="mt-0.5 h-4 w-4 shrink-0 accent-brown"
+        />
+        Birthwave may contact me regarding this enquiry or appointment request.
+      </label>
+      {fieldErrors.consent && (
+        <span className="-mt-2 text-[11px] text-coral">{fieldErrors.consent}</span>
+      )}
+
       <button
         type="submit"
-        className="mt-2 inline-flex min-h-11 items-center justify-center rounded-full bg-brown px-7 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
+        disabled={status === "submitting"}
+        className="mt-2 inline-flex min-h-11 items-center justify-center rounded-full bg-brown px-7 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700 disabled:opacity-60"
       >
-        Continue on WhatsApp
+        {status === "submitting" ? "Sending…" : "Send Enquiry"}
       </button>
+
+      {status === "error" && (
+        <div className="rounded-xl border border-coral/40 bg-coral/5 p-4">
+          <p className="text-xs font-medium text-ink">{errorMessage}</p>
+          <div className="mt-3 flex flex-wrap gap-3">
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="rounded-full border border-border bg-white px-5 py-2 text-[12px] font-semibold text-ink hover:border-brown"
+            >
+              Retry
+            </button>
+            <a
+              href={whatsappFallbackHref()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full bg-brown px-5 py-2 text-[12px] font-semibold text-white hover:bg-brown-600"
+            >
+              Continue on WhatsApp
+            </a>
+          </div>
+        </div>
+      )}
+
       <p className="text-[11px] text-muted">
-        Opens WhatsApp with your details filled in — nothing is sent until you do.
         Prefer to call? {site.phone}.
       </p>
     </form>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Poppins } from "next/font/google";
+import { QuickActions } from "@/components/QuickActions";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -26,7 +27,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${plusJakarta.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink">{children}</body>
+      <body className="min-h-full flex flex-col bg-cream text-ink pb-20 xl:pb-0">
+        {children}
+        <QuickActions />
+      </body>
     </html>
   );
 }
