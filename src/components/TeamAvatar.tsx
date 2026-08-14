@@ -40,11 +40,18 @@ export function TeamAvatar({
       className={`relative flex items-center justify-center overflow-hidden rounded-[24px] bg-blush ${className}`}
       aria-hidden="true"
     >
-      <svg viewBox="0 0 200 200" className="absolute h-[85%] w-[85%] opacity-70" fill="none">
-        <circle cx="100" cy="100" r="72" stroke="#613E37" strokeWidth="1.5" opacity="0.35" />
-        <circle cx="146" cy="54" r="5" fill="#F88379" opacity="0.85" />
+      <svg viewBox="0 0 200 200" className="absolute h-[85%] w-[85%] opacity-60" fill="none">
+        {/* head + shoulders — a generic person placeholder, not just a ring */}
+        <circle cx="100" cy="78" r="34" stroke="#613E37" strokeWidth="1.5" />
+        <path
+          d="M42 172c0-34 26-58 58-58s58 24 58 58"
+          stroke="#613E37"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+        <circle cx="140" cy="52" r="5" fill="#F88379" opacity="0.85" />
       </svg>
-      <span className="relative font-display text-3xl font-bold text-rose">
+      <span className="relative mt-16 font-display text-2xl font-bold text-rose">
         {initials(member.name)}
       </span>
     </div>

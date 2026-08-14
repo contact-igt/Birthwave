@@ -12,9 +12,9 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 h-[88px] border-b border-border bg-white">
       <Container className="flex h-full items-center justify-between">
-        <Link href="/" className="flex shrink-0 flex-col gap-1 leading-none">
+        <Link href="/" className="flex shrink-0 flex-col gap-1.5 leading-none">
           <BrandMark size="sm" />
-          <span className="pl-1 text-[8.5px] font-semibold uppercase tracking-[0.14em] text-muted">
+          <span className="pl-0.5 text-[8.5px] font-semibold uppercase tracking-[0.12em] text-muted">
             {site.byline}
           </span>
         </Link>

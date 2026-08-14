@@ -23,7 +23,7 @@ export default function ServicesPage() {
           heading="Every stage of care, under one roof."
           intro="Six focused care pathways, each with its own page — plus a wider range of supporting services available on request."
           accent="blue"
-          illustration="pregnancy"
+          illustration="journey"
         />
 
         <section className="bg-white py-16 md:py-20">

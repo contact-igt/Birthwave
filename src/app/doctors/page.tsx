@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/Container";
-import { PageHero } from "@/components/page/PageHero";
 import { PageCTA } from "@/components/page/PageCTA";
 import { TeamAvatar } from "@/components/TeamAvatar";
+import { site } from "@/lib/site";
 import { team, getTeamMember } from "@/lib/team";
 
 export const metadata: Metadata = {
@@ -34,14 +35,72 @@ export default function DoctorsPage() {
     <>
       <Header />
       <main>
-        <PageHero
-          eyebrow="Our Care Team"
-          heading="Connected care, from one doctor to a whole team."
-          intro="Birthwave brings obstetrics, pediatrics, fertility, pelvic health, lactation and emotional well-being together — so your care doesn't stop at one specialty."
-          accent="rose"
-          illustration="pregnancy"
-          bookHref="/contact#contact-form"
-        />
+        <section className="bg-cream py-16 md:py-20">
+          <Container className="grid items-center gap-12 xl:grid-cols-[1.1fr_0.9fr] xl:gap-16">
+            <div>
+              <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-rose">
+                Our Care Team
+              </p>
+              <h1 className="mt-4 max-w-xl font-display text-[42px] font-bold leading-[1.1] text-ink sm:text-[46px]">
+                Connected care, from one doctor to a whole team.
+              </h1>
+              <p className="mt-5 max-w-lg text-[16px] leading-[1.6] text-muted">
+                Birthwave brings obstetrics, pediatrics, fertility, pelvic health,
+                lactation and emotional well-being together — so your care doesn&rsquo;t
+                stop at one specialty.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <Link
+                  href="/contact#contact-form"
+                  className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
+                >
+                  Book an Appointment
+                </Link>
+                <a
+                  href={site.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-colors hover:border-brown hover:text-brown"
+                >
+                  Message on WhatsApp
+                </a>
+              </div>
+            </div>
+
+            {/* Editorial team composition — three verified portraits, not a
+                generic illustration standing in for the whole team. */}
+            <div className="relative mx-auto h-[420px] w-full max-w-lg sm:h-[460px]">
+              <div className="absolute left-0 top-0 h-[78%] w-[62%] overflow-hidden rounded-[28px] bg-sky shadow-[0_16px_40px_rgba(97,62,55,0.18)]">
+                <Image
+                  src="/images/dr-santoshi-nandigam.png"
+                  alt="Dr. Santoshi Nandigam"
+                  fill
+                  sizes="(min-width: 1280px) 320px, 60vw"
+                  className="object-cover object-top"
+                  priority
+                />
+              </div>
+              <div className="absolute right-0 top-0 h-[46%] w-[42%] overflow-hidden rounded-[24px] bg-blush shadow-[0_12px_30px_rgba(97,62,55,0.16)]">
+                <Image
+                  src="/images/birthwave/dr-bharathy-kandasamy.png"
+                  alt="Dr. Bharathy Kandasamy"
+                  fill
+                  sizes="(min-width: 1280px) 220px, 40vw"
+                  className="object-cover object-top"
+                />
+              </div>
+              <div className="absolute bottom-0 right-0 h-[46%] w-[42%] overflow-hidden rounded-[24px] bg-pink shadow-[0_12px_30px_rgba(97,62,55,0.16)]">
+                <Image
+                  src="/images/birthwave/sheethal-sathya.png"
+                  alt="Sheethal Sathya"
+                  fill
+                  sizes="(min-width: 1280px) 220px, 40vw"
+                  className="object-cover object-top"
+                />
+              </div>
+            </div>
+          </Container>
+        </section>
 
         {/* Founder feature */}
         <section className="bg-white py-16 md:py-20">

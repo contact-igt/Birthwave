@@ -27,7 +27,7 @@ export default function ContactPage() {
           heading="Get in touch, or book an appointment."
           intro="Call, message on WhatsApp, or send an enquiry below and we'll help you find the right time."
           accent="rose"
-          illustration="pregnancy"
+          illustration="support"
         />
 
         <section className="bg-white py-16 md:py-20">

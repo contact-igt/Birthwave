@@ -295,6 +295,10 @@ export const services: readonly ServiceContent[] = [
     title: "Fertility & Preconception",
     shortDescription: "Evaluation, counselling and planning before pregnancy.",
     accent: "blue",
+    image: {
+      src: "/images/birthwave/dr-bharathy-kandasamy.png",
+      alt: "Dr. Bharathy Kandasamy, Advanced Fertility Specialist",
+    },
     illustration: "fertility",
     hero: {
       eyebrow: "Fertility & Preconception",
