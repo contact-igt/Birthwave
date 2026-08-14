@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/Container";
+import { PageHero } from "@/components/page/PageHero";
 import { EnquiryForm } from "@/components/page/EnquiryForm";
 import { site } from "@/lib/site";
 
@@ -21,20 +22,13 @@ export default function ContactPage() {
     <>
       <Header />
       <main>
-        <section className="bg-cream py-16 md:py-20">
-          <Container className="max-w-2xl">
-            <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-rose">
-              Contact
-            </p>
-            <h1 className="mt-4 font-display text-[42px] font-bold leading-[1.1] text-ink sm:text-[46px]">
-              Get in touch, or book an appointment.
-            </h1>
-            <p className="mt-5 text-[16px] leading-[1.6] text-muted">
-              Call, message on WhatsApp, or send an enquiry below and we&rsquo;ll help you
-              find the right time.
-            </p>
-          </Container>
-        </section>
+        <PageHero
+          eyebrow="Contact"
+          heading="Get in touch, or book an appointment."
+          intro="Call, message on WhatsApp, or send an enquiry below and we'll help you find the right time."
+          accent="rose"
+          illustration="pregnancy"
+        />
 
         <section className="bg-white py-16 md:py-20">
           <Container className="grid gap-12 xl:grid-cols-[1fr_1.2fr] xl:gap-16">

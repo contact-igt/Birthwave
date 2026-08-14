@@ -16,6 +16,15 @@ const ACCENT_BG = {
   coral: "bg-pink",
 } as const;
 
+// Soft overlapping colour-field, echoing the Home hero's visual language,
+// so illustration-led heroes (no real photo available) feel as complete as
+// photo-led ones rather than a small icon floating in a flat colour box.
+const ACCENT_BLOBS = {
+  rose: ["bg-rose/25", "bg-brown/10", "bg-blue/15"],
+  blue: ["bg-blue/25", "bg-rose/15", "bg-brown/10"],
+  coral: ["bg-coral/20", "bg-rose/20", "bg-blue/10"],
+} as const;
+
 export function PageHero({
   eyebrow,
   heading,
@@ -77,10 +86,24 @@ export function PageHero({
               priority
             />
           ) : (
-            <LineArtIllustration
-              variant={illustration ?? "pregnancy"}
-              className="h-40 w-40 opacity-90"
-            />
+            <>
+              <div
+                className={`absolute -left-8 top-10 h-52 w-52 rounded-full ${ACCENT_BLOBS[accent][0]}`}
+                aria-hidden="true"
+              />
+              <div
+                className={`absolute right-0 top-0 h-40 w-40 rounded-full ${ACCENT_BLOBS[accent][1]}`}
+                aria-hidden="true"
+              />
+              <div
+                className={`absolute bottom-0 right-6 h-48 w-48 rounded-full ${ACCENT_BLOBS[accent][2]}`}
+                aria-hidden="true"
+              />
+              <LineArtIllustration
+                variant={illustration ?? "pregnancy"}
+                className="relative h-56 w-56 opacity-90"
+              />
+            </>
           )}
         </div>
       </Container>
