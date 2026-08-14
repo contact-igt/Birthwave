@@ -8,6 +8,7 @@ import { PageHero } from "@/components/page/PageHero";
 import { DoctorTrust } from "@/components/page/DoctorTrust";
 import { PageCTA } from "@/components/page/PageCTA";
 import { TeamAvatar } from "@/components/TeamAvatar";
+import { GoogleGallery } from "@/components/about/GoogleGallery";
 import { getTeamMember } from "@/lib/team";
 
 const santoshi = getTeamMember("santoshi-nandigam")!;
@@ -136,6 +137,8 @@ export default function AboutPage() {
             </div>
           </Container>
         </section>
+
+        <GoogleGallery />
 
         <PageCTA
           heading="Want to know if Birthwave is right for you?"

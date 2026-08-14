@@ -6,6 +6,7 @@ import { Services } from "@/components/home/Services";
 import { DoctorLedCare } from "@/components/home/DoctorLedCare";
 import { PatientJourney } from "@/components/home/PatientJourney";
 import { PatientExperience } from "@/components/home/PatientExperience";
+import { GoogleReviews } from "@/components/home/GoogleReviews";
 import { FAQ } from "@/components/home/FAQ";
 import { ConversionCTA } from "@/components/home/ConversionCTA";
 
@@ -20,6 +21,7 @@ export default function Home() {
         <DoctorLedCare />
         <PatientJourney />
         <PatientExperience />
+        <GoogleReviews />
         <FAQ />
         <ConversionCTA />
       </main>
