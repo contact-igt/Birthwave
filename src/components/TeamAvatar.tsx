@@ -17,9 +17,14 @@ function initials(name: string) {
 export function TeamAvatar({
   member,
   className = "",
+  focal = "center",
 }: {
   member: TeamMember;
   className?: string;
+  // Most portrait crops are safe at a centered position — only wide/short
+  // boxes (e.g. a stacked mobile card) need biasing toward the top so hair
+  // isn't trimmed off subjects photographed with little headroom.
+  focal?: "center" | "top";
 }) {
   if (member.image) {
     return (
@@ -29,7 +34,7 @@ export function TeamAvatar({
           alt={`${member.name}, ${member.role}`}
           fill
           sizes="(min-width: 1280px) 320px, 60vw"
-          className="object-cover"
+          className={`object-cover ${focal === "top" ? "object-top" : "object-center"}`}
         />
       </div>
     );

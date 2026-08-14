@@ -10,18 +10,24 @@ const categories = [
     body: "Clear guidance across scans, appointments and birth preparation.",
     image: "/images/birthwave/birthwave-prenatal-workshop.png",
     alt: "Prenatal workshop session at Birthwave",
+    // Both subjects' heads sit in the top third of this square source photo —
+    // the default centered crop in this wide card cuts them off entirely, so
+    // this one needs an explicit top-biased focal point.
+    focal: "object-[50%_12%]",
   },
   {
     label: "Birth Support",
     body: "Conversations that help patients understand preferences and options.",
     image: "/images/birthwave/birthwave-birth-partner-session.png",
     alt: "Birth partner preparation session at Birthwave",
+    focal: "object-center",
   },
   {
     label: "Postpartum + Baby",
     body: "Continuity from recovery into newborn and pediatric care.",
     image: "/images/birthwave/birthwave-community-event.png",
     alt: "Birthwave community care event",
+    focal: "object-center",
   },
 ] as const;
 
@@ -45,13 +51,13 @@ export function PatientExperience() {
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           {categories.map((c) => (
             <div key={c.label} className="overflow-hidden rounded-[22px] bg-cream">
-              <div className="relative h-40 w-full">
+              <div className="relative h-48 w-full">
                 <Image
                   src={c.image}
                   alt={c.alt}
                   fill
                   sizes="(min-width: 768px) 33vw, 90vw"
-                  className="object-cover"
+                  className={`object-cover ${c.focal}`}
                 />
               </div>
               <div className="p-6">

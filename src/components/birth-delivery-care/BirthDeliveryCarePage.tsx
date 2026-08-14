@@ -248,7 +248,7 @@ export function BirthDeliveryCarePage() {
           <div className="mt-10 grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
             <div className="flex flex-col gap-5 rounded-[28px] border border-border bg-cream p-6 sm:flex-row sm:items-center">
               <div className="relative h-[220px] w-full shrink-0 sm:h-[200px] sm:w-[180px]">
-                <TeamAvatar member={santoshi} className="h-full w-full" />
+                <TeamAvatar member={santoshi} focal="top" className="h-full w-full" />
               </div>
               <div>
                 <p className="font-display text-lg font-bold text-ink">{santoshi.name}</p>
@@ -262,7 +262,7 @@ export function BirthDeliveryCarePage() {
             </div>
             <div className="flex flex-col gap-5 rounded-[28px] border border-border bg-cream p-6 sm:flex-row sm:items-center">
               <div className="relative h-[220px] w-full shrink-0 sm:h-[200px] sm:w-[180px]">
-                <TeamAvatar member={sheethal} className="h-full w-full" />
+                <TeamAvatar member={sheethal} focal="top" className="h-full w-full" />
               </div>
               <div>
                 <p className="font-display text-lg font-bold text-ink">{sheethal.name}</p>

@@ -6,7 +6,6 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/page/PageHero";
 import { DoctorTrust } from "@/components/page/DoctorTrust";
-import { VideoSlot } from "@/components/page/VideoSlot";
 import { PageCTA } from "@/components/page/PageCTA";
 import { TeamAvatar } from "@/components/TeamAvatar";
 import { getTeamMember } from "@/lib/team";
@@ -101,7 +100,7 @@ export default function AboutPage() {
                   href="/doctors"
                   className="group rounded-[22px] bg-white p-5 transition-shadow hover:shadow-[0_8px_24px_rgba(46,36,33,0.08)]"
                 >
-                  <TeamAvatar member={member} className="aspect-[4/3] w-full" />
+                  <TeamAvatar member={member} focal="top" className="aspect-[4/3] w-full" />
                   <p className="mt-4 font-display text-base font-bold text-ink">
                     {member.name}
                   </p>
@@ -134,17 +133,6 @@ export default function AboutPage() {
                   </figcaption>
                 </figure>
               ))}
-            </div>
-          </Container>
-        </section>
-
-        <section className="bg-white py-16 md:py-20">
-          <Container className="max-w-3xl">
-            <h2 className="font-display text-[26px] font-bold leading-tight text-ink">
-              Hear from Birthwave
-            </h2>
-            <div className="mt-6">
-              <VideoSlot />
             </div>
           </Container>
         </section>
