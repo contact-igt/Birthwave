@@ -26,6 +26,31 @@ export default function ServicesPage() {
           illustration="journey"
         />
 
+        <section className="bg-cream py-10">
+          <Container>
+            <Link
+              href="/birth-delivery-care"
+              className="group flex flex-col gap-3 rounded-2xl border border-border bg-white p-6 transition-colors hover:border-brown sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+                  Not Sure Where To Start?
+                </p>
+                <h2 className="mt-2 font-display text-lg font-bold text-ink">
+                  Birth &amp; Delivery Care — a starting point for every birth pathway
+                </h2>
+                <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
+                  Normal birth, VBAC, birth preparation and what happens if plans need to
+                  change — all in one place.
+                </p>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-1.5 self-start text-[12px] font-semibold text-link sm:self-auto">
+                Visit the hub <span aria-hidden="true">&rarr;</span>
+              </span>
+            </Link>
+          </Container>
+        </section>
+
         <section className="bg-white py-16 md:py-20">
           <Container>
             <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">

@@ -21,10 +21,31 @@ export const site = {
 } as const;
 
 // Nav labels are locked to the approved PDF, now pointing to real routes.
+// Optional `children` render as an accessible dropdown (desktop) / accordion
+// (mobile) rather than adding more top-level clutter.
 export const nav = [
   { label: "About", href: "/about" },
-  { label: "Care & Services", href: "/services" },
-  { label: "Pregnancy", href: "/pregnancy-care" },
+  {
+    label: "Care & Services",
+    href: "/services",
+    children: [
+      { label: "Pregnancy Care", href: "/pregnancy-care" },
+      { label: "Birth & Delivery Care", href: "/birth-delivery-care" },
+      { label: "Fertility", href: "/fertility-preconception" },
+      { label: "Vaginismus", href: "/vaginismus" },
+      { label: "Newborn & Pediatrics", href: "/newborn-pediatric-care" },
+    ],
+  },
+  {
+    label: "Pregnancy",
+    href: "/pregnancy-care",
+    children: [
+      { label: "Pregnancy Care", href: "/pregnancy-care" },
+      { label: "Birth & Delivery Care", href: "/birth-delivery-care" },
+      { label: "Normal Birth", href: "/normal-birth-delivery" },
+      { label: "VBAC", href: "/vbac" },
+    ],
+  },
   { label: "Fertility", href: "/fertility-preconception" },
   { label: "Pediatrics", href: "/newborn-pediatric-care" },
   { label: "Our Team", href: "/doctors" },

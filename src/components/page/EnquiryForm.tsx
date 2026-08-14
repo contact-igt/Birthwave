@@ -2,17 +2,17 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { services } from "@/lib/services";
+import { formServiceOptions, getFormServiceTitle } from "@/lib/services";
 import { site } from "@/lib/site";
 import { ensureFirstTouchCaptured, getAttribution } from "@/lib/leads/attribution";
 import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "error";
 
-export function EnquiryForm() {
+export function EnquiryForm({ defaultService }: { defaultService?: string } = {}) {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const preselected = searchParams.get("service") ?? "";
+  const preselected = searchParams.get("service") ?? defaultService ?? "";
 
   useEffect(() => {
     ensureFirstTouchCaptured();
@@ -29,7 +29,7 @@ export function EnquiryForm() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
-  const serviceLabel = services.find((s) => s.slug === service)?.title ?? service;
+  const serviceLabel = getFormServiceTitle(service) ?? service;
 
   function whatsappFallbackHref() {
     const lines = [
@@ -144,7 +144,7 @@ export function EnquiryForm() {
           className="min-h-11 rounded-xl border border-border bg-cream px-4 text-sm text-ink outline-none focus:border-brown"
         >
           <option value="">Not sure yet</option>
-          {services.map((s) => (
+          {formServiceOptions.map((s) => (
             <option key={s.slug} value={s.slug}>
               {s.title}
             </option>

@@ -529,3 +529,15 @@ export const supportingServices = [
   { slug: "childbirth-education", title: "Childbirth Education" },
   { slug: "workshops-events", title: "Workshops & Events" },
 ] as const;
+
+// Lightweight option list for the enquiry form's service dropdown — the six
+// full service pages plus the Birth & Delivery Care hub, which isn't a full
+// ServiceContent (it's a hub page with its own bespoke layout).
+export const formServiceOptions = [
+  ...services.map((s) => ({ slug: s.slug, title: s.title })),
+  { slug: "birth-delivery-care", title: "Birth & Delivery Care" },
+] as const;
+
+export function getFormServiceTitle(slug: string): string | undefined {
+  return formServiceOptions.find((s) => s.slug === slug)?.title;
+}

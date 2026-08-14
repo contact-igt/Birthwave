@@ -8,6 +8,7 @@ const columns = [
     heading: "Care",
     links: [
       { label: "Pregnancy", href: "/pregnancy-care" },
+      { label: "Birth & Delivery Care", href: "/birth-delivery-care" },
       { label: "Fertility", href: "/fertility-preconception" },
       { label: "VBAC & Birth", href: "/vbac" },
       { label: "Women’s Wellness", href: "/vaginismus" },

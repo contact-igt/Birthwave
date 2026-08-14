@@ -2,17 +2,17 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { getService } from "@/lib/services";
+import { getFormServiceTitle } from "@/lib/services";
 import { site } from "@/lib/site";
 
 export function ThankYouContent() {
   const searchParams = useSearchParams();
   const serviceSlug = searchParams.get("service");
-  const service = serviceSlug ? getService(serviceSlug) : undefined;
+  const serviceTitle = serviceSlug ? getFormServiceTitle(serviceSlug) : undefined;
 
   const whatsappHref = `https://wa.me/919840798472?text=${encodeURIComponent(
     `Hi, I just submitted an enquiry through the Birthwave website${
-      service ? ` for ${service.title}` : ""
+      serviceTitle ? ` for ${serviceTitle}` : ""
     }.`
   )}`;
 
@@ -29,12 +29,12 @@ export function ThankYouContent() {
         details you submitted.
       </p>
 
-      {service && (
+      {serviceTitle && (
         <div className="mt-6 inline-flex flex-col items-center rounded-2xl border border-border bg-white px-6 py-4">
           <p className="text-[10px] font-semibold uppercase tracking-wide text-rose">
             Your enquiry
           </p>
-          <p className="mt-1 font-display text-base font-bold text-ink">{service.title}</p>
+          <p className="mt-1 font-display text-base font-bold text-ink">{serviceTitle}</p>
         </div>
       )}
 

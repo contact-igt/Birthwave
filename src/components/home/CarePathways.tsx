@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Container } from "@/components/Container";
 
 const pathways = [
@@ -7,6 +8,7 @@ const pathways = [
     title: "Planning a pregnancy",
     body: "Fertility, preconception and cycle guidance",
     link: "Fertility & Preconception",
+    href: "#services",
   },
   {
     n: "02",
@@ -14,13 +16,15 @@ const pathways = [
     title: "I’m pregnant",
     body: "Antenatal care, scans, birth planning and support",
     link: "Pregnancy Care",
+    href: "#services",
   },
   {
     n: "03",
     bg: "bg-sand",
     title: "I want birth options",
     body: "Normal birth, VBAC conversations and preparation",
-    link: "Birth & VBAC",
+    link: "Birth & Delivery Care",
+    href: "/birth-delivery-care",
   },
   {
     n: "04",
@@ -28,6 +32,7 @@ const pathways = [
     title: "I need women’s care",
     body: "Gynaecology, vaginismus and wellness support",
     link: "Women’s Wellness",
+    href: "#services",
   },
 ] as const;
 
@@ -61,12 +66,21 @@ export function CarePathways() {
                 {p.title}
               </h3>
               <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">{p.body}</p>
-              <a
-                href="#services"
-                className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
-              >
-                {p.link} <span aria-hidden="true">&rarr;</span>
-              </a>
+              {p.href.startsWith("/") ? (
+                <Link
+                  href={p.href}
+                  className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+                >
+                  {p.link} <span aria-hidden="true">&rarr;</span>
+                </Link>
+              ) : (
+                <a
+                  href={p.href}
+                  className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+                >
+                  {p.link} <span aria-hidden="true">&rarr;</span>
+                </a>
+              )}
             </div>
           ))}
         </div>

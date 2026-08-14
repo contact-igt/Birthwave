@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/page/PageHero";
 import { WhoItsFor } from "@/components/page/WhoItsFor";
@@ -10,6 +11,11 @@ import { PageCTA } from "@/components/page/PageCTA";
 import { EnquiryForm } from "@/components/page/EnquiryForm";
 import type { ServiceContent } from "@/lib/services";
 import { getTeamMember, team } from "@/lib/team";
+
+// Pages whose content sits under the broader Birth & Delivery Care hub — a
+// small in-flow link back to the hub for orientation, not shown on the
+// unrelated fertility/vaginismus/newborn pages.
+const BIRTH_HUB_LINK_SLUGS = ["pregnancy-care", "normal-birth-delivery", "vbac"];
 
 // Shared structure for all six priority landing pages (patient-intent hero →
 // explanation → who it's for → doctor trust → journey → related support →
@@ -69,6 +75,29 @@ export function ServiceLandingPage({ service }: { service: ServiceContent }) {
         intro={service.journey.intro}
         steps={service.journey.steps}
       />
+
+      {BIRTH_HUB_LINK_SLUGS.includes(service.slug) && (
+        <section className="bg-cream py-10">
+          <Container>
+            <Link
+              href="/birth-delivery-care"
+              className="group flex flex-col gap-3 rounded-2xl border border-border bg-white p-6 transition-colors hover:border-brown sm:flex-row sm:items-center sm:justify-between"
+            >
+              <div>
+                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+                  See The Bigger Picture
+                </p>
+                <h2 className="mt-2 font-display text-lg font-bold text-ink">
+                  Birth &amp; Delivery Care — normal birth, VBAC and preparation, in one place
+                </h2>
+              </div>
+              <span className="inline-flex shrink-0 items-center gap-1.5 self-start text-[12px] font-semibold text-link sm:self-auto">
+                Visit the hub <span aria-hidden="true">&rarr;</span>
+              </span>
+            </Link>
+          </Container>
+        </section>
+      )}
 
       <RelatedSupport currentSlug={service.slug} />
 
