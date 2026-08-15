@@ -24,7 +24,7 @@ export async function GoogleGallery() {
               href={data.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[11px] font-semibold text-link"
+              className="text-[13px] font-semibold text-link"
             >
               See on Google &rarr;
             </a>

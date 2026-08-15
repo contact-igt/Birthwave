@@ -48,7 +48,7 @@ export function CarePathways() {
           <h2 className="mt-3 font-display text-[36px] font-bold leading-tight text-ink">
             Start with what you need today.
           </h2>
-          <p className="mt-3 text-[14.5px] leading-relaxed text-muted">
+          <p className="mt-3 text-[16px] leading-relaxed text-muted">
             Choose a care path and reach the right service without searching through
             the whole website.
           </p>
@@ -66,18 +66,18 @@ export function CarePathways() {
                 <h3 className="mt-4 font-display text-[17px] font-semibold text-ink">
                   {p.title}
                 </h3>
-                <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">{p.body}</p>
+                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-muted">{p.body}</p>
                 {p.href.startsWith("/") ? (
                   <Link
                     href={p.href}
-                    className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+                    className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-link"
                   >
                     {p.link} <span aria-hidden="true">&rarr;</span>
                   </Link>
                 ) : (
                   <a
                     href={p.href}
-                    className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+                    className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-link"
                   >
                     {p.link} <span aria-hidden="true">&rarr;</span>
                   </a>

@@ -27,7 +27,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${plusJakarta.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink pb-20 xl:pb-0">
+      <body className="min-h-full flex flex-col bg-cream text-ink pb-24 xl:pb-0">
         {children}
         <QuickActions />
       </body>

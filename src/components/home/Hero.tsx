@@ -28,7 +28,7 @@ export function Hero() {
             {trustPoints.map((point) => (
               <li
                 key={point}
-                className="flex items-center gap-1.5 text-[10.5px] font-medium text-muted"
+                className="flex items-center gap-1.5 text-[13px] font-medium text-muted"
               >
                 <span className="h-1.5 w-1.5 rounded-full border border-rose" aria-hidden="true" />
                 {point}
@@ -45,13 +45,13 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#conversion-cta"
-              className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
+              className="rounded-full bg-brown px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
             >
               Book an Appointment
             </a>
             <a
               href="#services"
-              className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-all duration-150 hover:border-brown hover:text-brown active:scale-[0.98]"
+              className="rounded-full border border-border bg-white px-7 py-3.5 text-[15px] font-semibold text-ink transition-all duration-150 hover:border-brown hover:text-brown active:scale-[0.98]"
             >
               Explore Our Care
             </a>
@@ -92,7 +92,7 @@ export function Hero() {
             <p className="mt-1.5 font-display text-base font-bold text-ink">
               One place for every chapter
             </p>
-            <p className="mt-1 text-[11px] text-muted">
+            <p className="mt-1 text-[12.5px] text-muted">
               Fertility &bull; Pregnancy &bull; Birth &bull; Postpartum &bull; Baby
             </p>
           </div>

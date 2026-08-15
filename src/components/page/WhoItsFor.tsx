@@ -20,7 +20,7 @@ export function WhoItsFor({
               key={point}
               as="li"
               delay={i * 60}
-              className="flex items-start gap-3 rounded-2xl bg-white p-5 text-sm leading-relaxed text-ink/80"
+              className="flex items-start gap-3 rounded-2xl bg-white p-5 text-[15px] leading-relaxed text-ink/80"
             >
               <span
                 className="mt-1 h-2 w-2 shrink-0 rounded-full bg-blue"

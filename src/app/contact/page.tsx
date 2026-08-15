@@ -67,7 +67,7 @@ export default function ContactPage() {
                 className="rounded-2xl border border-border bg-cream p-6 transition-colors hover:border-brown"
               >
                 <p className="text-xs font-semibold uppercase tracking-wide text-rose">Visit</p>
-                <p className="mt-1 text-sm leading-relaxed text-ink">
+                <p className="mt-1 text-[15px] leading-relaxed text-ink">
                   {site.address.line1}
                   <br />
                   {site.address.line2}

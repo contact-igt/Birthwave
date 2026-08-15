@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import Link from "next/link";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/page/PageHero";
@@ -8,7 +7,7 @@ import { JourneySteps } from "@/components/page/JourneySteps";
 import { RelatedSupport } from "@/components/page/RelatedSupport";
 import { PageFAQ } from "@/components/page/PageFAQ";
 import { PageCTA } from "@/components/page/PageCTA";
-import { EnquiryForm } from "@/components/page/EnquiryForm";
+import { EnquirySection } from "@/components/page/EnquirySection";
 import type { ServiceContent } from "@/lib/services";
 import { getTeamMember, team } from "@/lib/team";
 
@@ -40,14 +39,14 @@ export function ServiceLandingPage({ service }: { service: ServiceContent }) {
           <h2 className="max-w-xl font-display text-[28px] font-bold leading-tight text-ink">
             {service.explanation.heading}
           </h2>
-          <p className="mt-4 max-w-2xl text-[14.5px] leading-relaxed text-muted">
+          <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-muted">
             {service.explanation.body}
           </p>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {service.explanation.points.map((point) => (
               <li
                 key={point}
-                className="flex items-start gap-3 rounded-2xl border border-border bg-cream p-5 text-sm leading-relaxed text-ink/80"
+                className="flex items-start gap-3 rounded-2xl border border-border bg-cream p-5 text-[15px] leading-relaxed text-ink/80"
               >
                 <span
                   className="mt-1 h-2 w-2 shrink-0 rounded-full bg-coral"
@@ -91,7 +90,7 @@ export function ServiceLandingPage({ service }: { service: ServiceContent }) {
                   Birth &amp; Delivery Care — normal birth, VBAC and preparation, in one place
                 </h2>
               </div>
-              <span className="inline-flex shrink-0 items-center gap-1.5 self-start text-[12px] font-semibold text-link sm:self-auto">
+              <span className="inline-flex shrink-0 items-center gap-1.5 self-start text-[13.5px] font-semibold text-link sm:self-auto">
                 Visit the hub <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>
@@ -105,21 +104,7 @@ export function ServiceLandingPage({ service }: { service: ServiceContent }) {
 
       <PageCTA heading={service.cta.heading} body={service.cta.body} />
 
-      <section className="bg-white py-16 md:py-20">
-        <Container className="max-w-2xl">
-          <h2 className="font-display text-[26px] font-bold leading-tight text-ink">
-            Send an enquiry
-          </h2>
-          <p className="mt-2 text-sm text-muted">
-            Prefer to write ahead? Fill this in and continue on WhatsApp.
-          </p>
-          <div className="mt-6">
-            <Suspense fallback={null}>
-              <EnquiryForm />
-            </Suspense>
-          </div>
-        </Container>
-      </section>
+      <EnquirySection defaultService={service.slug} />
     </main>
   );
 }

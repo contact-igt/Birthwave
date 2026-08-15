@@ -38,7 +38,7 @@ export function PatientJourney() {
           <h2 className="mt-3 font-display text-[37px] font-bold leading-tight text-white">
             A simpler care journey, with fewer gaps between steps.
           </h2>
-          <p className="mt-3 text-[14.5px] leading-relaxed text-border">
+          <p className="mt-3 text-[16px] leading-relaxed text-border">
             The homepage should help patients understand what happens next, not just
             list services.
           </p>
@@ -47,11 +47,11 @@ export function PatientJourney() {
         <ol className="mt-10 grid gap-3.5 sm:grid-cols-2 xl:grid-cols-4">
           {steps.map((step, i) => (
             <Reveal key={step.n} as="li" delay={i * 80} className="min-h-[172px] rounded-[22px] bg-journey-card p-6">
-              <span className="text-xs font-bold text-coral">{step.n}</span>
+              <span className="text-[13px] font-bold text-coral">{step.n}</span>
               <h3 className="mt-3 font-display text-[17.5px] font-semibold text-white">
                 {step.title}
               </h3>
-              <p className="mt-2 text-[11.5px] leading-relaxed text-border">{step.body}</p>
+              <p className="mt-2 text-[15px] leading-relaxed text-border">{step.body}</p>
             </Reveal>
           ))}
         </ol>

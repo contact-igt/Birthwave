@@ -25,8 +25,8 @@ export function DoctorLedCare() {
               priority
             />
             <div className="absolute bottom-6 left-6 rounded-2xl bg-white p-4 shadow-[0_8px_24px_rgba(46,36,33,0.08)]">
-              <p className="font-display text-sm font-bold text-ink">{site.doctor.name}</p>
-              <p className="text-xs text-muted">{site.doctor.title}</p>
+              <p className="font-display text-[15px] font-bold text-ink">{site.doctor.name}</p>
+              <p className="text-[13px] text-muted">{site.doctor.title}</p>
             </div>
           </div>
         </Reveal>
@@ -39,14 +39,14 @@ export function DoctorLedCare() {
             <h2 className="mt-3 font-display text-[37px] font-bold leading-tight text-ink">
               Clinical care and the birth experience can belong together.
             </h2>
-            <p className="mt-5 max-w-xl text-[14.5px] leading-relaxed text-muted">
+            <p className="mt-5 max-w-xl text-[16.5px] leading-relaxed text-muted">
               Birthwave is designed to feel less like moving between disconnected
               appointments and more like one continuous care journey, with space for
               questions, preferences, preparation and follow up.
             </p>
 
             <blockquote className="mt-6 rounded-2xl border border-border bg-quote p-6">
-              <p className="text-[13.5px] font-medium leading-relaxed text-ink/85">
+              <p className="text-[15px] font-medium leading-relaxed text-ink/85">
                 &ldquo;Patients should understand their options and feel supported
                 through every stage of care.&rdquo;
               </p>
@@ -54,7 +54,7 @@ export function DoctorLedCare() {
 
             <ul className="mt-6 space-y-2.5">
               {trustBullets.map((point) => (
-                <li key={point} className="flex items-start gap-2.5 text-xs font-medium text-ink/80">
+                <li key={point} className="flex items-start gap-2.5 text-[15px] font-medium text-ink/80">
                   <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-coral" aria-hidden="true" />
                   {point}
                 </li>
@@ -63,7 +63,7 @@ export function DoctorLedCare() {
 
             <Link
               href="/doctors"
-              className="mt-7 inline-flex rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
+              className="mt-7 inline-flex rounded-full bg-brown px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
             >
               Meet Dr. Santoshi
             </Link>

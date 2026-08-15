@@ -58,7 +58,7 @@ export function FAQ() {
                   onClick={() => setOpenIndex(open ? null : i)}
                   className="flex min-h-[62px] w-full items-center justify-between gap-4 px-6 py-4 text-left"
                 >
-                  <span className="text-[13.5px] font-medium text-ink">{item.q}</span>
+                  <span className="text-base font-medium text-ink">{item.q}</span>
                   <span
                     className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blush text-rose transition-transform duration-200 ${
                       open ? "rotate-45" : ""
@@ -77,7 +77,7 @@ export function FAQ() {
                 </button>
                 <div
                   id={`faq-panel-${i}`}
-                  className={`grid overflow-hidden text-xs leading-relaxed text-muted transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                  className={`grid overflow-hidden text-[15px] leading-relaxed text-muted transition-[grid-template-rows,opacity] duration-300 ease-out ${
                     open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
                   }`}
                 >

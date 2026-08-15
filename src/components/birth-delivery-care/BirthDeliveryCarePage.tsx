@@ -101,7 +101,7 @@ export function BirthDeliveryCarePage() {
           <h2 className="font-display text-[28px] font-bold leading-tight text-ink">
             Your birth plan starts with a conversation
           </h2>
-          <p className="mt-4 text-[14.5px] leading-relaxed text-muted">
+          <p className="mt-4 text-[16px] leading-relaxed text-muted">
             Birth care at Birthwave isn&rsquo;t a single decision made at one appointment
             — it&rsquo;s a conversation that starts early in your pregnancy and develops
             as your due date approaches. What you&rsquo;re hoping for, what you&rsquo;re
@@ -126,8 +126,8 @@ export function BirthDeliveryCarePage() {
                   <h3 className="font-display text-[16px] font-semibold text-ink">
                     {card.title}
                   </h3>
-                  <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">{card.body}</p>
-                  <span className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link">
+                  <p className="mt-2 flex-1 text-[15px] leading-relaxed text-muted">{card.body}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-link">
                     Read more <span aria-hidden="true">&darr;</span>
                   </span>
                 </a>
@@ -148,7 +148,7 @@ export function BirthDeliveryCarePage() {
             </h2>
           </div>
           <div>
-            <p className="text-[14.5px] leading-relaxed text-muted">
+            <p className="text-[16px] leading-relaxed text-muted">
               Preparing for a normal birth means discussing preferences early and
               revisiting them as your pregnancy progresses — birth planning, childbirth
               education and birth partner involvement, alongside a clear,
@@ -157,7 +157,7 @@ export function BirthDeliveryCarePage() {
             </p>
             <Link
               href="/normal-birth-delivery"
-              className="mt-5 inline-flex items-center gap-1.5 text-[12px] font-semibold text-link"
+              className="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-link"
             >
               Learn more about Normal Birth &amp; Delivery Care{" "}
               <span aria-hidden="true">&rarr;</span>
@@ -177,7 +177,7 @@ export function BirthDeliveryCarePage() {
             </h2>
           </div>
           <div>
-            <p className="text-[14.5px] leading-relaxed text-muted">
+            <p className="text-[16px] leading-relaxed text-muted">
               VBAC isn&rsquo;t right for everyone, and it isn&rsquo;t ruled out for
               everyone either. Your previous caesarean and this pregnancy are assessed
               individually — including what closer monitoring during labour would
@@ -186,7 +186,7 @@ export function BirthDeliveryCarePage() {
             </p>
             <Link
               href="/vbac"
-              className="mt-5 inline-flex items-center gap-1.5 text-[12px] font-semibold text-link"
+              className="mt-5 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-link"
             >
               Learn more about VBAC <span aria-hidden="true">&rarr;</span>
             </Link>
@@ -199,7 +199,7 @@ export function BirthDeliveryCarePage() {
           <h2 className="max-w-xl font-display text-[28px] font-bold leading-tight text-ink">
             Preparing for birth
           </h2>
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
+          <p className="mt-3 max-w-xl text-[16px] leading-relaxed text-muted">
             Practical, unhurried preparation — for you and whoever is supporting you
             through labour.
           </p>
@@ -209,10 +209,10 @@ export function BirthDeliveryCarePage() {
                 key={point.title}
                 className="rounded-2xl border border-border bg-cream p-5"
               >
-                <h3 className="font-display text-sm font-semibold text-ink">
+                <h3 className="font-display text-[15px] font-semibold text-ink">
                   {point.title}
                 </h3>
-                <p className="mt-2 text-xs leading-relaxed text-muted">{point.body}</p>
+                <p className="mt-2 text-[15px] leading-relaxed text-muted">{point.body}</p>
               </li>
             ))}
           </ul>
@@ -227,7 +227,7 @@ export function BirthDeliveryCarePage() {
           <h2 className="mt-3 font-display text-[28px] font-bold leading-tight text-ink">
             When birth plans need to change
           </h2>
-          <p className="mt-4 text-[14.5px] leading-relaxed text-ink/80">
+          <p className="mt-4 text-[16px] leading-relaxed text-ink/80">
             Not every birth follows the plan discussed in advance, and that&rsquo;s
             expected — labour is assessed as it happens, not against a fixed script
             agreed weeks earlier. If a caesarean becomes the safer path, it&rsquo;s
@@ -254,8 +254,8 @@ export function BirthDeliveryCarePage() {
               </div>
               <div>
                 <p className="font-display text-lg font-bold text-ink">{santoshi.name}</p>
-                <p className="mt-1 text-xs text-muted">{santoshi.role}</p>
-                <p className="mt-3 text-[13px] leading-relaxed text-ink/80">
+                <p className="mt-1 text-[13px] text-muted">{santoshi.role}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-ink/80">
                   Leads birth planning conversations from your first antenatal visit
                   through delivery — discussing preferences, preparation and, when
                   needed, a change in plan, honestly and without judgement.
@@ -268,8 +268,8 @@ export function BirthDeliveryCarePage() {
               </div>
               <div>
                 <p className="font-display text-lg font-bold text-ink">{sheethal.name}</p>
-                <p className="mt-1 text-xs text-muted">{sheethal.role}</p>
-                <p className="mt-3 text-[13px] leading-relaxed text-ink/80">
+                <p className="mt-1 text-[13px] text-muted">{sheethal.role}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-ink/80">
                   Supports birth preparation as a certified birth doula and childbirth
                   educator — running childbirth education sessions and helping birth
                   partners feel ready for labour.
@@ -279,7 +279,7 @@ export function BirthDeliveryCarePage() {
           </div>
           <Link
             href="/doctors"
-            className="mt-6 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+            className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-link"
           >
             Meet the full care team <span aria-hidden="true">&rarr;</span>
           </Link>
@@ -297,7 +297,7 @@ export function BirthDeliveryCarePage() {
             <h2 className="mt-2 font-display text-[28px] font-bold leading-tight text-ink">
               Ready to talk through your birth plan?
             </h2>
-            <p className="mt-2 text-[13.5px] leading-relaxed text-muted">
+            <p className="mt-2 text-[16px] leading-relaxed text-muted">
               Every birth plan starts with a conversation — reach out and we&rsquo;ll
               take it from there.
             </p>
@@ -305,7 +305,7 @@ export function BirthDeliveryCarePage() {
           <div className="flex shrink-0 flex-wrap items-center gap-4">
             <a
               href="#contact-form"
-              className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
+              className="rounded-full bg-brown px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
             >
               Discuss Your Birth Plan
             </a>
@@ -313,7 +313,7 @@ export function BirthDeliveryCarePage() {
               href={site.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-all duration-150 hover:border-brown hover:text-brown active:scale-[0.98]"
+              className="rounded-full border border-border bg-white px-7 py-3.5 text-[15px] font-semibold text-ink transition-all duration-150 hover:border-brown hover:text-brown active:scale-[0.98]"
             >
               WhatsApp Birthwave
             </a>
@@ -326,7 +326,7 @@ export function BirthDeliveryCarePage() {
           <h2 className="font-display text-[26px] font-bold leading-tight text-ink">
             Send an enquiry
           </h2>
-          <p className="mt-2 text-sm text-muted">
+          <p className="mt-2 text-[15px] text-muted">
             Prefer to write ahead? Fill this in and continue on WhatsApp.
           </p>
           <div className="mt-6">

@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/Container";
 import { PageCTA } from "@/components/page/PageCTA";
+import { EnquirySection } from "@/components/page/EnquirySection";
 import { TeamAvatar } from "@/components/TeamAvatar";
 import { site } from "@/lib/site";
 import { team, getTeamMember } from "@/lib/team";
@@ -52,7 +53,7 @@ export default function DoctorsPage() {
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <Link
                   href="/contact#contact-form"
-                  className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
+                  className="rounded-full bg-brown px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
                 >
                   Book an Appointment
                 </Link>
@@ -60,7 +61,7 @@ export default function DoctorsPage() {
                   href={site.whatsappHref}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-colors hover:border-brown hover:text-brown"
+                  className="rounded-full border border-border bg-white px-7 py-3.5 text-[15px] font-semibold text-ink transition-all duration-150 hover:border-brown hover:text-brown active:scale-[0.98]"
                 >
                   Message on WhatsApp
                 </a>
@@ -113,16 +114,16 @@ export default function DoctorsPage() {
               <h2 className="mt-3 font-display text-[32px] font-bold leading-tight text-ink">
                 {founder.name}
               </h2>
-              <p className="mt-1 text-sm font-medium text-muted">{founder.role}</p>
+              <p className="mt-1 text-[13.5px] font-medium text-muted">{founder.role}</p>
               {founder.credential && (
-                <p className="mt-1 text-xs font-semibold text-link">{founder.credential}</p>
+                <p className="mt-1 text-[13px] font-semibold text-link">{founder.credential}</p>
               )}
-              <p className="mt-4 max-w-lg text-[14.5px] leading-relaxed text-muted">
+              <p className="mt-4 max-w-lg text-[16px] leading-relaxed text-muted">
                 {founder.bio}
               </p>
               <Link
                 href="/contact#contact-form"
-                className="mt-7 inline-flex rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
+                className="mt-7 inline-flex rounded-full bg-brown px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
               >
                 Book an Appointment
               </Link>
@@ -144,17 +145,17 @@ export default function DoctorsPage() {
                     {member.name}
                   </p>
                   {member.credential && (
-                    <p className="mt-1 text-[11px] font-semibold text-link">
+                    <p className="mt-1 text-[13px] font-semibold text-link">
                       {member.credential}
                     </p>
                   )}
-                  <p className="mt-1 flex-1 text-xs leading-relaxed text-muted">
+                  <p className="mt-1 flex-1 text-[15px] leading-relaxed text-muted">
                     {member.role}
                   </p>
                   {member.expertiseHref && (
                     <Link
                       href={member.expertiseHref}
-                      className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+                      className="mt-3 inline-flex items-center gap-1.5 text-[13px] font-semibold text-link"
                     >
                       Related care <span aria-hidden="true">&rarr;</span>
                     </Link>
@@ -175,15 +176,15 @@ export default function DoctorsPage() {
               {allied.map((member) => (
                 <div key={member.slug} className="flex flex-col rounded-[22px] bg-cream p-5">
                   <TeamAvatar member={member} className="aspect-square w-full" />
-                  <p className="mt-4 font-display text-sm font-bold text-ink">
+                  <p className="mt-4 font-display text-[15px] font-bold text-ink">
                     {member.name}
                   </p>
                   {member.credential && (
-                    <p className="mt-1 text-[10.5px] font-semibold text-link">
+                    <p className="mt-1 text-[13px] font-semibold text-link">
                       {member.credential}
                     </p>
                   )}
-                  <p className="mt-1 text-xs leading-relaxed text-muted">{member.role}</p>
+                  <p className="mt-1 text-[13px] leading-relaxed text-muted">{member.role}</p>
                 </div>
               ))}
             </div>
@@ -217,6 +218,8 @@ export default function DoctorsPage() {
           heading="Ready to meet your care team?"
           body="Reach out by phone or WhatsApp, or send an enquiry and we'll match you with the right person."
         />
+
+        <EnquirySection />
       </main>
       <Footer />
     </>

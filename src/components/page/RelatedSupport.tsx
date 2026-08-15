@@ -19,8 +19,8 @@ export function RelatedSupport({ currentSlug }: { currentSlug: string }) {
               className="group rounded-2xl border border-border bg-cream p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brown hover:shadow-[0_10px_28px_rgba(46,36,33,0.08)]"
             >
               <h3 className="font-display text-base font-semibold text-ink">{s.title}</h3>
-              <p className="mt-2 text-xs leading-relaxed text-muted">{s.shortDescription}</p>
-              <span className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link">
+              <p className="mt-2 text-[15px] leading-relaxed text-muted">{s.shortDescription}</p>
+              <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-link">
                 Learn more <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>

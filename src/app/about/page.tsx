@@ -7,6 +7,7 @@ import { Container } from "@/components/Container";
 import { PageHero } from "@/components/page/PageHero";
 import { DoctorTrust } from "@/components/page/DoctorTrust";
 import { PageCTA } from "@/components/page/PageCTA";
+import { EnquirySection } from "@/components/page/EnquirySection";
 import { TeamAvatar } from "@/components/TeamAvatar";
 import { GoogleGallery } from "@/components/about/GoogleGallery";
 import { getTeamMember } from "@/lib/team";
@@ -61,7 +62,7 @@ export default function AboutPage() {
             <h2 className="font-display text-[28px] font-bold leading-tight text-ink">
               Our approach
             </h2>
-            <p className="mt-4 text-[14.5px] leading-relaxed text-muted">
+            <p className="mt-4 text-[16px] leading-relaxed text-muted">
               Birthwave is designed to feel less like moving between disconnected
               appointments and more like one continuous care journey, with space for
               questions, preferences, preparation and follow up — across pregnancy,
@@ -89,7 +90,7 @@ export default function AboutPage() {
               </h2>
               <Link
                 href="/doctors"
-                className="text-[11px] font-semibold text-link"
+                className="text-[13px] font-semibold text-link"
               >
                 See the full team &rarr;
               </Link>
@@ -105,7 +106,7 @@ export default function AboutPage() {
                   <p className="mt-4 font-display text-base font-bold text-ink">
                     {member.name}
                   </p>
-                  <p className="mt-1 text-xs text-muted">{member.role}</p>
+                  <p className="mt-1 text-[13px] text-muted">{member.role}</p>
                 </Link>
               ))}
             </div>
@@ -129,7 +130,7 @@ export default function AboutPage() {
                       className="object-cover"
                     />
                   </div>
-                  <figcaption className="p-4 text-xs font-medium text-ink/70">
+                  <figcaption className="p-4 text-[12.5px] font-medium text-ink/70">
                     {item.caption}
                   </figcaption>
                 </figure>
@@ -144,6 +145,8 @@ export default function AboutPage() {
           heading="Want to know if Birthwave is right for you?"
           body="Reach out by phone or WhatsApp — we're happy to answer questions before you book."
         />
+
+        <EnquirySection />
       </main>
       <Footer />
     </>

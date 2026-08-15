@@ -28,7 +28,7 @@ function DesktopNavItem({ item }: { item: NavItem }) {
     return (
       <Link
         href={item.href}
-        className="text-[12.5px] font-medium text-ink/80 transition-colors hover:text-brown"
+        className="text-[14px] font-medium text-ink/80 transition-colors hover:text-brown"
       >
         {item.label}
       </Link>
@@ -39,7 +39,7 @@ function DesktopNavItem({ item }: { item: NavItem }) {
     <div className="group relative">
       <Link
         href={item.href}
-        className="flex items-center gap-1 text-[12.5px] font-medium text-ink/80 transition-colors hover:text-brown focus-visible:text-brown"
+        className="flex items-center gap-1 text-[14px] font-medium text-ink/80 transition-colors hover:text-brown focus-visible:text-brown"
       >
         {item.label}
         <Chevron open={false} />
@@ -51,7 +51,7 @@ function DesktopNavItem({ item }: { item: NavItem }) {
           <Link
             key={child.href}
             href={child.href}
-            className="block rounded-xl px-3.5 py-2.5 text-[12.5px] font-medium text-ink/80 transition-colors hover:bg-cream hover:text-brown"
+            className="block rounded-xl px-3.5 py-2.5 text-[14px] font-medium text-ink/80 transition-colors hover:bg-cream hover:text-brown"
           >
             {child.label}
           </Link>
@@ -150,7 +150,7 @@ export function Header() {
 
         <Link
           href="/contact#contact-form"
-          className="hidden rounded-full bg-brown px-5 py-2.5 text-[13px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] xl:inline-block"
+          className="hidden rounded-full bg-brown px-5 py-2.5 text-[14.5px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] xl:inline-block"
         >
           Book Appointment
         </Link>

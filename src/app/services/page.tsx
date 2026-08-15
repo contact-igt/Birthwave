@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/page/PageHero";
 import { PageCTA } from "@/components/page/PageCTA";
+import { EnquirySection } from "@/components/page/EnquirySection";
 import { services, supportingServices } from "@/lib/services";
 
 export const metadata: Metadata = {
@@ -39,12 +40,12 @@ export default function ServicesPage() {
                 <h2 className="mt-2 font-display text-lg font-bold text-ink">
                   Birth &amp; Delivery Care — a starting point for every birth pathway
                 </h2>
-                <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
+                <p className="mt-2 max-w-xl text-[16px] leading-relaxed text-muted">
                   Normal birth, VBAC, birth preparation and what happens if plans need to
                   change — all in one place.
                 </p>
               </div>
-              <span className="inline-flex shrink-0 items-center gap-1.5 self-start text-[12px] font-semibold text-link sm:self-auto">
+              <span className="inline-flex shrink-0 items-center gap-1.5 self-start text-[13.5px] font-semibold text-link sm:self-auto">
                 Visit the hub <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>
@@ -66,10 +67,10 @@ export default function ServicesPage() {
                   <h2 className="mt-4 font-display text-lg font-bold text-ink">
                     {service.title}
                   </h2>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
+                  <p className="mt-2 flex-1 text-[16px] leading-relaxed text-muted">
                     {service.shortDescription}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link">
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-link">
                     Learn more <span aria-hidden="true">&rarr;</span>
                   </span>
                 </Link>
@@ -83,7 +84,7 @@ export default function ServicesPage() {
             <h2 className="max-w-xl font-display text-[26px] font-bold leading-tight text-ink">
               Supporting services
             </h2>
-            <p className="mt-3 max-w-xl text-sm leading-relaxed text-muted">
+            <p className="mt-3 max-w-xl text-[16px] leading-relaxed text-muted">
               A wider range of care is available at Birthwave. Tell us what you need and
               we&rsquo;ll guide you to the right appointment.
             </p>
@@ -95,7 +96,7 @@ export default function ServicesPage() {
                     className="flex min-h-14 items-center justify-between gap-3 rounded-2xl border border-border bg-white px-5 py-3 text-sm font-medium text-ink transition-colors hover:border-brown"
                   >
                     {item.title}
-                    <span className="text-[11px] font-semibold text-link">
+                    <span className="text-[13px] font-semibold text-link">
                       Talk to Birthwave &rarr;
                     </span>
                   </Link>
@@ -109,6 +110,8 @@ export default function ServicesPage() {
           heading="Not sure which service to choose?"
           body="Tell us what you need help with. We'll guide you to the right appointment pathway."
         />
+
+        <EnquirySection />
       </main>
       <Footer />
     </>

@@ -43,7 +43,7 @@ export function Services() {
           <h2 className="mt-3 font-display text-[38px] font-bold leading-tight text-ink">
             Specialist care, designed around your journey.
           </h2>
-          <p className="mt-3 text-[14.5px] leading-relaxed text-muted">
+          <p className="mt-3 text-[16px] leading-relaxed text-muted">
             Focused service pages help patients understand the concern, the care
             available and the next step without overwhelming them.
           </p>
@@ -62,12 +62,12 @@ export function Services() {
                 <h3 className="mt-4 font-display text-[17.5px] font-semibold text-ink">
                   {service.title}
                 </h3>
-                <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">
+                <p className="mt-2 flex-1 text-[15px] leading-relaxed text-muted">
                   {service.description}
                 </p>
                 <a
                   href="#conversion-cta"
-                  className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+                  className="mt-4 inline-flex items-center gap-1.5 text-[13px] font-semibold text-link"
                 >
                   Explore service
                   <span aria-hidden="true">&rarr;</span>

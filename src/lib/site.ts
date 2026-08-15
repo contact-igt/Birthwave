@@ -18,6 +18,11 @@ export const site = {
     line1: "8/15, Mahalingapuram Main Rd, Mahalingapuram",
     line2: "Nungambakkam, Chennai, Tamil Nadu, 600034",
   },
+  mapsHref:
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent(
+      "8/15, Mahalingapuram Main Rd, Mahalingapuram, Nungambakkam, Chennai, Tamil Nadu, 600034"
+    ),
 } as const;
 
 // Nav labels are locked to the approved PDF, now pointing to real routes.

@@ -43,7 +43,7 @@ export function PatientExperience() {
           <h2 className="mt-3 font-display text-[35px] font-bold leading-tight text-ink">
             Trust grows when patients can see the experience, not just the treatment.
           </h2>
-          <p className="mt-3 text-[14.5px] leading-relaxed text-muted">
+          <p className="mt-3 text-[16px] leading-relaxed text-muted">
             Real, consented birth stories are on their way — here&rsquo;s what they&rsquo;ll
             cover.
           </p>
