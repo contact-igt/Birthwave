@@ -45,13 +45,13 @@ export function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
               href="#conversion-cta"
-              className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
+              className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
             >
               Book an Appointment
             </a>
             <a
               href="#services"
-              className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-colors hover:border-brown hover:text-brown"
+              className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-all duration-150 hover:border-brown hover:text-brown active:scale-[0.98]"
             >
               Explore Our Care
             </a>

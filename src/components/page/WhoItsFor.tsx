@@ -1,4 +1,5 @@
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 export function WhoItsFor({
   heading = "Who this may be relevant for",
@@ -14,9 +15,11 @@ export function WhoItsFor({
           {heading}
         </h2>
         <ul className="mt-8 grid gap-4 sm:grid-cols-2">
-          {points.map((point) => (
-            <li
+          {points.map((point, i) => (
+            <Reveal
               key={point}
+              as="li"
+              delay={i * 60}
               className="flex items-start gap-3 rounded-2xl bg-white p-5 text-sm leading-relaxed text-ink/80"
             >
               <span
@@ -24,7 +27,7 @@ export function WhoItsFor({
                 aria-hidden="true"
               />
               {point}
-            </li>
+            </Reveal>
           ))}
         </ul>
       </Container>

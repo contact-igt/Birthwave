@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 // No verified patient testimonials exist yet, so this stays story-ready rather
 // than inventing quotes or names — but presented as finished, public-facing
@@ -49,26 +50,28 @@ export function PatientExperience() {
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {categories.map((c) => (
-            <div key={c.label} className="overflow-hidden rounded-[22px] bg-cream">
-              <div className="relative h-48 w-full">
-                <Image
-                  src={c.image}
-                  alt={c.alt}
-                  fill
-                  sizes="(min-width: 768px) 33vw, 90vw"
-                  className={`object-cover ${c.focal}`}
-                />
+          {categories.map((c, i) => (
+            <Reveal key={c.label} delay={i * 80}>
+              <div className="overflow-hidden rounded-[22px] bg-cream transition-shadow duration-200 hover:shadow-[0_10px_28px_rgba(46,36,33,0.08)]">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={c.image}
+                    alt={c.alt}
+                    fill
+                    sizes="(min-width: 768px) 33vw, 90vw"
+                    className={`object-cover ${c.focal}`}
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-rose">
+                    {c.label}
+                  </p>
+                  <p className="mt-3 text-[15px] font-medium leading-snug text-ink">
+                    {c.body}
+                  </p>
+                </div>
               </div>
-              <div className="p-6">
-                <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-rose">
-                  {c.label}
-                </p>
-                <p className="mt-3 text-[15px] font-medium leading-snug text-ink">
-                  {c.body}
-                </p>
-              </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

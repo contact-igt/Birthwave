@@ -1,4 +1,5 @@
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 const steps = [
   {
@@ -44,14 +45,14 @@ export function PatientJourney() {
         </div>
 
         <ol className="mt-10 grid gap-3.5 sm:grid-cols-2 xl:grid-cols-4">
-          {steps.map((step) => (
-            <li key={step.n} className="min-h-[172px] rounded-[22px] bg-journey-card p-6">
+          {steps.map((step, i) => (
+            <Reveal key={step.n} as="li" delay={i * 80} className="min-h-[172px] rounded-[22px] bg-journey-card p-6">
               <span className="text-xs font-bold text-coral">{step.n}</span>
               <h3 className="mt-3 font-display text-[17.5px] font-semibold text-white">
                 {step.title}
               </h3>
               <p className="mt-2 text-[11.5px] leading-relaxed text-border">{step.body}</p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </Container>

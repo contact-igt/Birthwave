@@ -1,4 +1,5 @@
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 const services = [
   {
@@ -50,30 +51,29 @@ export function Services() {
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {services.map((service, i) => (
-            <div
-              key={service.title}
-              className="flex min-h-[222px] flex-col rounded-[22px] border border-border bg-white p-6 shadow-[0_1px_2px_rgba(46,36,33,0.04)]"
-            >
-              <div className="flex items-center gap-2">
-                <span className="text-[11px] font-bold text-coral">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="h-1 w-1 rounded-full bg-coral" aria-hidden="true" />
+            <Reveal key={service.title} delay={(i % 3) * 80}>
+              <div className="flex min-h-[222px] flex-col rounded-[22px] border border-border bg-white p-6 shadow-[0_1px_2px_rgba(46,36,33,0.04)] transition-shadow duration-200 hover:shadow-[0_10px_28px_rgba(46,36,33,0.08)]">
+                <div className="flex items-center gap-2">
+                  <span className="text-[11px] font-bold text-coral">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="h-1 w-1 rounded-full bg-coral" aria-hidden="true" />
+                </div>
+                <h3 className="mt-4 font-display text-[17.5px] font-semibold text-ink">
+                  {service.title}
+                </h3>
+                <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">
+                  {service.description}
+                </p>
+                <a
+                  href="#conversion-cta"
+                  className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+                >
+                  Explore service
+                  <span aria-hidden="true">&rarr;</span>
+                </a>
               </div>
-              <h3 className="mt-4 font-display text-[17.5px] font-semibold text-ink">
-                {service.title}
-              </h3>
-              <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">
-                {service.description}
-              </p>
-              <a
-                href="#conversion-cta"
-                className="mt-4 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
-              >
-                Explore service
-                <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>

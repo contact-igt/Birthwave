@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 // Questions are locked to the approved PDF. The PDF export only captured the
 // collapsed question rows (no answer text) — answers below are minimal, factual,
@@ -45,8 +46,9 @@ export function FAQ() {
           {faqs.map((item, i) => {
             const open = openIndex === i;
             return (
-              <div
+              <Reveal
                 key={item.q}
+                delay={i * 60}
                 className="overflow-hidden rounded-2xl border border-border bg-white"
               >
                 <button
@@ -83,7 +85,7 @@ export function FAQ() {
                     {item.a}
                   </p>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>

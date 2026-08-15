@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/motion/Reveal";
 import { PageHero } from "@/components/page/PageHero";
 import { PageFAQ } from "@/components/page/PageFAQ";
 import { EnquiryForm } from "@/components/page/EnquiryForm";
@@ -116,20 +117,21 @@ export function BirthDeliveryCarePage() {
             Find your starting point
           </h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            {pathwayCards.map((card) => (
-              <a
-                key={card.title}
-                href={card.href}
-                className="group flex min-h-[190px] flex-col rounded-[22px] border border-border bg-white p-6 transition-colors hover:border-brown"
-              >
-                <h3 className="font-display text-[16px] font-semibold text-ink">
-                  {card.title}
-                </h3>
-                <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">{card.body}</p>
-                <span className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link">
-                  Read more <span aria-hidden="true">&darr;</span>
-                </span>
-              </a>
+            {pathwayCards.map((card, i) => (
+              <Reveal key={card.title} delay={i * 80}>
+                <a
+                  href={card.href}
+                  className="group flex min-h-[190px] flex-col rounded-[22px] border border-border bg-white p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brown hover:shadow-[0_10px_28px_rgba(46,36,33,0.08)]"
+                >
+                  <h3 className="font-display text-[16px] font-semibold text-ink">
+                    {card.title}
+                  </h3>
+                  <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">{card.body}</p>
+                  <span className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link">
+                    Read more <span aria-hidden="true">&darr;</span>
+                  </span>
+                </a>
+              </Reveal>
             ))}
           </div>
         </Container>
@@ -303,7 +305,7 @@ export function BirthDeliveryCarePage() {
           <div className="flex shrink-0 flex-wrap items-center gap-4">
             <a
               href="#contact-form"
-              className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700"
+              className="rounded-full bg-brown px-7 py-3.5 text-[13px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
             >
               Discuss Your Birth Plan
             </a>
@@ -311,7 +313,7 @@ export function BirthDeliveryCarePage() {
               href={site.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-colors hover:border-brown hover:text-brown"
+              className="rounded-full border border-border bg-white px-7 py-3.5 text-[13px] font-semibold text-ink transition-all duration-150 hover:border-brown hover:text-brown active:scale-[0.98]"
             >
               WhatsApp Birthwave
             </a>

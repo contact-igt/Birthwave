@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 export function PageFAQ({
   eyebrow = "Before You Book",
@@ -30,8 +31,9 @@ export function PageFAQ({
           {faqs.map((item, i) => {
             const open = openIndex === i;
             return (
-              <div
+              <Reveal
                 key={item.q}
+                delay={i * 60}
                 className="overflow-hidden rounded-2xl border border-border bg-white"
               >
                 <button
@@ -68,7 +70,7 @@ export function PageFAQ({
                     {item.a}
                   </p>
                 </div>
-              </div>
+              </Reveal>
             );
           })}
         </div>

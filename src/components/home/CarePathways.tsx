@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 const pathways = [
   {
@@ -54,34 +55,35 @@ export function CarePathways() {
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {pathways.map((p) => (
-            <div
-              key={p.title}
-              className={`flex min-h-[214px] flex-col rounded-[22px] ${p.bg} p-6`}
-            >
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[11px] font-bold text-coral">
-                {p.n}
-              </span>
-              <h3 className="mt-4 font-display text-[17px] font-semibold text-ink">
-                {p.title}
-              </h3>
-              <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">{p.body}</p>
-              {p.href.startsWith("/") ? (
-                <Link
-                  href={p.href}
-                  className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
-                >
-                  {p.link} <span aria-hidden="true">&rarr;</span>
-                </Link>
-              ) : (
-                <a
-                  href={p.href}
-                  className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
-                >
-                  {p.link} <span aria-hidden="true">&rarr;</span>
-                </a>
-              )}
-            </div>
+          {pathways.map((p, i) => (
+            <Reveal key={p.title} delay={i * 80}>
+              <div
+                className={`flex min-h-[214px] flex-col rounded-[22px] ${p.bg} p-6 transition-transform duration-200 hover:-translate-y-1`}
+              >
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[11px] font-bold text-coral">
+                  {p.n}
+                </span>
+                <h3 className="mt-4 font-display text-[17px] font-semibold text-ink">
+                  {p.title}
+                </h3>
+                <p className="mt-2 flex-1 text-xs leading-relaxed text-muted">{p.body}</p>
+                {p.href.startsWith("/") ? (
+                  <Link
+                    href={p.href}
+                    className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+                  >
+                    {p.link} <span aria-hidden="true">&rarr;</span>
+                  </Link>
+                ) : (
+                  <a
+                    href={p.href}
+                    className="mt-3 inline-flex items-center gap-1.5 text-[11px] font-semibold text-link"
+                  >
+                    {p.link} <span aria-hidden="true">&rarr;</span>
+                  </a>
+                )}
+              </div>
+            </Reveal>
           ))}
         </div>
       </Container>

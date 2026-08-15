@@ -1,4 +1,5 @@
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/motion/Reveal";
 import { getGoogleBusinessData } from "@/lib/google-business/provider";
 
 function Stars({ rating }: { rating: number }) {
@@ -56,21 +57,23 @@ export async function GoogleReviews() {
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {featured.map((review) => (
-            <div key={review.id} className="flex flex-col rounded-[22px] bg-white p-6">
-              <Stars rating={review.rating} />
-              {review.text && (
-                <p className="mt-3 flex-1 text-[13px] leading-relaxed text-ink/80">
-                  &ldquo;{review.text}&rdquo;
-                </p>
-              )}
-              <div className="mt-4 flex items-center gap-2">
-                <p className="text-xs font-semibold text-ink">{review.authorName}</p>
-                {review.relativeTime && (
-                  <span className="text-[11px] text-muted">&middot; {review.relativeTime}</span>
+          {featured.map((review, i) => (
+            <Reveal key={review.id} delay={i * 80}>
+              <div className="flex h-full flex-col rounded-[22px] bg-white p-6 transition-shadow duration-200 hover:shadow-[0_10px_28px_rgba(46,36,33,0.08)]">
+                <Stars rating={review.rating} />
+                {review.text && (
+                  <p className="mt-3 flex-1 text-[13px] leading-relaxed text-ink/80">
+                    &ldquo;{review.text}&rdquo;
+                  </p>
                 )}
+                <div className="mt-4 flex items-center gap-2">
+                  <p className="text-xs font-semibold text-ink">{review.authorName}</p>
+                  {review.relativeTime && (
+                    <span className="text-[11px] text-muted">&middot; {review.relativeTime}</span>
+                  )}
+                </div>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 

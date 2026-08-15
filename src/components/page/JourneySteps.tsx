@@ -1,4 +1,5 @@
 import { Container } from "@/components/Container";
+import { Reveal } from "@/components/motion/Reveal";
 
 const GRID_COLS = {
   4: "sm:grid-cols-2 xl:grid-cols-4",
@@ -32,7 +33,7 @@ export function JourneySteps({
 
         <ol className={`mt-10 grid gap-3.5 ${cols}`}>
           {steps.map((step, i) => (
-            <li key={step.title} className="min-h-[160px] rounded-[22px] bg-journey-card p-6">
+            <Reveal key={step.title} as="li" delay={i * 80} className="min-h-[160px] rounded-[22px] bg-journey-card p-6">
               <span className="text-xs font-bold text-coral">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -40,7 +41,7 @@ export function JourneySteps({
                 {step.title}
               </h3>
               <p className="mt-2 text-[11.5px] leading-relaxed text-border">{step.body}</p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </Container>

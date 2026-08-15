@@ -16,7 +16,7 @@ export function RelatedSupport({ currentSlug }: { currentSlug: string }) {
             <Link
               key={s.slug}
               href={`/${s.slug}`}
-              className="group rounded-2xl border border-border bg-cream p-6 transition-colors hover:border-brown"
+              className="group rounded-2xl border border-border bg-cream p-6 transition-all duration-200 hover:-translate-y-1 hover:border-brown hover:shadow-[0_10px_28px_rgba(46,36,33,0.08)]"
             >
               <h3 className="font-display text-base font-semibold text-ink">{s.title}</h3>
               <p className="mt-2 text-xs leading-relaxed text-muted">{s.shortDescription}</p>

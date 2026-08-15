@@ -190,7 +190,7 @@ export function EnquiryForm({ defaultService }: { defaultService?: string } = {}
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-2 inline-flex min-h-11 items-center justify-center rounded-full bg-brown px-7 text-[13px] font-semibold text-white transition-colors hover:bg-brown-600 active:bg-brown-700 disabled:opacity-60"
+        className="mt-2 inline-flex min-h-11 items-center justify-center rounded-full bg-brown px-7 text-[13px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700 disabled:opacity-60 disabled:active:scale-100"
       >
         {status === "submitting" ? "Sending…" : "Send Enquiry"}
       </button>
