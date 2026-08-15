@@ -8,10 +8,10 @@ export function ConversionCTA() {
       id="conversion-cta"
       className="scroll-mt-[100px] flex min-h-[300px] items-center bg-blush py-12"
     >
-      <Reveal>
-        <Container className="flex flex-col items-start justify-between gap-8 xl:flex-row xl:items-center">
+      <Reveal className="w-full">
+        <Container className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div className="max-w-lg">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
               Need Help Choosing?
             </p>
             <h2 className="mt-2 font-display text-[31px] font-bold leading-tight text-ink">

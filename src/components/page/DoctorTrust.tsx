@@ -32,7 +32,7 @@ export function DoctorTrust({
 
         <Reveal delay={80}>
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
               {eyebrow}
             </p>
             <h2 className="mt-3 max-w-xl font-display text-[32px] font-bold leading-tight text-ink">

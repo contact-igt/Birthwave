@@ -15,7 +15,7 @@ export function EnquirySection({
 }) {
   return (
     <section className="bg-white py-16 md:py-20">
-      <Container className="max-w-2xl">
+      <Container className="max-w-3xl">
         <h2 className="font-display text-[26px] font-bold leading-tight text-ink">{heading}</h2>
         <p className="mt-2 text-[15px] text-muted">{body}</p>
         <div className="mt-6">

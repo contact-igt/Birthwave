@@ -14,7 +14,7 @@ export function PageCTA({
     <section className="flex min-h-[260px] items-center bg-blush py-12">
       <Container className="flex flex-col items-start justify-between gap-8 xl:flex-row xl:items-center">
         <div className="max-w-lg">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
             {eyebrow}
           </p>
           <h2 className="mt-2 font-display text-[28px] font-bold leading-tight text-ink">

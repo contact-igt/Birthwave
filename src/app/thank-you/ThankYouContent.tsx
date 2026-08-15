@@ -18,7 +18,7 @@ export function ThankYouContent() {
 
   return (
     <>
-      <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-rose">
+      <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
         Request Received
       </p>
       <h1 className="mt-4 font-display text-[36px] font-bold leading-[1.15] text-ink sm:text-[42px]">

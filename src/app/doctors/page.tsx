@@ -39,7 +39,7 @@ export default function DoctorsPage() {
         <section className="bg-cream py-16 md:py-20">
           <Container className="grid items-center gap-12 xl:grid-cols-[1.1fr_0.9fr] xl:gap-16">
             <div>
-              <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-rose">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
                 Our Care Team
               </p>
               <h1 className="mt-4 max-w-xl font-display text-[42px] font-bold leading-[1.1] text-ink sm:text-[46px]">
@@ -108,7 +108,7 @@ export default function DoctorsPage() {
           <Container className="grid items-center gap-12 xl:grid-cols-[420px_1fr] xl:gap-16">
             <TeamAvatar member={founder} className="mx-auto h-[420px] w-full max-w-sm xl:h-[460px]" />
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+              <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
                 Founder
               </p>
               <h2 className="mt-3 font-display text-[32px] font-bold leading-tight text-ink">
@@ -194,7 +194,7 @@ export default function DoctorsPage() {
         {/* Connected care */}
         <section className="bg-brown py-16 text-white md:py-20">
           <Container>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-journey-eyebrow">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-journey-eyebrow">
               One Team, Every Stage
             </p>
             <h2 className="mt-3 max-w-xl font-display text-[28px] font-bold leading-tight text-white">

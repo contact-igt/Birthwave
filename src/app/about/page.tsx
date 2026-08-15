@@ -52,7 +52,7 @@ export default function AboutPage() {
           intro="Birthwave was built around a simple idea: patients shouldn't have to re-explain their history at every visit. One doctor, one care plan, from your first question through follow-up."
           accent="rose"
           image={{
-            src: "/images/birthwave/birthwave-workshop-facilitator.png",
+            src: "/images/birthwave/birthwave.JPG",
             alt: "Dr. Santoshi Nandigam leading a Birthwave workshop",
           }}
         />

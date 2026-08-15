@@ -7,15 +7,7 @@ import { site } from "@/lib/site";
 
 const BOOK_HREF = "/contact#contact-form";
 
-// Instagram is part of the required action set, but no verified handle
-// exists in the approved brand material for this business (the only
-// Instagram URLs found in the sourced site content are ambiguous — two
-// different unverified handles) — so it's omitted rather than guessed,
-// per the "only render an action when a verified URL exists" rule.
-
 function useHideOnFocus() {
-  // Hide the mobile bar while a text field is focused so it doesn't fight
-  // the on-screen keyboard — simple hide/show, no keyboard-height engineering.
   const [hidden, setHidden] = useState(false);
   useEffect(() => {
     function onFocusIn(e: FocusEvent) {
@@ -69,6 +61,16 @@ function WhatsAppIcon() {
   );
 }
 
+function InstagramIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37Z" stroke="currentColor" strokeWidth="1.6" />
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+  );
+}
+
 function CallIcon({ size = 18 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -96,24 +98,21 @@ export function QuickActions() {
   const pathname = usePathname();
   const hidden = useHideOnFocus();
 
-  // Thank-you page already offers Call/WhatsApp/Home explicitly — no need
-  // to duplicate the rail there.
   if (pathname === "/thank-you") return null;
 
-  function track(action: "call" | "whatsapp" | "book" | "directions") {
+  function track(action: "call" | "whatsapp" | "instagram" | "book" | "directions") {
     trackEvent(`birthwave_${action}_click`, { page: pathname });
   }
 
   return (
     <>
-      {/* Mobile fixed bottom dock — icon-first, Call centred and enlarged
-          as the visual anchor. */}
+      {/* Mobile floating glassmorphic dock — rounded pill design with backdrop blur,
+          centered horizontally */}
       <nav
         aria-label="Quick actions"
-        className={`fixed inset-x-0 bottom-0 z-40 flex items-end justify-between gap-1 border-t border-border bg-white px-2 pt-2 transition-transform duration-200 xl:hidden ${
-          hidden ? "translate-y-full" : "translate-y-0"
+        className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-40 flex w-[92%] max-w-[400px] items-center justify-around rounded-full border border-border/80 bg-white/95 px-2 py-2 shadow-[0_12px_36px_rgba(46,36,33,0.2)] backdrop-blur-xl transition-all duration-300 xl:hidden ${
+          hidden ? "translate-y-24 opacity-0 pointer-events-none" : "translate-y-0 opacity-100"
         }`}
-        style={{ paddingBottom: "max(0.5rem, env(safe-area-inset-bottom))" }}
       >
         <a
           href={site.mapsHref}
@@ -121,10 +120,10 @@ export function QuickActions() {
           rel="noopener noreferrer"
           onClick={() => track("directions")}
           aria-label="Get directions to Birthwave"
-          className="flex min-h-11 flex-1 flex-col items-center justify-center gap-0.5 rounded-2xl py-1.5 text-ink/80 transition-colors active:bg-cream"
+          className="flex flex-col items-center justify-center gap-1 rounded-full px-2 py-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
         >
           <DirectionsIcon />
-          <span className="text-[11px] font-medium">Directions</span>
+          <span className="text-[10.5px] font-semibold tracking-tight">Directions</span>
         </a>
         <a
           href={site.whatsappHref}
@@ -132,38 +131,45 @@ export function QuickActions() {
           rel="noopener noreferrer"
           onClick={() => track("whatsapp")}
           aria-label="Message Birthwave on WhatsApp"
-          className="flex min-h-11 flex-1 flex-col items-center justify-center gap-0.5 rounded-2xl py-1.5 text-ink/80 transition-colors active:bg-cream"
+          className="flex flex-col items-center justify-center gap-1 rounded-full px-2 py-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
         >
           <WhatsAppIcon />
-          <span className="text-[11px] font-medium">WhatsApp</span>
+          <span className="text-[10.5px] font-semibold tracking-tight">WhatsApp</span>
         </a>
         <a
           href={site.phoneHref}
           onClick={() => track("call")}
           aria-label="Call Birthwave"
-          className="flex flex-1 flex-col items-center gap-1"
+          className="group relative -mt-6 flex flex-col items-center gap-1"
         >
-          <span className="flex h-[58px] w-[58px] -translate-y-3 items-center justify-center rounded-full bg-brown text-white shadow-[0_8px_22px_rgba(97,62,55,0.4)] transition-transform duration-150 active:scale-[0.96]">
-            <CallIcon size={24} />
+          <span className="flex h-13 w-13 items-center justify-center rounded-full bg-brown text-white shadow-[0_8px_24px_rgba(97,62,55,0.45)] transition-all duration-200 group-active:scale-95">
+            <CallIcon size={20} />
           </span>
-          <span className="-mt-2 text-[11px] font-semibold text-ink">Call</span>
+          <span className="text-[10.5px] font-bold text-ink">Call</span>
+        </a>
+        <a
+          href={site.instagramHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => track("instagram")}
+          aria-label="Follow Birthwave on Instagram"
+          className="flex flex-col items-center justify-center gap-1 rounded-full px-2 py-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
+        >
+          <InstagramIcon />
+          <span className="text-[10.5px] font-semibold tracking-tight">Instagram</span>
         </a>
         <a
           href={BOOK_HREF}
           onClick={() => track("book")}
           aria-label="Book an appointment"
-          className="flex min-h-11 flex-1 flex-col items-center justify-center gap-0.5 rounded-2xl py-1.5 text-ink/80 transition-colors active:bg-cream"
+          className="flex flex-col items-center justify-center gap-1 rounded-full px-2 py-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
         >
           <BookIcon />
-          <span className="text-[11px] font-medium">Book</span>
+          <span className="text-[10.5px] font-semibold tracking-tight">Book</span>
         </a>
       </nav>
 
-      {/* Desktop fixed right rail — compact icon circles with a label that
-          reveals on hover/focus. The site container's right gutter is a
-          fixed 96px from xl (1280px) up to its 1440px max-width, so the
-          rail must stay well inside that to never overlap hero/content at
-          any width in that range. */}
+      {/* Desktop fixed right rail */}
       <div
         className="fixed right-3 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-2.5 xl:flex"
         aria-label="Quick actions"
@@ -203,6 +209,19 @@ export function QuickActions() {
           <CallIcon size={20} />
           <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-full bg-ink px-3 py-1.5 text-[12px] font-medium text-white opacity-0 transition-[opacity,transform] duration-150 translate-x-1 group-hover/rail:translate-x-0 group-hover/rail:opacity-100 group-focus-visible/rail:translate-x-0 group-focus-visible/rail:opacity-100">
             Call
+          </span>
+        </a>
+        <a
+          href={site.instagramHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => track("instagram")}
+          aria-label="Follow Birthwave on Instagram"
+          className="group/rail relative flex h-11 w-11 items-center justify-center rounded-full border border-border bg-white text-ink shadow-[0_4px_16px_rgba(46,36,33,0.1)] transition-colors hover:border-brown hover:text-brown"
+        >
+          <InstagramIcon />
+          <span className="pointer-events-none absolute right-full mr-3 whitespace-nowrap rounded-full bg-ink px-3 py-1.5 text-[12px] font-medium text-white opacity-0 transition-[opacity,transform] duration-150 translate-x-1 group-hover/rail:translate-x-0 group-hover/rail:opacity-100 group-focus-visible/rail:translate-x-0 group-focus-visible/rail:opacity-100">
+            Instagram
           </span>
         </a>
         <a

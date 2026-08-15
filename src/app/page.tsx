@@ -18,10 +18,10 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <VideoExperience />
         <CarePathways />
         <Services />
         <DoctorLedCare />
-        <VideoExperience />
         <PatientJourney />
         <PatientExperience />
         <GoogleReviews />

@@ -28,7 +28,7 @@ function DesktopNavItem({ item }: { item: NavItem }) {
     return (
       <Link
         href={item.href}
-        className="text-[14px] font-medium text-ink/80 transition-colors hover:text-brown"
+        className="text-[16px] font-medium text-ink/80 transition-colors hover:text-brown"
       >
         {item.label}
       </Link>
@@ -39,7 +39,7 @@ function DesktopNavItem({ item }: { item: NavItem }) {
     <div className="group relative">
       <Link
         href={item.href}
-        className="flex items-center gap-1 text-[14px] font-medium text-ink/80 transition-colors hover:text-brown focus-visible:text-brown"
+        className="flex items-center gap-1 text-[16px] font-medium text-ink/80 transition-colors hover:text-brown focus-visible:text-brown"
       >
         {item.label}
         <Chevron open={false} />
@@ -51,7 +51,7 @@ function DesktopNavItem({ item }: { item: NavItem }) {
           <Link
             key={child.href}
             href={child.href}
-            className="block rounded-xl px-3.5 py-2.5 text-[14px] font-medium text-ink/80 transition-colors hover:bg-cream hover:text-brown"
+            className="block rounded-xl px-3.5 py-2.5 text-[16px] font-medium text-ink/80 transition-colors hover:bg-cream hover:text-brown"
           >
             {child.label}
           </Link>
@@ -130,16 +130,13 @@ export function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 h-[88px] border-b bg-white transition-shadow duration-200 ${
+      className={`sticky top-0 z-50 h-[80px] md:h-[100px] border-b bg-white transition-shadow duration-200 ${
         scrolled ? "border-border shadow-[0_2px_12px_rgba(46,36,33,0.06)]" : "border-border/70"
       }`}
     >
       <Container className="flex h-full items-center justify-between">
-        <Link href="/" className="flex shrink-0 flex-col gap-1.5 leading-none">
+        <Link href="/" className="flex shrink-0 items-center">
           <BrandMark size="sm" />
-          <span className="pl-0.5 text-[8.5px] font-semibold uppercase tracking-[0.12em] text-muted">
-            {site.byline}
-          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 xl:flex" aria-label="Primary">
@@ -150,7 +147,7 @@ export function Header() {
 
         <Link
           href="/contact#contact-form"
-          className="hidden rounded-full bg-brown px-5 py-2.5 text-[14.5px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] xl:inline-block"
+          className="hidden rounded-full bg-brown px-5 py-2.5 text-[16px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] xl:inline-block"
         >
           Book Appointment
         </Link>
@@ -190,7 +187,7 @@ export function Header() {
         }`}
         style={{ display: "grid" }}
       >
-        <div className="min-h-0 overflow-hidden">
+        <div className="min-h-0 max-h-[calc(100vh-85px)] overflow-y-auto">
           <Container className="flex flex-col py-2">
             {nav.map((item) => (
               <MobileNavItem key={item.label} item={item} onNavigate={() => setOpen(false)} />

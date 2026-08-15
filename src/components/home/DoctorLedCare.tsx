@@ -33,10 +33,10 @@ export function DoctorLedCare() {
 
         <Reveal className="order-1 xl:order-2" delay={80}>
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+            <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
               Doctor Led, Patient Centred
             </p>
-            <h2 className="mt-3 font-display text-[37px] font-bold leading-tight text-ink">
+            <h2 className="mt-3 font-display text-[26px] sm:text-[32px] md:text-[37px] font-bold leading-tight text-ink">
               Clinical care and the birth experience can belong together.
             </h2>
             <p className="mt-5 max-w-xl text-[16.5px] leading-relaxed text-muted">

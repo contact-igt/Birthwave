@@ -83,7 +83,7 @@ export function ServiceLandingPage({ service }: { service: ServiceContent }) {
               className="group flex flex-col gap-3 rounded-2xl border border-border bg-white p-6 transition-colors hover:border-brown sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+                <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
                   See The Bigger Picture
                 </p>
                 <h2 className="mt-2 font-display text-lg font-bold text-ink">

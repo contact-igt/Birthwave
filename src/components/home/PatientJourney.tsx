@@ -32,15 +32,14 @@ export function PatientJourney() {
     >
       <Container>
         <div className="max-w-2xl">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-journey-eyebrow">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-journey-eyebrow">
             From First Question To Follow Up
           </p>
-          <h2 className="mt-3 font-display text-[37px] font-bold leading-tight text-white">
+          <h2 className="mt-3 font-display text-[26px] sm:text-[32px] md:text-[37px] font-bold leading-tight text-white">
             A simpler care journey, with fewer gaps between steps.
           </h2>
           <p className="mt-3 text-[16px] leading-relaxed text-border">
-            The homepage should help patients understand what happens next, not just
-            list services.
+            From initial guidance to treatment and post-care follow up, we support you every step of the way.
           </p>
         </div>
 

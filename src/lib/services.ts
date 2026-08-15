@@ -443,6 +443,10 @@ export const services: readonly ServiceContent[] = [
     title: "Newborn & Pediatric Care",
     shortDescription: "Newborn review, vaccination guidance and continuing pediatric care.",
     accent: "coral",
+    image: {
+      src: "/images/birthwave/hero2.png",
+      alt: "Newborn and pediatric care at The Birth Wave",
+    },
     illustration: "newborn",
     hero: {
       eyebrow: "Newborn, Pediatric & Vaccination Care",

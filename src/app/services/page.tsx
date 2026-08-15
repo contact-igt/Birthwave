@@ -24,7 +24,10 @@ export default function ServicesPage() {
           heading="Every stage of care, under one roof."
           intro="Six focused care pathways, each with its own page — plus a wider range of supporting services available on request."
           accent="blue"
-          illustration="journey"
+          image={{
+            src: "/images/birthwave/hero3.png",
+            alt: "Every stage of care at The Birth Wave",
+          }}
         />
 
         <section className="bg-cream py-10">
@@ -34,7 +37,7 @@ export default function ServicesPage() {
               className="group flex flex-col gap-3 rounded-2xl border border-border bg-white p-6 transition-colors hover:border-brown sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
-                <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+                <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
                   Not Sure Where To Start?
                 </p>
                 <h2 className="mt-2 font-display text-lg font-bold text-ink">

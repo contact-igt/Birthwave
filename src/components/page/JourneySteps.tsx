@@ -22,7 +22,7 @@ export function JourneySteps({
     <section className="bg-brown py-16 text-white md:py-20">
       <Container>
         <div className="max-w-2xl">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-journey-eyebrow">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-journey-eyebrow">
             {eyebrow}
           </p>
           <h2 className="mt-3 font-display text-[32px] font-bold leading-tight text-white">

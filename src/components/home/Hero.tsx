@@ -11,17 +11,11 @@ export function Hero() {
     >
       <Container className="grid items-center gap-12 xl:grid-cols-[1.02fr_0.98fr] xl:gap-14">
         <div>
-          <p className="text-[10.5px] font-semibold uppercase tracking-[0.16em] text-rose">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
             Women&rsquo;s Health &bull; Pregnancy &bull; Newborn Care
           </p>
-          <h1 className="mt-4 max-w-[560px] font-display text-[52px] font-bold leading-[1.08] text-ink">
-            Care that sees the
-            <br />
-            whole woman &mdash;
-            <br />
-            before, during and
-            <br />
-            after birth.
+          <h1 className="mt-4 max-w-[560px] font-display text-[34px] sm:text-[44px] md:text-[52px] font-bold leading-[1.1] text-ink">
+            Care that sees the whole woman &mdash; before, during and after birth.
           </h1>
 
           <ul className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
@@ -65,8 +59,8 @@ export function Hero() {
           />
           <div className="absolute inset-0 overflow-hidden rounded-[34px] bg-blush shadow-[0_20px_60px_rgba(97,62,55,0.15)]">
             <Image
-              src="/images/birthwave/birthwave-workshop-facilitator.png"
-              alt="Dr. Santoshi Nandigam leading a Birthwave childbirth education session"
+              src="/images/clinic.JPG"
+              alt="The Birth Wave clinic space in Nungambakkam, Chennai"
               fill
               sizes="(min-width: 1280px) 520px, 90vw"
               className="object-cover object-top"
@@ -86,7 +80,7 @@ export function Hero() {
           </div>
 
           <div className="absolute bottom-6 left-6 right-6 rounded-[20px] bg-white p-5 shadow-[0_8px_24px_rgba(46,36,33,0.1)]">
-            <p className="text-[9px] font-semibold uppercase tracking-[0.1em] text-rose">
+            <p className="text-[12px] font-semibold uppercase tracking-[0.12em] text-rose">
               Your Care Journey
             </p>
             <p className="mt-1.5 font-display text-base font-bold text-ink">

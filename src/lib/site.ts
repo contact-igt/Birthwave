@@ -18,6 +18,7 @@ export const site = {
     line1: "8/15, Mahalingapuram Main Rd, Mahalingapuram",
     line2: "Nungambakkam, Chennai, Tamil Nadu, 600034",
   },
+  instagramHref: "https://instagram.com/thebirthwave",
   mapsHref:
     "https://www.google.com/maps/search/?api=1&query=" +
     encodeURIComponent(

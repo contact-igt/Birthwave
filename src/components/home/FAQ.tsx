@@ -32,9 +32,9 @@ export function FAQ() {
 
   return (
     <section id="faq" className="scroll-mt-[100px] bg-cream py-16 md:py-[72px]">
-      <Container>
+      <Container className="max-w-4xl">
         <div className="max-w-2xl">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
             Before You Book
           </p>
           <h2 className="mt-3 font-display text-[34px] font-bold leading-tight text-ink">

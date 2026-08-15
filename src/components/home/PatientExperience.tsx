@@ -37,15 +37,14 @@ export function PatientExperience() {
     <section id="patient-experience" className="scroll-mt-[100px] bg-white py-14 md:py-16">
       <Container>
         <div className="max-w-2xl">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-rose">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
             Patient Experience
           </p>
-          <h2 className="mt-3 font-display text-[35px] font-bold leading-tight text-ink">
+          <h2 className="mt-3 font-display text-[25px] sm:text-[30px] md:text-[35px] font-bold leading-tight text-ink">
             Trust grows when patients can see the experience, not just the treatment.
           </h2>
           <p className="mt-3 text-[16px] leading-relaxed text-muted">
-            Real, consented birth stories are on their way — here&rsquo;s what they&rsquo;ll
-            cover.
+            A glimpse into how personalized, continuous care transforms every stage of your healthcare journey.
           </p>
         </div>
 
@@ -63,7 +62,7 @@ export function PatientExperience() {
                   />
                 </div>
                 <div className="p-6">
-                  <p className="text-[10px] font-semibold uppercase tracking-[0.12em] text-rose">
+                  <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
                     {c.label}
                   </p>
                   <p className="mt-3 text-[15px] font-medium leading-snug text-ink">

@@ -38,7 +38,7 @@ export function PageHero({
   heading: ReactNode;
   intro: string;
   accent?: keyof typeof ACCENT;
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; objectPosition?: string };
   illustration?: LineArtVariant;
   bookHref?: string;
 }) {
@@ -47,11 +47,11 @@ export function PageHero({
       <Container className="grid items-center gap-12 xl:grid-cols-[1.1fr_0.9fr] xl:gap-16">
         <div>
           <p
-            className={`text-[10.5px] font-semibold uppercase tracking-[0.16em] ${ACCENT[accent]}`}
+            className={`text-[13px] font-semibold uppercase tracking-[0.14em] ${ACCENT[accent]}`}
           >
             {eyebrow}
           </p>
-          <h1 className="mt-4 max-w-xl font-display text-[42px] font-bold leading-[1.1] text-ink sm:text-[46px]">
+          <h1 className="mt-4 max-w-xl font-display text-[28px] sm:text-[38px] md:text-[46px] font-bold leading-[1.1] text-ink">
             {heading}
           </h1>
           <p className="mt-5 max-w-lg text-[16px] leading-[1.6] text-muted">{intro}</p>
@@ -74,17 +74,19 @@ export function PageHero({
         </div>
 
         <div
-          className={`relative mx-auto flex h-[380px] w-full max-w-lg items-center justify-center overflow-hidden rounded-[32px] ${ACCENT_BG[accent]} sm:h-[460px]`}
+          className={`relative mx-auto flex h-[380px] w-full max-w-lg items-center justify-center overflow-hidden rounded-[32px] ${ACCENT_BG[accent]} p-3.5 sm:h-[460px] sm:p-4`}
         >
           {image ? (
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(min-width: 1280px) 500px, 90vw"
-              className="object-cover"
-              priority
-            />
+            <div className="relative h-full w-full overflow-hidden rounded-[24px]">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(min-width: 1280px) 500px, 90vw"
+                className={`object-cover ${image.objectPosition ?? "object-top"}`}
+                priority
+              />
+            </div>
           ) : (
             <>
               <div
