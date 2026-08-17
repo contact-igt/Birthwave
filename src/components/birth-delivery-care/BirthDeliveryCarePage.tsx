@@ -302,10 +302,10 @@ export function BirthDeliveryCarePage() {
               take it from there.
             </p>
           </div>
-          <div className="flex shrink-0 flex-wrap items-center gap-4">
+          <div className="flex w-full sm:w-auto shrink-0 flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
             <a
               href="#contact-form"
-              className="rounded-full bg-brown px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
+              className="inline-flex justify-center rounded-full bg-brown px-7 py-3.5 text-[15px] font-semibold text-white transition-all duration-150 hover:bg-brown-600 active:scale-[0.98] active:bg-brown-700"
             >
               Discuss Your Birth Plan
             </a>
@@ -313,7 +313,7 @@ export function BirthDeliveryCarePage() {
               href={site.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-border bg-white px-7 py-3.5 text-[15px] font-semibold text-ink transition-all duration-150 hover:border-brown hover:text-brown active:scale-[0.98]"
+              className="inline-flex justify-center rounded-full border border-border bg-white px-7 py-3.5 text-[15px] font-semibold text-ink transition-all duration-150 hover:border-brown hover:text-brown active:scale-[0.98]"
             >
               WhatsApp Birthwave
             </a>
@@ -321,7 +321,7 @@ export function BirthDeliveryCarePage() {
         </Container>
       </section>
 
-      <section className="bg-white py-16 md:py-20">
+      <section className="bg-white py-16 md:py-20 pb-24 md:pb-20">
         <Container className="max-w-2xl">
           <h2 className="font-display text-[26px] font-bold leading-tight text-ink">
             Send an enquiry

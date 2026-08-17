@@ -30,7 +30,7 @@ export default function ContactPage() {
           illustration="support"
         />
 
-        <section className="bg-white py-16 md:py-20">
+        <section className="bg-white py-16 md:py-20 pb-24 md:pb-20">
           <Container className="grid gap-12 xl:grid-cols-[1fr_1.2fr] xl:gap-16">
             <div className="grid gap-4">
               <a

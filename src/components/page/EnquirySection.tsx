@@ -14,7 +14,7 @@ export function EnquirySection({
   defaultService?: string;
 }) {
   return (
-    <section className="bg-white py-16 md:py-20">
+    <section className="bg-white py-16 md:py-20 pb-24 md:pb-20">
       <Container className="max-w-3xl">
         <h2 className="font-display text-[26px] font-bold leading-tight text-ink">{heading}</h2>
         <p className="mt-2 text-[15px] text-muted">{body}</p>

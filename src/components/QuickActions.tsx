@@ -110,7 +110,7 @@ export function QuickActions() {
           centered horizontally */}
       <nav
         aria-label="Quick actions"
-        className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-40 flex w-[92%] max-w-[400px] items-center justify-around rounded-full border border-border/80 bg-white/95 px-2 py-2 shadow-[0_12px_36px_rgba(46,36,33,0.2)] backdrop-blur-xl transition-all duration-300 xl:hidden ${
+        className={`fixed bottom-4 left-1/2 -translate-x-1/2 z-40 grid grid-cols-5 items-center w-[92%] max-w-[420px] rounded-full border border-border/80 bg-white/95 px-3 py-2 shadow-[0_12px_36px_rgba(46,36,33,0.2)] backdrop-blur-xl transition-all duration-300 xl:hidden ${
           hidden ? "translate-y-24 opacity-0 pointer-events-none" : "translate-y-0 opacity-100"
         }`}
       >
@@ -120,10 +120,10 @@ export function QuickActions() {
           rel="noopener noreferrer"
           onClick={() => track("directions")}
           aria-label="Get directions to Birthwave"
-          className="flex flex-col items-center justify-center gap-1 rounded-full px-2 py-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
+          className="flex flex-col items-center justify-center gap-1 min-w-0 w-full text-center px-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
         >
           <DirectionsIcon />
-          <span className="text-[10.5px] font-semibold tracking-tight">Directions</span>
+          <span className="block w-full text-center text-[10px] font-semibold tracking-tight truncate">Directions</span>
         </a>
         <a
           href={site.whatsappHref}
@@ -131,21 +131,21 @@ export function QuickActions() {
           rel="noopener noreferrer"
           onClick={() => track("whatsapp")}
           aria-label="Message Birthwave on WhatsApp"
-          className="flex flex-col items-center justify-center gap-1 rounded-full px-2 py-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
+          className="flex flex-col items-center justify-center gap-1 min-w-0 w-full text-center px-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
         >
           <WhatsAppIcon />
-          <span className="text-[10.5px] font-semibold tracking-tight">WhatsApp</span>
+          <span className="block w-full text-center text-[10px] font-semibold tracking-tight truncate">WhatsApp</span>
         </a>
         <a
           href={site.phoneHref}
           onClick={() => track("call")}
           aria-label="Call Birthwave"
-          className="group relative -mt-6 flex flex-col items-center gap-1"
+          className="group relative -mt-5 flex flex-col items-center justify-center min-w-0 w-full text-center"
         >
-          <span className="flex h-13 w-13 items-center justify-center rounded-full bg-brown text-white shadow-[0_8px_24px_rgba(97,62,55,0.45)] transition-all duration-200 group-active:scale-95">
+          <span className="flex h-12 w-12 items-center justify-center rounded-full bg-brown text-white shadow-[0_8px_24px_rgba(97,62,55,0.45)] transition-all duration-200 group-active:scale-95">
             <CallIcon size={20} />
           </span>
-          <span className="text-[10.5px] font-bold text-ink">Call</span>
+          <span className="block w-full text-center text-[10px] font-bold text-ink mt-0.5">Call</span>
         </a>
         <a
           href={site.instagramHref}
@@ -153,19 +153,19 @@ export function QuickActions() {
           rel="noopener noreferrer"
           onClick={() => track("instagram")}
           aria-label="Follow Birthwave on Instagram"
-          className="flex flex-col items-center justify-center gap-1 rounded-full px-2 py-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
+          className="flex flex-col items-center justify-center gap-1 min-w-0 w-full text-center px-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
         >
           <InstagramIcon />
-          <span className="text-[10.5px] font-semibold tracking-tight">Instagram</span>
+          <span className="block w-full text-center text-[10px] font-semibold tracking-tight truncate">Instagram</span>
         </a>
         <a
           href={BOOK_HREF}
           onClick={() => track("book")}
           aria-label="Book an appointment"
-          className="flex flex-col items-center justify-center gap-1 rounded-full px-2 py-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
+          className="flex flex-col items-center justify-center gap-1 min-w-0 w-full text-center px-1 text-ink/75 transition-colors hover:text-brown active:scale-95"
         >
           <BookIcon />
-          <span className="text-[10.5px] font-semibold tracking-tight">Book</span>
+          <span className="block w-full text-center text-[10px] font-semibold tracking-tight truncate">Book</span>
         </a>
       </nav>
 
