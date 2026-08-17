@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Poppins } from "next/font/google";
+import Script from "next/script";
+import { GoogleTagManager } from "@next/third-parties/google";
 import { QuickActions } from "@/components/QuickActions";
 import "./globals.css";
 
@@ -27,7 +29,29 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${plusJakarta.variable} ${poppins.variable} h-full antialiased overflow-x-hidden max-w-full`}
     >
+      <GoogleTagManager gtmId="GTM-PW4F5S6P" />
+      <Script
+        id="microsoft-clarity"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "y3ragh8nww");
+          `,
+        }}
+      />
       <body className="min-h-full flex flex-col bg-cream text-ink pb-24 xl:pb-0 overflow-x-hidden max-w-full relative">
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PW4F5S6P"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         {children}
         <QuickActions />
       </body>

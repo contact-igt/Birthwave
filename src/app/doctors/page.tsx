@@ -83,11 +83,11 @@ export default function DoctorsPage() {
               </div>
               <div className="absolute right-0 top-0 h-[46%] w-[42%] overflow-hidden rounded-[24px] bg-blush shadow-[0_12px_30px_rgba(97,62,55,0.16)]">
                 <Image
-                  src="/images/birthwave/dr-bharathy-kandasamy.png"
+                  src="/images/birthwave/dr-bharathy.jpeg"
                   alt="Dr. Bharathy Kandasamy"
                   fill
                   sizes="(min-width: 1280px) 220px, 40vw"
-                  className="object-cover object-top"
+                  className="object-cover object-[center_45%]"
                 />
               </div>
               <div className="absolute bottom-0 right-0 h-[46%] w-[42%] overflow-hidden rounded-[24px] bg-pink shadow-[0_12px_30px_rgba(97,62,55,0.16)]">
