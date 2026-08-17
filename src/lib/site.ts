@@ -19,11 +19,7 @@ export const site = {
     line2: "Nungambakkam, 600034",
   },
   instagramHref: "https://instagram.com/thebirthwave",
-  mapsHref:
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent(
-      "No 8/15, Mahalingapuram main road, Nungambakkam, 600034"
-    ),
+  mapsHref: "https://maps.app.goo.gl/akYiVWGW8NTWTK3M9",
 } as const;
 
 // Nav labels are locked to the approved PDF, now pointing to real routes.

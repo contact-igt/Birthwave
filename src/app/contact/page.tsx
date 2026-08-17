@@ -13,10 +13,6 @@ export const metadata: Metadata = {
     "Call, WhatsApp or send an enquiry to book an appointment with Dr. Santoshi Nandigam at The Birth Wave in Nungambakkam, Chennai.",
 };
 
-const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  `${site.address.line1}, ${site.address.line2}`
-)}`;
-
 export default function ContactPage() {
   return (
     <>
@@ -61,7 +57,7 @@ export default function ContactPage() {
                 </p>
               </a>
               <a
-                href={mapsHref}
+                href={site.mapsHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-2xl border border-border bg-cream p-6 transition-colors hover:border-brown"

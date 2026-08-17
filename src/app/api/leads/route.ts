@@ -43,7 +43,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const result = await submitLead(validation.value);
+  const result = await submitLead(validation.value, ip);
 
   if (!result.ok) {
     const status = result.reason === "sink_not_configured" ? 503 : 502;

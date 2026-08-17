@@ -50,6 +50,8 @@ export type NormalizedLead = {
 
   landing_page: string;
   referrer: string | null;
+  ipaddress: string | null;
+  ip_address: string | null;
 
   utm_source: string | null;
   utm_medium: string | null;
