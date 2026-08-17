@@ -28,35 +28,40 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="flex min-h-[400px] flex-col justify-between bg-footer py-14 text-white">
+    <footer className="flex min-h-[420px] flex-col justify-between bg-footer py-16 text-white">
       <Container>
-        <div className="flex flex-col gap-10 xl:flex-row xl:justify-between">
-          <div className="max-w-xs">
-            <Link href="/" className="inline-block">
-              <Image
-                src="/images/birthwave/birthwave-logo-white.png"
-                alt="The Birth Wave"
-                width={150}
-                height={100}
-                className="h-10 w-auto"
-              />
+        <div className="flex flex-col gap-12 xl:flex-row xl:justify-between">
+          <div className="max-w-sm">
+            <Link href="/" className="inline-block" aria-label="The Birth Wave - Home">
+              <div className="relative h-[76px] sm:h-[84px] w-64 sm:w-72 overflow-hidden flex items-center justify-start">
+                <Image
+                  src="/images/logo.PNG"
+                  alt="The Birth Wave"
+                  width={900}
+                  height={900}
+                  className="absolute left-1/2 top-[50%] w-[360px] sm:w-[410px] -translate-x-1/2 -translate-y-1/2 object-contain brightness-0 invert"
+                  priority
+                />
+              </div>
             </Link>
-            <p className="mt-4 text-[13px] leading-relaxed text-footer-secondary">
+            <p className="mt-5 sm:mt-6 text-[14.5px] sm:text-[15px] leading-relaxed text-footer-secondary">
               Women&rsquo;s health, pregnancy, birth, postpartum and newborn care,
               connected in one patient journey.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 xl:gap-14">
             {columns.map((col) => (
               <nav key={col.heading} aria-label={col.heading}>
-                <p className="text-[13px] font-semibold text-white">{col.heading}</p>
-                <ul className="mt-3 flex flex-col gap-2.5">
+                <p className="font-display text-[16px] sm:text-[17px] font-bold text-white">
+                  {col.heading}
+                </p>
+                <ul className="mt-4 flex flex-col gap-3">
                   {col.links.map((link) => (
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="text-[13px] text-footer-secondary transition-colors hover:text-white"
+                        className="text-[14.5px] sm:text-[15px] text-footer-secondary transition-colors hover:text-white"
                       >
                         {link.label}
                       </Link>
@@ -66,28 +71,41 @@ export function Footer() {
               </nav>
             ))}
 
-            <nav aria-label="Contact">
-              <p className="text-[13px] font-semibold text-white">Contact</p>
-              <ul className="mt-3 flex flex-col gap-2.5">
-                <li className="text-[13px] text-footer-secondary">
-                  Nungambakkam, Chennai
-                </li>
+            <nav aria-label="Contact Info">
+              <p className="font-display text-[16px] sm:text-[17px] font-bold text-white">
+                Contact Info
+              </p>
+              <ul className="mt-4 flex flex-col gap-3.5">
                 <li>
-                  <Link
-                    href="/contact"
-                    className="text-[13px] text-footer-secondary transition-colors hover:text-white"
+                  <a
+                    href={site.phoneHref}
+                    className="flex items-center gap-3 text-[14.5px] sm:text-[15px] text-footer-secondary transition-colors hover:text-white"
                   >
-                    Book an appointment
-                  </Link>
+                    <svg
+                      className="h-[18px] w-[18px] shrink-0 text-white/90"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+                    </svg>
+                    <span className="font-medium">9363031925</span>
+                  </a>
                 </li>
                 <li>
                   <a
-                    href={site.whatsappHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[13px] text-footer-secondary transition-colors hover:text-white"
+                    href={`mailto:${site.email}`}
+                    className="flex items-start gap-3 text-[14.5px] sm:text-[15px] text-footer-secondary transition-colors hover:text-white"
                   >
-                    WhatsApp
+                    <svg
+                      className="mt-1 h-[18px] w-[18px] shrink-0 text-white/90"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                    <span className="break-all font-medium">drsantoshi@thebirthwave.com</span>
                   </a>
                 </li>
                 <li>
@@ -95,9 +113,25 @@ export function Footer() {
                     href={site.mapsHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[13px] text-footer-secondary transition-colors hover:text-white"
+                    className="flex items-start gap-3 text-[14.5px] sm:text-[15px] text-footer-secondary transition-colors hover:text-white"
                   >
-                    Google Maps
+                    <svg
+                      className="mt-1 h-[18px] w-[18px] shrink-0 text-white/90"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                    <span className="leading-relaxed">
+                      No 8/15
+                      <br />
+                      Mahalingapuram main road,
+                      <br />
+                      Nungambakkam,
+                      <br />
+                      600034
+                    </span>
                   </a>
                 </li>
               </ul>
@@ -107,7 +141,7 @@ export function Footer() {
       </Container>
 
       <Container>
-        <div className="mt-10 border-t border-footer-divider pt-6 text-[9.5px] text-footer-legal">
+        <div className="mt-12 border-t border-footer-divider pt-6 text-[12px] sm:text-[13px] text-footer-legal">
           &copy; Birthwave. All rights reserved. Privacy Policy &bull; Terms &amp;
           Conditions &bull; Medical Disclaimer
         </div>

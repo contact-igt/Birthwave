@@ -8,21 +8,21 @@ export const site = {
     name: "Dr. Santoshi Nandigam",
     title: "Obstetrics & Gynaecology",
   },
-  phone: "+91 9840798472",
-  phoneHref: "tel:+919840798472",
+  phone: "9363031925",
+  phoneHref: "tel:9363031925",
   whatsappHref:
-    "https://wa.me/919840798472?text=" +
+    "https://wa.me/919363031925?text=" +
     encodeURIComponent("Hi, I'd like to book an appointment with The Birth Wave."),
   email: "drsantoshi@thebirthwave.com",
   address: {
-    line1: "8/15, Mahalingapuram Main Rd, Mahalingapuram",
-    line2: "Nungambakkam, Chennai, Tamil Nadu, 600034",
+    line1: "No 8/15, Mahalingapuram main road",
+    line2: "Nungambakkam, 600034",
   },
   instagramHref: "https://instagram.com/thebirthwave",
   mapsHref:
     "https://www.google.com/maps/search/?api=1&query=" +
     encodeURIComponent(
-      "8/15, Mahalingapuram Main Rd, Mahalingapuram, Nungambakkam, Chennai, Tamil Nadu, 600034"
+      "No 8/15, Mahalingapuram main road, Nungambakkam, 600034"
     ),
 } as const;
 
