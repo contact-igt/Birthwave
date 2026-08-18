@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/about",
     "/doctors",
     "/services",
-    "/birth-delivery-care",
+    "/natural-birth",
     "/contact",
   ].map((path) => ({
     url: `${BASE_URL}${path}`,

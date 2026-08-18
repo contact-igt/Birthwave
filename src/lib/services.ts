@@ -24,6 +24,23 @@ export type ServiceContent = {
     body: string;
     bullets: readonly string[];
   };
+  approach?: {
+    eyebrow: string;
+    heading: string;
+    body: string;
+    items: readonly { title: string; description: string }[];
+  };
+  connectedCare?: {
+    eyebrow?: string;
+    heading: string;
+    intro?: string;
+    cards: readonly {
+      title: string;
+      description: string;
+      href: string;
+      ctaText: string;
+    }[];
+  };
   journey: {
     eyebrow: string;
     heading: string;
@@ -43,7 +60,7 @@ export type ServiceContent = {
 // deliberately wherever an outcome depends on individual assessment.
 export const services: readonly ServiceContent[] = [
   {
-    slug: "pregnancy-care",
+    slug: "pregnancy-antenatal-care",
     expertSlug: "santoshi-nandigam",
     title: "Pregnancy & Antenatal Care",
     shortDescription:
@@ -56,67 +73,148 @@ export const services: readonly ServiceContent[] = [
     illustration: "pregnancy",
     hero: {
       eyebrow: "Pregnancy & Antenatal Care",
-      heading: "Antenatal care built around your trimester, not a checklist.",
+      heading: "Personalised pregnancy care, from your first visit to birth.",
       intro:
-        "Regular visits, scans coordinated with your timeline, and a birth plan that develops alongside your pregnancy — with the same doctor from your first consult.",
+        "Every pregnancy brings different questions, changes and decisions. At Birthwave, your antenatal care combines regular medical guidance with nutrition, movement, birth preparation and continuous support throughout your pregnancy.",
     },
     explanation: {
-      heading: "What antenatal care at Birthwave covers",
-      body: "Care is structured around where you are in pregnancy, with space to discuss preferences, concerns and preparation as they come up — not only at scheduled milestones.",
+      heading: "Care that grows with your pregnancy",
+      body: "Your needs change as your pregnancy progresses. Your antenatal care is planned around each stage, with time to understand your health, your baby’s development and how you can prepare for the months ahead.",
       points: [
-        "Regular prenatal visits with screening appropriate to each trimester",
-        "Scan and test coordination, explained in plain language",
-        "Birth planning conversations that start early, not at the last visit",
-        "Nutrition and movement guidance suited to your stage of pregnancy",
+        "Regular Antenatal Consultations — Ongoing consultations to monitor your pregnancy, discuss symptoms and answer questions as they arise.",
+        "Scans, Tests & Pregnancy Monitoring — Recommended scans, screenings and tests explained clearly, so you understand what is being checked and why.",
+        "Nutrition During Pregnancy — Practical nutritional guidance to support your health and your baby’s development throughout pregnancy.",
+        "Movement & Pregnancy Yoga — Appropriate movement, yoga and physical preparation based on your stage of pregnancy and individual needs.",
+        "Birth Preparation — Start understanding labour, delivery choices, breathing, movement and birth preferences well before your due date.",
+        "Continuous Doctor-Led Care — Your pregnancy history and care plan remain connected as you move from antenatal visits towards birth.",
       ],
     },
-    whoItsFor: [
-      "You're newly pregnant and want continuous care from one doctor",
-      "You're switching providers and want your history understood from visit one",
-      "Your pregnancy needs closer monitoring and you want a consistent care team",
-      "You want birth preparation woven into your routine antenatal visits",
-    ],
+    whoItsFor: [],
     doctorTrust: {
-      heading: "The same doctor, every visit",
-      body: "Birthwave is designed so you're not repeating your history at each appointment — your care plan carries forward, and questions are addressed as they arise.",
+      heading: "Your pregnancy care with\nDr. Santoshi Nandigam",
+      body: "At Birthwave, pregnancy care is built around continuity, conversation and informed decision-making. Dr. Santoshi works with women through pregnancy and birth, helping them understand their options and prepare for delivery with confidence.",
       bullets: [
-        "Clear explanations before decisions",
-        "Care plans that connect pregnancy, birth and recovery",
-        "Continuity from your first consult through delivery",
+        "Clear explanations at every stage",
+        "Birth conversations that begin during pregnancy",
+        "Care that connects pregnancy, birth and recovery",
+      ],
+    },
+    approach: {
+      eyebrow: "The Birthwave Approach",
+      heading: "Pregnancy care is more than appointments and scans.",
+      body: "Medical care is at the centre of your pregnancy journey, but how you eat, move, prepare, understand your body and feel emotionally also matters.\nBirthwave brings these parts of pregnancy care together around you.",
+      items: [
+        {
+          title: "Pregnancy & medical care",
+          description: "Doctor-led antenatal monitoring and guidance.",
+        },
+        {
+          title: "Nutrition",
+          description: "Support for changing nutritional needs through pregnancy.",
+        },
+        {
+          title: "Yoga & movement",
+          description: "Pregnancy-appropriate movement and physical preparation.",
+        },
+        {
+          title: "Childbirth preparation",
+          description: "Understanding labour, birth choices and what to expect.",
+        },
+        {
+          title: "Pelvic health & recovery preparation",
+          description: "Preparing the body for birth and the recovery that follows.",
+        },
+        {
+          title: "Lactation preparation",
+          description: "Beginning breastfeeding education before your baby arrives.",
+        },
+      ],
+    },
+    connectedCare: {
+      eyebrow: "Connect Pregnancy to Birth",
+      heading: "Thinking about how you want to give birth?",
+      intro:
+        "Pregnancy is also the time to begin understanding your birth options. Your doctor can discuss what may be appropriate for you as your pregnancy progresses.",
+      cards: [
+        {
+          title: "Normal Delivery",
+          description:
+            "Understand vaginal birth, preparation for labour and the factors that influence your birth plan.",
+          href: "/normal-birth-delivery",
+          ctaText: "Explore Normal Delivery",
+        },
+        {
+          title: "Natural Birth",
+          description:
+            "Learn about Birthwave’s approach to preparation, informed choices, movement and lower-intervention birth where appropriate.",
+          href: "/natural-birth",
+          ctaText: "Explore Natural Birth",
+        },
+        {
+          title: "VBAC",
+          description:
+            "Had a previous C-section? Learn how VBAC is assessed and what preparing for a vaginal birth after caesarean can involve.",
+          href: "/vbac",
+          ctaText: "Explore VBAC",
+        },
       ],
     },
     journey: {
-      eyebrow: "From First Question To Follow Up",
-      heading: "A simpler care journey, with fewer gaps between steps.",
-      intro: "What happens next, not just a list of services.",
+      eyebrow: "Pregnancy Journey",
+      heading: "What care can look like through your pregnancy",
+      intro: "Your care unfolds alongside each stage of your pregnancy.",
       steps: [
-        { title: "Discover", body: "Understand what antenatal care looks like at each stage." },
-        { title: "Book", body: "Choose a time by phone or WhatsApp." },
-        { title: "Consult", body: "Meet Dr. Santoshi with your context already understood." },
-        { title: "Continue", body: "Regular visits through to delivery and beyond." },
+        {
+          title: "Early Pregnancy",
+          body: "Confirming and understanding your pregnancy, reviewing your health history, planning initial tests and scans, and discussing the questions that naturally come with the first few weeks.",
+        },
+        {
+          title: "As Your Pregnancy Progresses",
+          body: "Regular consultations, monitoring your health and your baby’s growth, reviewing scans and tests, and supporting nutrition, movement and overall wellbeing.",
+        },
+        {
+          title: "Preparing for Birth",
+          body: "As you move closer to delivery, conversations increasingly focus on labour, birth preferences, physical preparation, breastfeeding preparation and what to expect around delivery.",
+        },
+        {
+          title: "Towards Delivery",
+          body: "Your doctor reviews how your pregnancy is progressing and discusses the safest and most appropriate birth options with you.",
+        },
       ],
     },
     faqs: [
       {
-        q: "When should I book my first antenatal visit?",
-        a: "As soon as you have a positive test or missed period — an early visit helps confirm dates and plan your antenatal schedule.",
+        q: "When should I have my first pregnancy or antenatal appointment?",
+        a: "You can contact an obstetrician once you know you are pregnant. Your first antenatal visit helps confirm and understand your pregnancy, review your medical history, discuss any symptoms or concerns, and plan the scans and tests you may need. Starting antenatal care early also gives you time to understand nutrition, activity, medications and what to expect during the different stages of pregnancy.",
       },
       {
-        q: "Will I see the same doctor at every visit?",
-        a: "Yes — continuity of care with Dr. Santoshi is central to how Birthwave is structured.",
+        q: "What is antenatal care and why is it important during pregnancy?",
+        a: "Antenatal care is the regular medical care and support you receive during pregnancy before your baby is born. It includes check-ups to monitor your health and your baby’s growth, along with appropriate scans, tests and screenings. It is also an opportunity to discuss nutrition, physical activity, pregnancy changes, warning signs, emotional wellbeing and preparation for birth. Regular antenatal care helps your doctor follow how your pregnancy is progressing and identify concerns that may need additional attention.",
       },
       {
-        q: "Can we start discussing my birth plan early?",
-        a: "Yes, birth preferences are discussed progressively through your antenatal visits, not left to the end.",
+        q: "What is the difference between normal delivery and natural birth?",
+        a: "Both usually involve giving birth vaginally, but the approach to labour and pain management may be different. Normal delivery generally means vaginal birth and may include medical support or pain-relief options such as an epidural when needed or chosen. Natural birth generally aims to allow labour and vaginal birth to progress with minimal medical intervention and without routine pain-relief medicines where possible and clinically appropriate. Support may include breathing techniques, movement, comfortable positions, relaxation and continuous physical and emotional support. The right approach depends on the mother, baby and how labour progresses, and safety always comes first.",
       },
       {
-        q: "Do you coordinate scans and lab tests?",
-        a: "Yes — scans and tests are scheduled around your trimester and explained during your visit.",
+        q: "When should I start preparing for a normal delivery or natural birth?",
+        a: "Birth preparation can begin during pregnancy rather than waiting until labour or the final few weeks. As your pregnancy progresses, preparation can include understanding labour, discussing your birth preferences, staying appropriately active, pregnancy-safe movement or yoga, breathing and relaxation techniques, childbirth education, nutrition and preparing mentally and physically for birth. Preparation can help you feel more informed and confident, but no particular type of delivery can be guaranteed.",
+      },
+      {
+        q: "Can I have a normal delivery after a previous C-section?",
+        a: "For some women, a vaginal birth after a previous C-section may be possible. This is known as VBAC — Vaginal Birth After Caesarean. Whether VBAC is appropriate depends on factors such as the reason for your previous C-section, the type of uterine incision, your previous birth history, your current pregnancy and the health of you and your baby. If you are considering VBAC, your obstetrician can review your individual history and discuss the potential benefits, risks and other birth options with you.",
+      },
+      {
+        q: "Does Birthwave provide nutrition, yoga and birth preparation along with antenatal care?",
+        a: "Yes. Birthwave’s pregnancy care goes beyond routine antenatal consultations by bringing together medical care with supportive services for pregnancy and birth preparation. Depending on your individual needs, your care may include nutrition guidance, pregnancy yoga and movement, childbirth education, birth preparation, pelvic health support and lactation guidance, alongside your regular antenatal care. This allows different aspects of your pregnancy journey to remain connected rather than being treated separately.",
+      },
+      {
+        q: "What does holistic pregnancy care mean?",
+        a: "Holistic pregnancy care means caring for you as a whole person during pregnancy—not only monitoring your baby’s growth or completing routine tests. Alongside medical antenatal care, it considers areas such as nutrition, movement, emotional wellbeing, childbirth preparation, pelvic health and breastfeeding preparation. At Birthwave, the aim is to connect these different aspects of care so that you are supported through pregnancy, preparation for birth and the transition into postpartum recovery and newborn care.",
       },
     ],
     cta: {
-      heading: "Ready to book your antenatal visit?",
-      body: "Reach out by phone or WhatsApp and we'll help you find a time.",
+      heading: "Start your pregnancy journey with Birthwave",
+      body: "Whether you’ve just found out you’re pregnant or you’re looking for continued antenatal care, speak with the Birthwave team about your next appointment.",
     },
   },
   {
@@ -296,8 +394,8 @@ export const services: readonly ServiceContent[] = [
     shortDescription: "Evaluation, counselling and planning before pregnancy.",
     accent: "blue",
     image: {
-      src: "/images/birthwave/dr-santoshi.JPG",
-      alt: "Dr. Bharathy Kandasamy, Advanced Fertility Specialist",
+      src: "/images/birthwave/birthwave-prenatal-workshop.png",
+      alt: "Preconception and fertility planning consultation at Birthwave",
     },
     illustration: "fertility",
     hero: {
@@ -338,7 +436,7 @@ export const services: readonly ServiceContent[] = [
       steps: [
         { title: "Discover", body: "Understand what preconception evaluation involves." },
         { title: "Book", body: "Choose a time by phone or WhatsApp." },
-        { title: "Consult", body: "Discuss your cycle and history with Dr. Santoshi." },
+        { title: "Consult", body: "Discuss your cycle and history with Dr. Bharathy Kandasamy." },
         { title: "Continue", body: "A plan for what's next, reviewed as needed." },
       ],
     },
@@ -410,14 +508,14 @@ export const services: readonly ServiceContent[] = [
       steps: [
         { title: "Discover", body: "Understand what a first conversation looks like." },
         { title: "Book", body: "Choose a time by phone or WhatsApp, privately." },
-        { title: "Consult", body: "A private, unhurried conversation with Dr. Santoshi." },
+        { title: "Consult", body: "A private, unhurried conversation with Dr. Adithi Nair." },
         { title: "Continue", body: "Ongoing support at a pace that's comfortable for you." },
       ],
     },
     faqs: [
       {
-        q: "Is the first appointment just a conversation?",
-        a: "Yes — the first visit is about listening and understanding your situation, not examination.",
+        q: "Will my first session be a discussion alone?",
+        a: "That depends on your history, comfort and the concerns discussed during the consultation. The first session may include discussion, assessment and, where appropriate, guidance or exercises based on your individual care plan.",
       },
       {
         q: "Can I book privately, without discussing why on the phone?",
@@ -434,7 +532,364 @@ export const services: readonly ServiceContent[] = [
     ],
     cta: {
       heading: "Ready to talk, privately?",
-      body: "Reach out by phone or WhatsApp — this stays between you and Dr. Santoshi.",
+      body: "Reach out by phone or WhatsApp — this stays between you and Dr. Adithi Nair.",
+    },
+  },
+  {
+    slug: "gynaecology",
+    expertSlug: "santoshi-nandigam",
+    title: "Gynaecology & Women’s Wellness",
+    shortDescription:
+      "Care for menstrual, hormonal, PCOS and common gynaecological concerns.",
+    accent: "rose",
+    illustration: "pregnancy",
+    hero: {
+      eyebrow: "Gynaecology & Women’s Wellness",
+      heading: "Compassionate, doctor-led care for every stage of your health.",
+      intro:
+        "From routine annual checkups and menstrual health to PCOS, fibroids and menopause guidance — continuous care tailored to your individual needs.",
+    },
+    explanation: {
+      heading: "What Gynaecology & Women’s Wellness covers",
+      body: "We provide comprehensive, personalized consultation and evidence-based care for preventive wellness as well as acute and chronic gynaecological conditions.",
+      points: [
+        "Routine gynaecological checkups and preventive health screening",
+        "Evaluation and care for irregular, painful or heavy periods",
+        "PCOS management, hormonal balance and metabolic wellness",
+        "Pelvic health, infection treatment and perimenopause counselling",
+      ],
+    },
+    whoItsFor: [
+      "You're experiencing irregular, painful or unusually heavy periods",
+      "You want dedicated evaluation and management for PCOS or hormonal imbalance",
+      "You're looking for routine preventive gynaecology checkups with a trusted specialist",
+      "You need guidance on pelvic health, contraception or perimenopause",
+    ],
+    doctorTrust: {
+      heading: "Empathetic, doctor-led care",
+      body: "Our practice prioritizes active listening, thorough clinical assessment and clear explanations — ensuring you feel comfortable and informed at every step.",
+      bullets: [
+        "Unhurried, private consultations with experienced specialists",
+        "Clear explanations of diagnoses and treatment options",
+        "Holistic care connecting medical management with lifestyle wellness",
+      ],
+    },
+    journey: {
+      eyebrow: "Your Care Pathway",
+      heading: "A clear, supportive journey from initial consult to wellness.",
+      intro: "What happens when you consult with our gynaecology team.",
+      steps: [
+        { title: "Book", body: "Schedule a private consultation by phone or WhatsApp." },
+        { title: "Consult", body: "A detailed discussion of your health history and current concerns." },
+        { title: "Evaluate", body: "Thorough clinical examination and relevant tests explained clearly." },
+        { title: "Care Plan", body: "Personalized treatment and lifestyle guidance tailored to your goals." },
+      ],
+    },
+    faqs: [
+      {
+        q: "When should I consult a gynaecologist?",
+        a: "You should book a visit for routine annual checkups, or if you experience irregular periods, pelvic pain, unusual discharge or hormonal symptoms.",
+      },
+      {
+        q: "Do you offer PCOS evaluation and management?",
+        a: "Yes — we provide comprehensive PCOS care including hormonal evaluation, symptom management, lifestyle coaching and fertility support.",
+      },
+      {
+        q: "What should I bring to my first appointment?",
+        a: "Bring any recent medical reports, test results, or notes regarding your menstrual cycle and symptoms.",
+      },
+    ],
+    cta: {
+      heading: "Ready to schedule your gynaecology consultation?",
+      body: "Reach out by phone or WhatsApp and we'll help you find a convenient time.",
+    },
+  },
+  {
+    slug: "lactation",
+    expertSlug: "sheethal-sathya",
+    title: "Lactation & Breastfeeding Support",
+    shortDescription:
+      "Gentle, expert guidance for baby latching, positioning, milk supply and postpartum feeding.",
+    accent: "coral",
+    illustration: "newborn",
+    hero: {
+      eyebrow: "Lactation Support & Feeding Care",
+      heading: "Gentle, practical breastfeeding guidance for you and your baby.",
+      intro:
+        "One-on-one lactation counselling, latch assistance, positioning and milk supply guidance — helping you feel confident and supported in feeding your baby.",
+    },
+    explanation: {
+      heading: "What lactation support covers",
+      body: "Feeding your baby is a learning process for both mother and infant. We provide calm, hands-on support to resolve feeding challenges early and comfortably.",
+      points: [
+        "Latch evaluation and comfortable birthing/feeding positioning",
+        "Relief and management for sore nipples, engorgement or pain",
+        "Milk supply assessment (addressing low supply or oversupply concerns)",
+        "Pumping guidance, express milk storage and return-to-work planning",
+      ],
+    },
+    whoItsFor: [
+      "You're expecting and want prenatal breastfeeding preparation",
+      "You're experiencing pain or difficulty getting your baby to latch",
+      "You have concerns about milk supply or baby's weight gain",
+      "You need practical guidance on pumping, storing milk or weaning",
+    ],
+    doctorTrust: {
+      heading: "Certified, compassionate lactation counselling",
+      body: "Led by certified lactation counsellors and birth doulas, our care provides patient, non-judgmental guidance tailored to your feeding goals.",
+      bullets: [
+        "Hands-on, unhurried guidance in a calm environment",
+        "Individualized care plans respecting your feeding choices",
+        "Continuity of support across your postpartum journey",
+      ],
+    },
+    journey: {
+      eyebrow: "Lactation Care Pathway",
+      heading: "A supportive pathway from prenatal prep to feeding confidence.",
+      intro: "What to expect during a lactation consultation.",
+      steps: [
+        { title: "Book", body: "Reach out by phone or WhatsApp to request a session." },
+        { title: "Assessment", body: "We observe a feed, evaluate latch and positioning, and listen to your concerns." },
+        { title: "Guidance", body: "Receive gentle, hands-on adjustments and practical feeding techniques." },
+        { title: "Follow-up", body: "Ongoing check-ins to track progress and answer your questions." },
+      ],
+    },
+    faqs: [
+      {
+        q: "When should I see a lactation consultant?",
+        a: "You can consult prenatally to prepare, or anytime after birth if you experience painful feeding, latching difficulty or supply concerns.",
+      },
+      {
+        q: "Can my birth partner join the consultation?",
+        a: "Yes! Partners are encouraged to attend so they can learn how to support positioning and feeding at home.",
+      },
+      {
+        q: "Do you help with pumping and milk storage?",
+        a: "Yes — we provide complete guidance on flange sizing, pump settings, milk storage safety and bottle introduction.",
+      },
+    ],
+    cta: {
+      heading: "Need help with breastfeeding or lactation?",
+      body: "Reach out by phone or WhatsApp to book a private consultation with our lactation team.",
+    },
+  },
+  {
+    slug: "birth-preparation",
+    expertSlug: "sheethal-sathya",
+    title: "Birth Preparation & Childbirth Education",
+    shortDescription:
+      "Comprehensive birth preparation, labour guidance, and birth partner readiness with experienced birth doulas.",
+    accent: "coral",
+    image: {
+      src: "/images/birthwave/birthwave-birth-position-practice.png",
+      alt: "Birthing position practice during a Birthwave childbirth workshop",
+    },
+    illustration: "birth",
+    hero: {
+      eyebrow: "Birth Preparation & Childbirth Education",
+      heading: "Birth preparation designed to help you feel informed and supported.",
+      intro:
+        "Understand the stages of labour, practice birthing positions, build your birth preferences, and prepare your birth partner with hands-on guidance from certified birth doulas.",
+    },
+    explanation: {
+      heading: "What Birth Preparation covers",
+      body: "Thorough birth preparation connects practical labour skills with evidence-based childbirth education so you feel prepared, calm, and confident.",
+      points: [
+        "Preparing for labour stages, physiology, and comfort techniques",
+        "Understanding birth preferences and writing your birth plan",
+        "Birth partner preparation and active support roles in labour",
+        "Practical preparation: hospital bags, birth environment, and breathing practice",
+      ],
+    },
+    whoItsFor: [
+      "You're expecting and want structured birth preparation before your due date",
+      "You want your birth partner actively involved and confident during labour",
+      "You want to understand birth options, pain management choices, and decision-making",
+      "You want practical guidance on labour positions, relaxation, and breathing",
+    ],
+    doctorTrust: {
+      heading: "Certified Doula & Childbirth Educator",
+      body: "Led by DONA-certified birth doulas and experienced childbirth educators, our preparation sessions provide calm, evidence-based guidance respecting your birth preferences.",
+      bullets: [
+        "Hands-on practice of labour positions and comfort techniques",
+        "Individualized birth preference planning without judgment",
+        "Comprehensive support for both expecting parents",
+      ],
+    },
+    journey: {
+      eyebrow: "Your Preparation Journey",
+      heading: "A step-by-step path to feeling ready for birth.",
+      intro: "What to expect in your birth preparation sessions.",
+      steps: [
+        { title: "Book", body: "Schedule your birth preparation workshop or 1-on-1 session." },
+        { title: "Learn", body: "Understand labour physiology, warning signs, and birth options." },
+        { title: "Practice", body: "Hands-on practice of birthing positions, movement, and partner support." },
+        { title: "Plan", body: "Finalize your birth preferences document to share with your care team." },
+      ],
+    },
+    faqs: [
+      {
+        q: "When should we start birth preparation classes?",
+        a: "Most parents begin between weeks 28 and 34 of pregnancy, but you can start earlier or take an expedited session closer to your due date.",
+      },
+      {
+        q: "Is birth partner attendance included?",
+        a: "Yes — birth partner preparation is a core component of our sessions so they know how to support you effectively.",
+      },
+      {
+        q: "Do you cover both natural birth and medical interventions?",
+        a: "Yes, we cover natural comfort techniques as well as pain management options, inductions, and caesarean births so you feel prepared for any path.",
+      },
+    ],
+    cta: {
+      heading: "Book a Birth Preparation Session",
+      body: "Reach out by phone or WhatsApp to schedule a 1-on-1 session or register for our next group workshop.",
+    },
+  },
+  {
+    slug: "postpartum-care",
+    expertSlug: "santoshi-nandigam",
+    title: "Postpartum Recovery & Care",
+    shortDescription:
+      "Comprehensive recovery support, pelvic floor guidance, lactation, and emotional well-being after delivery.",
+    accent: "rose",
+    image: {
+      src: "/images/birthwave/birthwave-community-event.png",
+      alt: "Postpartum care and recovery support session at Birthwave",
+    },
+    illustration: "pregnancy",
+    hero: {
+      eyebrow: "Postpartum Recovery & Care",
+      heading: "Care that continues after birth.",
+      intro:
+        "Comprehensive clinical review, physical recovery guidance, lactation support, and emotional well-being checkups — so your postpartum journey receives the same continuous care as your pregnancy.",
+    },
+    explanation: {
+      heading: "What Postpartum Care covers",
+      body: "The postpartum period requires dedicated clinical and supportive care. We bring together medical follow-up, lactation guidance, physical recovery, and emotional support.",
+      points: [
+        "Postpartum clinical review and wound/healing assessment",
+        "Lactation counselling and newborn feeding guidance with Sheethal Sathya",
+        "Pelvic floor evaluation, movement, and yoga recovery support with Dr. Amudha Varshini",
+        "Postpartum nutrition and emotional well-being support",
+      ],
+    },
+    whoItsFor: [
+      "You've recently given birth and want thorough clinical follow-up for physical recovery",
+      "You need dedicated support for breastfeeding, latching, or milk supply",
+      "You want gentle movement and pelvic recovery guidance tailored to postpartum body",
+      "You're seeking a supportive space to discuss postpartum mood, fatigue, or transition to parenthood",
+    ],
+    doctorTrust: {
+      heading: "A continuous postpartum care team",
+      body: "Postpartum care at Birthwave is led by Dr. Santoshi Nandigam and integrated with allied specialists in lactation, pelvic health, nutrition, and emotional wellness.",
+      bullets: [
+        "Thorough medical checkups connecting birth to recovery",
+        "Supportive care for physical, emotional, and feeding needs",
+        "Direct point of contact for postpartum concerns",
+      ],
+    },
+    journey: {
+      eyebrow: "Postpartum Care Journey",
+      heading: "From initial recovery checkup to long-term wellness.",
+      intro: "What to expect in your postpartum care appointments.",
+      steps: [
+        { title: "Early Check-in", body: "Lactation and early recovery consultation in the first days post-delivery." },
+        { title: "6-Week Review", body: "Comprehensive clinical review, pelvic evaluation, and health check with Dr. Santoshi." },
+        { title: "Supportive Care", body: "Postpartum movement with Dr. Amudha Varshini, nutrition guidance, and emotional support." },
+        { title: "Ongoing Wellness", body: "Continued support as you navigate baby care and personal well-being." },
+      ],
+    },
+    faqs: [
+      {
+        q: "When should I schedule my first postpartum checkup?",
+        a: "Initial lactation check-ins can happen within the first week after birth, followed by routine clinical reviews at 2 and 6 weeks post-delivery.",
+      },
+      {
+        q: "Is pelvic floor recovery guidance included?",
+        a: "Yes — pelvic health assessment and safe postpartum movement guidance are key parts of our recovery care.",
+      },
+      {
+        q: "How do you support postpartum emotional well-being?",
+        a: "We provide dedicated emotional well-being check-ins with our supportive care team to address fatigue, anxiety, or postpartum transition.",
+      },
+    ],
+    cta: {
+      heading: "Ready for your postpartum consultation?",
+      body: "Reach out by phone or WhatsApp to schedule a recovery or lactation checkup.",
+    },
+  },
+  {
+    slug: "nutrition-emotional-wellbeing",
+    expertSlug: "santoshi-nandigam",
+    title: "Nutrition & Emotional Well-being",
+    shortDescription:
+      "Personalized nutrition planning and compassionate psychological support across pregnancy, postpartum, and general wellness.",
+    accent: "blue",
+    image: {
+      src: "/images/birthwave/birthwave-workshop-facilitator.png",
+      alt: "Nutrition and emotional well-being counseling at Birthwave",
+    },
+    illustration: "fertility",
+    hero: {
+      eyebrow: "Nutrition & Emotional Well-being",
+      heading: "Nourishment for your body, support for your mind.",
+      intro:
+        "Evidence-based nutrition guidance and empathetic psychological support — empowering your health during preconception, pregnancy, postpartum recovery, and beyond.",
+    },
+    explanation: {
+      heading: "What Nutrition & Emotional Well-being covers",
+      body: "Physical health and mental well-being are deeply connected. Our supportive care team provides tailored guidance for nutritional needs and emotional resilience.",
+      points: [
+        "Trimester-specific pregnancy nutrition and gestational diabetes support",
+        "Postpartum recovery nutrition and energy replenishment",
+        "Empathetic psychological counselling and emotional support",
+        "Mindfulness, stress reduction, and parental transition guidance",
+      ],
+    },
+    whoItsFor: [
+      "You want personalized nutrition planning during pregnancy or postpartum",
+      "You're seeking psychological support for anxiety, stress, or life transitions",
+      "You want holistic lifestyle guidance that supports your clinical medical care",
+      "You need specialized dietary advice for PCOS, fertility preparation, or recovery",
+    ],
+    doctorTrust: {
+      heading: "Expert-led supportive care",
+      body: "Our nutritionists (Sherene) and emotional well-being specialists (Deepa, M.Sc Psychology & Rakshitha) work closely alongside our clinical team for integrated care.",
+      bullets: [
+        "Individualized nutrition plans tailored to your food preferences and clinical needs",
+        "Confidential, empathetic psychological support sessions",
+        "Care plans seamlessly coordinated with your main doctor",
+      ],
+    },
+    journey: {
+      eyebrow: "Supportive Care Pathway",
+      heading: "A calm, structured pathway to holistic well-being.",
+      intro: "What happens during a nutrition or emotional well-being consultation.",
+      steps: [
+        { title: "Book", body: "Schedule a session via phone or WhatsApp specifying your focus area." },
+        { title: "Assess", body: "In-depth review of your dietary habits, lifestyle, or emotional concerns." },
+        { title: "Plan", body: "Receive a realistic, personalized nutrition plan or supportive coping strategies." },
+        { title: "Follow-up", body: "Regular check-ins to support your progress and adjust guidance as needed." },
+      ],
+    },
+    faqs: [
+      {
+        q: "Are nutrition plans customized for Indian dietary preferences?",
+        a: "Yes — all nutrition guidance is practical, culturally familiar, and adapted to your personal dietary habits and medical requirements.",
+      },
+      {
+        q: "What topics can be discussed in emotional well-being sessions?",
+        a: "Sessions provide support for anxiety, birth fear, postpartum mood changes, relationship adjustments, and parental stress.",
+      },
+      {
+        q: "Do I need a referral from an OBGYN?",
+        a: "No referral is needed — you can book directly for nutrition or emotional well-being support anytime.",
+      },
+    ],
+    cta: {
+      heading: "Talk to the Birthwave Team",
+      body: "Reach out by phone or WhatsApp to connect with our nutrition and emotional well-being specialists.",
     },
   },
   {
@@ -525,7 +980,7 @@ export const supportingServices = [
   { slug: "womens-health", title: "Women's Health & Gynaecology" },
   { slug: "pcos", title: "PCOS" },
   { slug: "postpartum-recovery", title: "Postpartum & Recovery" },
-  { slug: "lactation-support", title: "Lactation Support" },
+  { slug: "lactation", title: "Lactation Support" },
   { slug: "pregnancy-yoga", title: "Pregnancy Yoga" },
   { slug: "nutrition", title: "Nutrition" },
   { slug: "prenatal-classes", title: "Prenatal Classes" },
@@ -534,12 +989,12 @@ export const supportingServices = [
   { slug: "workshops-events", title: "Workshops & Events" },
 ] as const;
 
-// Lightweight option list for the enquiry form's service dropdown — the six
-// full service pages plus the Birth & Delivery Care hub, which isn't a full
+// Lightweight option list for the enquiry form's service dropdown — the
+// full service pages plus the Natural Birth hub, which isn't a single
 // ServiceContent (it's a hub page with its own bespoke layout).
 export const formServiceOptions = [
   ...services.map((s) => ({ slug: s.slug, title: s.title })),
-  { slug: "birth-delivery-care", title: "Birth & Delivery Care" },
+  { slug: "natural-birth", title: "Natural Birth" },
 ] as const;
 
 export function getFormServiceTitle(slug: string): string | undefined {

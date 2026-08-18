@@ -4,12 +4,12 @@ import { Footer } from "@/components/layout/Footer";
 import { ServiceLandingPage } from "@/components/service/ServiceLandingPage";
 import { getService } from "@/lib/services";
 
-const service = getService("vaginismus")!;
+const service = getService("nutrition-emotional-wellbeing")!;
 
 export const metadata: Metadata = {
-  title: "Vaginismus & Intimate Wellness in Nungambakkam, Chennai – The Birth Wave",
+  title: "Nutrition & Emotional Well-being in Nungambakkam, Chennai – The Birth Wave",
   description:
-    "Private, unhurried support for pain and fear around intimacy with Dr. Adithi Nair — a judgement-free first conversation, at your pace.",
+    "Personalized nutrition planning, pregnancy diet guidance, and empathetic psychological support at The Birth Wave in Chennai.",
 };
 
 export default function Page() {

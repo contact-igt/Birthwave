@@ -4,7 +4,17 @@ import { useEffect, useRef, useState } from "react";
 import { Container } from "@/components/Container";
 import { Reveal } from "@/components/motion/Reveal";
 
-export function VideoExperience() {
+export function VideoExperience({
+  eyebrow = "Inside Birthwave",
+  heading = "Care designed around the whole journey.",
+  body = "See how Birthwave brings pregnancy, birth, recovery and newborn care together in one connected experience.",
+  className = "bg-cream py-16 md:py-24 border-y border-border/60",
+}: {
+  eyebrow?: string;
+  heading?: string;
+  body?: string;
+  className?: string;
+} = {}) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
 
@@ -31,18 +41,17 @@ export function VideoExperience() {
   }
 
   return (
-    <section className="bg-cream py-16 md:py-24">
+    <section className={className}>
       <Container>
         <Reveal className="mx-auto max-w-xl text-center">
           <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
-            Inside Birthwave
+            {eyebrow}
           </p>
           <h2 className="mt-3 font-display text-[28px] font-bold leading-tight text-ink md:text-[36px]">
-            Care designed around the whole journey.
+            {heading}
           </h2>
           <p className="mt-3 text-[16px] leading-relaxed text-muted">
-            See how Birthwave brings pregnancy, birth, recovery and newborn care
-            together in one connected experience.
+            {body}
           </p>
         </Reveal>
 

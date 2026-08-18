@@ -4,12 +4,12 @@ import { Footer } from "@/components/layout/Footer";
 import { ServiceLandingPage } from "@/components/service/ServiceLandingPage";
 import { getService } from "@/lib/services";
 
-const service = getService("vaginismus")!;
+const service = getService("lactation")!;
 
 export const metadata: Metadata = {
-  title: "Vaginismus & Intimate Wellness in Nungambakkam, Chennai – The Birth Wave",
+  title: "Lactation & Breastfeeding Support in Chennai – The Birth Wave",
   description:
-    "Private, unhurried support for pain and fear around intimacy with Dr. Adithi Nair — a judgement-free first conversation, at your pace.",
+    "Expert lactation counselling, latch assistance, positioning, and breastfeeding support with certified lactation specialists at The Birth Wave.",
 };
 
 export default function Page() {

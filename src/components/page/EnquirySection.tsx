@@ -8,13 +8,15 @@ export function EnquirySection({
   heading = "Send an enquiry",
   body = "Prefer to write ahead? Fill this in and continue on WhatsApp.",
   defaultService,
+  id = "enquiry",
 }: {
   heading?: string;
   body?: string;
   defaultService?: string;
+  id?: string;
 }) {
   return (
-    <section className="bg-white py-16 md:py-20 pb-24 md:pb-20">
+    <section id={id} className="scroll-mt-[100px] bg-white py-16 md:py-20 pb-24 md:pb-20">
       <Container className="max-w-3xl">
         <h2 className="font-display text-[26px] font-bold leading-tight text-ink">{heading}</h2>
         <p className="mt-2 text-[15px] text-muted">{body}</p>

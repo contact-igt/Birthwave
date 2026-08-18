@@ -33,8 +33,15 @@ export default function ContactPage() {
                 href={site.phoneHref}
                 className="rounded-2xl border border-border bg-cream p-6 transition-colors hover:border-brown"
               >
-                <p className="text-xs font-semibold uppercase tracking-wide text-rose">Call</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-rose">Primary Call</p>
                 <p className="mt-1 font-display text-lg font-bold text-ink">{site.phone}</p>
+              </a>
+              <a
+                href={site.cugPhoneHref}
+                className="rounded-2xl border border-border bg-cream p-6 transition-colors hover:border-brown"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wide text-rose">CUG Number</p>
+                <p className="mt-1 font-display text-lg font-bold text-ink">{site.cugPhone}</p>
               </a>
               <a
                 href={site.whatsappHref}
@@ -45,14 +52,14 @@ export default function ContactPage() {
                 <p className="text-xs font-semibold uppercase tracking-wide text-rose">
                   WhatsApp
                 </p>
-                <p className="mt-1 font-display text-lg font-bold text-ink">{site.phone}</p>
+                <p className="mt-1 font-display text-lg font-bold text-ink">{site.whatsapp}</p>
               </a>
               <a
                 href={`mailto:${site.email}`}
                 className="rounded-2xl border border-border bg-cream p-6 transition-colors hover:border-brown"
               >
                 <p className="text-xs font-semibold uppercase tracking-wide text-rose">Email</p>
-                <p className="mt-1 font-display text-lg font-bold text-ink break-all">
+                <p className="mt-1 font-display text-lg font-bold text-ink break-words sm:break-normal">
                   {site.email}
                 </p>
               </a>

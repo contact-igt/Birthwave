@@ -6,7 +6,7 @@ import type { TeamMember } from "@/lib/team";
 
 export function DoctorTrust({
   member,
-  eyebrow = "Doctor Led, Patient Centred",
+  eyebrow = "Doctor Led, Women-Centred Care",
   heading,
   body,
   bullets,
@@ -35,7 +35,7 @@ export function DoctorTrust({
             <p className="text-[13px] font-semibold uppercase tracking-[0.14em] text-rose">
               {eyebrow}
             </p>
-            <h2 className="mt-3 max-w-xl font-display text-[32px] font-bold leading-tight text-ink">
+            <h2 className="mt-3 max-w-xl font-display text-[32px] font-bold leading-tight text-ink whitespace-pre-line">
               {heading}
             </h2>
             <p className="mt-4 max-w-xl text-[16px] leading-relaxed text-muted">{body}</p>

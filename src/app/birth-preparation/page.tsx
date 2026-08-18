@@ -4,12 +4,12 @@ import { Footer } from "@/components/layout/Footer";
 import { ServiceLandingPage } from "@/components/service/ServiceLandingPage";
 import { getService } from "@/lib/services";
 
-const service = getService("vaginismus")!;
+const service = getService("birth-preparation")!;
 
 export const metadata: Metadata = {
-  title: "Vaginismus & Intimate Wellness in Nungambakkam, Chennai – The Birth Wave",
+  title: "Birth Preparation & Childbirth Education in Chennai – The Birth Wave",
   description:
-    "Private, unhurried support for pain and fear around intimacy with Dr. Adithi Nair — a judgement-free first conversation, at your pace.",
+    "Comprehensive birth preparation, birthing position practice, labour guidance, and birth partner readiness with DONA-certified birth doulas at The Birth Wave.",
 };
 
 export default function Page() {

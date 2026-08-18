@@ -7,7 +7,7 @@ const services = [
     title: "Pregnancy & Antenatal Care",
     description:
       "Routine and high touch pregnancy care with a clear plan for each trimester.",
-    href: "/pregnancy-care",
+    href: "/pregnancy-antenatal-care",
   },
   {
     title: "Fertility & Preconception",
@@ -23,7 +23,7 @@ const services = [
   {
     title: "Gynaecology & Women’s Wellness",
     description: "Care for menstrual, hormonal and common gynaecological concerns.",
-    href: "/services",
+    href: "/gynaecology",
   },
   {
     title: "Vaginismus & Intimate Wellness",

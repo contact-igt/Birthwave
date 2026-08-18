@@ -48,10 +48,10 @@ export const team: readonly TeamMember[] = [
   {
     slug: "amudha-varshini",
     name: "Dr. Amudha Varshini",
-    role: "Naturopathy & Yoga · Fertility Yoga",
+    role: "Naturopathy & Yoga · Prenatal & Postpartum Yoga Specialist",
     credential: "BNYS",
     group: "clinical",
-    expertiseHref: "/fertility-preconception",
+    expertiseHref: "/pregnancy-antenatal-care",
     // No verified local portrait exists for Dr. Amudha — see IMAGE GAPS.
   },
   {
@@ -72,7 +72,7 @@ export const team: readonly TeamMember[] = [
     credential: "DONA-certified Birth Doula, Lactation Counsellor",
     group: "allied",
     image: "/images/birthwave/sheethal-sathya.png",
-    expertiseHref: "/normal-birth-delivery",
+    expertiseHref: "/lactation",
   },
   {
     slug: "deepa",

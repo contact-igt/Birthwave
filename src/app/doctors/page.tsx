@@ -21,13 +21,16 @@ const clinical = team.filter((m) => m.group === "clinical");
 const allied = team.filter((m) => m.group === "allied");
 
 const connectedCare = [
-  { label: "Pregnancy", href: "/pregnancy-care" },
+  { label: "Pregnancy & Antenatal Care", href: "/pregnancy-antenatal-care" },
+  { label: "Natural Birth", href: "/natural-birth" },
   { label: "Birth & VBAC", href: "/vbac" },
+  { label: "Birth Preparation", href: "/birth-preparation" },
   { label: "Fertility", href: "/fertility-preconception" },
-  { label: "Pelvic Health", href: "/vaginismus" },
-  { label: "Lactation", href: "/normal-birth-delivery" },
-  { label: "Nutrition", href: "/services" },
-  { label: "Emotional Well-being", href: "/services" },
+  { label: "Gynaecology", href: "/gynaecology" },
+  { label: "Vaginismus & Pelvic Health", href: "/vaginismus" },
+  { label: "Lactation", href: "/lactation" },
+  { label: "Postpartum Care", href: "/postpartum-care" },
+  { label: "Nutrition & Well-being", href: "/nutrition-emotional-wellbeing" },
   { label: "Newborn & Pediatric Care", href: "/newborn-pediatric-care" },
 ] as const;
 

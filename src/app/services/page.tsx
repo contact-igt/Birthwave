@@ -33,7 +33,7 @@ export default function ServicesPage() {
         <section className="bg-cream py-10">
           <Container>
             <Link
-              href="/birth-delivery-care"
+              href="/natural-birth"
               className="group flex flex-col gap-3 rounded-2xl border border-border bg-white p-6 transition-colors hover:border-brown sm:flex-row sm:items-center sm:justify-between"
             >
               <div>
@@ -41,7 +41,7 @@ export default function ServicesPage() {
                   Not Sure Where To Start?
                 </p>
                 <h2 className="mt-2 font-display text-lg font-bold text-ink">
-                  Birth &amp; Delivery Care — a starting point for every birth pathway
+                  Natural Birth — a starting point for every birth pathway
                 </h2>
                 <p className="mt-2 max-w-xl text-[16px] leading-relaxed text-muted">
                   Normal birth, VBAC, birth preparation and what happens if plans need to
@@ -49,7 +49,7 @@ export default function ServicesPage() {
                 </p>
               </div>
               <span className="inline-flex shrink-0 items-center gap-1.5 self-start text-[13.5px] font-semibold text-link sm:self-auto">
-                Visit the hub <span aria-hidden="true">&rarr;</span>
+                Visit Natural Birth <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>
           </Container>
