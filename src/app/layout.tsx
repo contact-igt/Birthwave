@@ -21,6 +21,15 @@ export const metadata: Metadata = {
   title: "Obstetrician Gynaecologist in Nungambakkam Chennai – The BirthWave",
   description:
     "The Birth Wave is a doctor-led obstetrics & gynaecology practice in Nungambakkam, Chennai, offering continuous care across pregnancy, birth and recovery.",
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "any" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
