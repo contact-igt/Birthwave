@@ -39,7 +39,7 @@ export function EnquiryForm({ defaultService }: { defaultService?: string } = {}
       serviceLabel && `Interested in: ${serviceLabel}`,
       message && `Message: ${message}`,
     ].filter(Boolean);
-    return `https://wa.me/919363031925?text=${encodeURIComponent(lines.join("\n"))}`;
+    return `https://wa.me/917904251378?text=${encodeURIComponent(lines.join("\n"))}`;
   }
 
   async function handleSubmit(e: React.FormEvent) {
@@ -181,7 +181,7 @@ export function EnquiryForm({ defaultService }: { defaultService?: string } = {}
           onChange={(e) => setConsent(e.target.checked)}
           className="mt-0.5 h-4 w-4 shrink-0 accent-brown"
         />
-        Birthwave may contact me regarding this enquiry or appointment request.
+        The Birthwave may contact me regarding this enquiry or appointment request.
       </label>
       {fieldErrors.consent && (
         <span className="-mt-2 text-xs text-coral">{fieldErrors.consent}</span>

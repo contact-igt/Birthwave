@@ -13,7 +13,7 @@ const pathways = [
     link: "Fertility & Preconception",
     href: "/fertility-preconception",
     image: "/images/birthwave/birthwave-prenatal-workshop.png",
-    alt: "Planning a pregnancy counseling at Birthwave",
+    alt: "Planning a pregnancy counseling at The Birthwave",
   },
   {
     n: "02",

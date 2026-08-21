@@ -3,6 +3,7 @@ import type { LineArtVariant } from "@/components/illustrations/LineArt";
 export type ServiceContent = {
   slug: string;
   expertSlug: string;
+  expertSlugs?: readonly string[];
   title: string;
   shortDescription: string;
   accent: "rose" | "blue" | "coral";
@@ -68,14 +69,14 @@ export const services: readonly ServiceContent[] = [
     accent: "blue",
     image: {
       src: "/images/birthwave/birthwave-antenatal-movement-coaching.png",
-      alt: "Antenatal movement coaching session at Birthwave",
+      alt: "Antenatal movement coaching session at The Birthwave",
     },
     illustration: "pregnancy",
     hero: {
       eyebrow: "Pregnancy & Antenatal Care",
       heading: "Personalised pregnancy care, from your first visit to birth.",
       intro:
-        "Every pregnancy brings different questions, changes and decisions. At Birthwave, your antenatal care combines regular medical guidance with nutrition, movement, birth preparation and continuous support throughout your pregnancy.",
+        "Every pregnancy brings different questions, changes and decisions. At The Birthwave, your antenatal care combines regular medical guidance with nutrition, movement, birth preparation and continuous support throughout your pregnancy.",
     },
     explanation: {
       heading: "Care that grows with your pregnancy",
@@ -92,7 +93,7 @@ export const services: readonly ServiceContent[] = [
     whoItsFor: [],
     doctorTrust: {
       heading: "Your pregnancy care with\nDr. Santoshi Nandigam",
-      body: "At Birthwave, pregnancy care is built around continuity, conversation and informed decision-making. Dr. Santoshi works with women through pregnancy and birth, helping them understand their options and prepare for delivery with confidence.",
+      body: "At The Birthwave, pregnancy care is built around continuity, conversation and informed decision-making. Dr. Santoshi works with women through pregnancy and birth, helping them understand their options and prepare for delivery with confidence.",
       bullets: [
         "Clear explanations at every stage",
         "Birth conversations that begin during pregnancy",
@@ -102,7 +103,7 @@ export const services: readonly ServiceContent[] = [
     approach: {
       eyebrow: "The Birthwave Approach",
       heading: "Pregnancy care is more than appointments and scans.",
-      body: "Medical care is at the centre of your pregnancy journey, but how you eat, move, prepare, understand your body and feel emotionally also matters.\nBirthwave brings these parts of pregnancy care together around you.",
+      body: "Medical care is at the centre of your pregnancy journey, but how you eat, move, prepare, understand your body and feel emotionally also matters.\nThe Birthwave brings these parts of pregnancy care together around you.",
       items: [
         {
           title: "Pregnancy & medical care",
@@ -146,7 +147,7 @@ export const services: readonly ServiceContent[] = [
         {
           title: "Natural Birth",
           description:
-            "Learn about Birthwave’s approach to preparation, informed choices, movement and lower-intervention birth where appropriate.",
+            "Learn about The Birthwave’s approach to preparation, informed choices, movement and lower-intervention birth where appropriate.",
           href: "/natural-birth",
           ctaText: "Explore Natural Birth",
         },
@@ -204,17 +205,17 @@ export const services: readonly ServiceContent[] = [
         a: "For some women, a vaginal birth after a previous C-section may be possible. This is known as VBAC — Vaginal Birth After Caesarean. Whether VBAC is appropriate depends on factors such as the reason for your previous C-section, the type of uterine incision, your previous birth history, your current pregnancy and the health of you and your baby. If you are considering VBAC, your obstetrician can review your individual history and discuss the potential benefits, risks and other birth options with you.",
       },
       {
-        q: "Does Birthwave provide nutrition, yoga and birth preparation along with antenatal care?",
-        a: "Yes. Birthwave’s pregnancy care goes beyond routine antenatal consultations by bringing together medical care with supportive services for pregnancy and birth preparation. Depending on your individual needs, your care may include nutrition guidance, pregnancy yoga and movement, childbirth education, birth preparation, pelvic health support and lactation guidance, alongside your regular antenatal care. This allows different aspects of your pregnancy journey to remain connected rather than being treated separately.",
+        q: "Does The Birthwave provide nutrition, yoga and birth preparation along with antenatal care?",
+        a: "Yes. The Birthwave’s pregnancy care goes beyond routine antenatal consultations by bringing together medical care with supportive services for pregnancy and birth preparation. Depending on your individual needs, your care may include nutrition guidance, pregnancy yoga and movement, childbirth education, birth preparation, pelvic health support and lactation guidance, alongside your regular antenatal care. This allows different aspects of your pregnancy journey to remain connected rather than being treated separately.",
       },
       {
         q: "What does holistic pregnancy care mean?",
-        a: "Holistic pregnancy care means caring for you as a whole person during pregnancy—not only monitoring your baby’s growth or completing routine tests. Alongside medical antenatal care, it considers areas such as nutrition, movement, emotional wellbeing, childbirth preparation, pelvic health and breastfeeding preparation. At Birthwave, the aim is to connect these different aspects of care so that you are supported through pregnancy, preparation for birth and the transition into postpartum recovery and newborn care.",
+        a: "Holistic pregnancy care means caring for you as a whole person during pregnancy—not only monitoring your baby’s growth or completing routine tests. Alongside medical antenatal care, it considers areas such as nutrition, movement, emotional wellbeing, childbirth preparation, pelvic health and breastfeeding preparation. At The Birthwave, the aim is to connect these different aspects of care so that you are supported through pregnancy, preparation for birth and the transition into postpartum recovery and newborn care.",
       },
     ],
     cta: {
-      heading: "Start your pregnancy journey with Birthwave",
-      body: "Whether you’ve just found out you’re pregnant or you’re looking for continued antenatal care, speak with the Birthwave team about your next appointment.",
+      heading: "Start your pregnancy journey with The Birthwave",
+      body: "Whether you’ve just found out you’re pregnant or you’re looking for continued antenatal care, speak with The Birthwave team about your next appointment.",
     },
   },
   {
@@ -226,7 +227,7 @@ export const services: readonly ServiceContent[] = [
     accent: "coral",
     image: {
       src: "/images/birthwave/birthwave-birth-position-practice.png",
-      alt: "Birthing position practice during a Birthwave childbirth workshop",
+      alt: "Birthing position practice during a childbirth workshop at The Birthwave",
     },
     illustration: "birth",
     hero: {
@@ -253,7 +254,7 @@ export const services: readonly ServiceContent[] = [
     ],
     doctorTrust: {
       heading: "Preparation, not pressure",
-      body: "Every birth is different. Birthwave's approach is to prepare you thoroughly for a normal birth while staying clinically flexible — a caesarean, when appropriate, is never presented as a failure.",
+      body: "Every birth is different. The Birthwave's approach is to prepare you thoroughly for a normal birth while staying clinically flexible — a caesarean, when appropriate, is never presented as a failure.",
       bullets: [
         "Clear explanations before decisions",
         "Support for sensitive conversations without judgement",
@@ -303,7 +304,7 @@ export const services: readonly ServiceContent[] = [
     accent: "rose",
     image: {
       src: "/images/birthwave/birthwave-childbirth-workshop-02.png",
-      alt: "Birth preparation workshop group session at Birthwave",
+      alt: "Birth preparation workshop group session at The Birthwave",
     },
     illustration: "vbac",
     hero: {
@@ -389,13 +390,14 @@ export const services: readonly ServiceContent[] = [
   },
   {
     slug: "fertility-preconception",
-    expertSlug: "bharathy-kandasamy",
+    expertSlug: "santoshi-nandigam",
+    expertSlugs: ["santoshi-nandigam", "bharathy-kandasamy"],
     title: "Fertility & Preconception",
     shortDescription: "Evaluation, counselling and planning before pregnancy.",
     accent: "blue",
     image: {
       src: "/images/birthwave/birthwave-prenatal-workshop.png",
-      alt: "Preconception and fertility planning consultation at Birthwave",
+      alt: "Preconception and fertility planning consultation at The Birthwave",
     },
     illustration: "fertility",
     hero: {
@@ -421,12 +423,12 @@ export const services: readonly ServiceContent[] = [
       "You want a consistent doctor if evaluation leads into pregnancy care",
     ],
     doctorTrust: {
-      heading: "Planning conversations, not assumptions",
-      body: "Every fertility conversation starts with your individual history and current cycle — evaluation comes before any recommendation.",
+      heading: "Doctor-led, collaborative fertility care",
+      body: "Every fertility journey brings both medical and lifestyle considerations. At The Birthwave, holistic preconception guidance and continuous pregnancy care with Dr. Santoshi Nandigam work hand-in-hand with clinical evaluation and reproductive medicine by Dr. Bharathy Kandasamy.",
       bullets: [
         "Clear explanations before decisions",
         "Individual evaluation rather than general advice",
-        "Continuity into pregnancy care if and when that's next",
+        "Continuity into pregnancy care once you conceive",
       ],
     },
     journey: {
@@ -436,7 +438,7 @@ export const services: readonly ServiceContent[] = [
       steps: [
         { title: "Discover", body: "Understand what preconception evaluation involves." },
         { title: "Book", body: "Choose a time by phone or WhatsApp." },
-        { title: "Consult", body: "Discuss your cycle and history with Dr. Bharathy Kandasamy." },
+        { title: "Consult", body: "Discuss your cycle and health history with Dr. Santoshi Nandigam and Dr. Bharathy Kandasamy." },
         { title: "Continue", body: "A plan for what's next, reviewed as needed." },
       ],
     },
@@ -682,7 +684,7 @@ export const services: readonly ServiceContent[] = [
     accent: "coral",
     image: {
       src: "/images/birthwave/birthwave-birth-position-practice.png",
-      alt: "Birthing position practice during a Birthwave childbirth workshop",
+      alt: "Birthing position practice during a childbirth workshop at The Birthwave",
     },
     illustration: "birth",
     hero: {
@@ -755,7 +757,7 @@ export const services: readonly ServiceContent[] = [
     accent: "rose",
     image: {
       src: "/images/birthwave/birthwave-community-event.png",
-      alt: "Postpartum care and recovery support session at Birthwave",
+      alt: "Postpartum care and recovery support session at The Birthwave",
     },
     illustration: "pregnancy",
     hero: {
@@ -782,7 +784,7 @@ export const services: readonly ServiceContent[] = [
     ],
     doctorTrust: {
       heading: "A continuous postpartum care team",
-      body: "Postpartum care at Birthwave is led by Dr. Santoshi Nandigam and integrated with allied specialists in lactation, pelvic health, nutrition, and emotional wellness.",
+      body: "Postpartum care at The Birthwave is led by Dr. Santoshi Nandigam and integrated with allied specialists in lactation, pelvic health, nutrition, and emotional wellness.",
       bullets: [
         "Thorough medical checkups connecting birth to recovery",
         "Supportive care for physical, emotional, and feeding needs",
@@ -828,7 +830,7 @@ export const services: readonly ServiceContent[] = [
     accent: "blue",
     image: {
       src: "/images/birthwave/birthwave-workshop-facilitator.png",
-      alt: "Nutrition and emotional well-being counseling at Birthwave",
+      alt: "Nutrition and emotional well-being counseling at The Birthwave",
     },
     illustration: "fertility",
     hero: {
@@ -888,7 +890,7 @@ export const services: readonly ServiceContent[] = [
       },
     ],
     cta: {
-      heading: "Talk to the Birthwave Team",
+      heading: "Talk to The Birthwave Team",
       body: "Reach out by phone or WhatsApp to connect with our nutrition and emotional well-being specialists.",
     },
   },
@@ -956,7 +958,7 @@ export const services: readonly ServiceContent[] = [
       },
       {
         q: "Can I continue pediatric care with the same team after delivery?",
-        a: "Yes — that continuity is a core part of how Birthwave is structured.",
+        a: "Yes — that continuity is a core part of how The Birthwave is structured.",
       },
       {
         q: "What if I have questions between scheduled visits?",

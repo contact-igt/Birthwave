@@ -9,7 +9,7 @@ const service = getService("fertility-preconception")!;
 export const metadata: Metadata = {
   title: "Fertility & Preconception Care in Nungambakkam, Chennai – The Birth Wave",
   description:
-    "Cycle guidance and preconception evaluation with Dr. Santoshi Nandigam — individual assessment before pregnancy planning, not generic advice.",
+    "Cycle guidance and preconception evaluation with Dr. Santoshi Nandigam and Dr. Bharathy Kandasamy — individual assessment before pregnancy planning, not generic advice.",
 };
 
 export default function Page() {
