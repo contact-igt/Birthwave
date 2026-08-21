@@ -18,7 +18,7 @@ const faqs = [
     a: "Yes — birth preferences, including VBAC eligibility, are discussed as part of your antenatal visits.",
   },
   {
-    q: "Does Birthwave support fertility and preconception concerns?",
+    q: "Does The Birthwave support fertility and preconception concerns?",
     a: "Yes, fertility, preconception counselling and cycle guidance are part of our care pathways.",
   },
   {

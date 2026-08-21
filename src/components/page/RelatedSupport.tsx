@@ -23,7 +23,7 @@ export function RelatedSupport({
         }));
 
   const eyebrow = connectedCare?.eyebrow ?? "RELATED CARE";
-  const heading = connectedCare?.heading ?? "Related Birthwave support";
+  const heading = connectedCare?.heading ?? "Related care at The Birthwave";
   const intro = connectedCare?.intro;
 
   return (

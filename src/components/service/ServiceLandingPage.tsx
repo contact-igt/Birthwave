@@ -52,7 +52,11 @@ function PointIcon({ index }: { index: number }) {
 // FAQ → CTA → form). Per-page copy, imagery and accent color come from
 // lib/services.ts so pages share a system without being visual clones.
 export function ServiceLandingPage({ service }: { service: ServiceContent }) {
-  const expert = getTeamMember(service.expertSlug) ?? team[0];
+  const expertSlugs = service.expertSlugs ?? [service.expertSlug];
+  const experts = expertSlugs
+    .map((slug) => getTeamMember(slug))
+    .filter((m): m is NonNullable<typeof m> => Boolean(m));
+  const primaryExpert = experts[0] ?? team[0];
 
   return (
     <main>
@@ -121,6 +125,8 @@ export function ServiceLandingPage({ service }: { service: ServiceContent }) {
         <WhoItsFor points={service.whoItsFor} />
       )}
 
+      <VideoExperience />
+
       <JourneySteps
         eyebrow={service.journey.eyebrow}
         heading={service.journey.heading}
@@ -129,7 +135,8 @@ export function ServiceLandingPage({ service }: { service: ServiceContent }) {
       />
 
       <DoctorTrust
-        member={expert}
+        member={primaryExpert}
+        members={experts}
         heading={service.doctorTrust.heading}
         body={service.doctorTrust.body}
         bullets={service.doctorTrust.bullets}
@@ -143,8 +150,6 @@ export function ServiceLandingPage({ service }: { service: ServiceContent }) {
           items={service.approach.items}
         />
       )}
-
-      <VideoExperience />
 
       <RelatedSupport
         currentSlug={service.slug}
