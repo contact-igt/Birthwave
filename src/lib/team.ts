@@ -10,7 +10,7 @@ export type TeamMember = {
   credential?: string; // verified academic/professional credential line
   group: "founder" | "clinical" | "allied";
   image?: string; // path under /public, when a verified portrait exists
-  imageFocal?: string; // custom object-position override for portraits with large headroom
+  imageFocal?: string; // per-portrait object-position for consistent card framing
   bio?: string;
   expertiseHref?: string; // link to the most relevant service page
 };
@@ -33,7 +33,7 @@ export const team: readonly TeamMember[] = [
     credential: "MBBS, Fellowship in Reproductive Medicine and Laparoscopy",
     group: "clinical",
     image: "/images/birthwave/dr-bharathy.jpeg",
-    imageFocal: "object-[center_45%]",
+    imageFocal: "object-[center_58%]",
     expertiseHref: "/fertility-preconception",
   },
   {
@@ -43,6 +43,7 @@ export const team: readonly TeamMember[] = [
     credential: "MBBS, MD — Pediatrics",
     group: "clinical",
     image: "/images/birthwave/dr-deepika.PNG",
+    imageFocal: "object-center",
     expertiseHref: "/newborn-pediatric-care",
   },
   {
@@ -51,8 +52,9 @@ export const team: readonly TeamMember[] = [
     role: "Naturopathy & Yoga · Prenatal & Postpartum Yoga Specialist",
     credential: "BNYS",
     group: "clinical",
+    image: "/images/team/Dr. Amudha Varshini.JPG",
+    imageFocal: "object-[center_55%]",
     expertiseHref: "/pregnancy-antenatal-care",
-    // No verified local portrait exists for Dr. Amudha — see IMAGE GAPS.
   },
   {
     slug: "adithi-nair",
@@ -62,8 +64,9 @@ export const team: readonly TeamMember[] = [
     // as a source could not be verified (returned a bot-challenge page, no
     // content). Do not publish MPT/DPT/MS OBG until independently confirmed.
     group: "clinical",
+    image: "/images/team/Dr Adithi Nair2.jpg",
+    imageFocal: "object-top",
     expertiseHref: "/vaginismus",
-    // No verified local portrait exists for Dr. Adithi — see IMAGE GAPS.
   },
   {
     slug: "sheethal-sathya",
@@ -72,6 +75,7 @@ export const team: readonly TeamMember[] = [
     credential: "DONA-certified Birth Doula, Lactation Counsellor",
     group: "allied",
     image: "/images/birthwave/sheethal-sathya.png",
+    imageFocal: "object-[center_-40%]",
     expertiseHref: "/lactation",
   },
   {
@@ -80,7 +84,8 @@ export const team: readonly TeamMember[] = [
     role: "Emotional Well-being Support",
     credential: "M.Sc Psychology",
     group: "allied",
-    // No verified local portrait exists for Deepa — see IMAGE GAPS.
+    image: "/images/team/Deepa.png",
+    imageFocal: "object-[center_45%]",
   },
   {
     slug: "rakshitha",
@@ -88,13 +93,15 @@ export const team: readonly TeamMember[] = [
     role: "School Psychology",
     group: "allied",
     image: "/images/birthwave/dr-rakshitha.jpeg",
+    imageFocal: "object-top",
   },
   {
     slug: "coach-tilak",
     name: "Coach Tilak",
     role: "Strength & Conditioning",
     group: "allied",
-    // No verified local portrait exists for Coach Tilak — see IMAGE GAPS.
+    image: "/images/team/coach tilak.JPG",
+    imageFocal: "object-[50%_35%]",
   },
   {
     slug: "sherene",
@@ -102,6 +109,7 @@ export const team: readonly TeamMember[] = [
     role: "Nutritionist",
     group: "allied",
     image: "/images/birthwave/dr-sherene.jpeg",
+    imageFocal: "object-top",
   },
 ] as const;
 
