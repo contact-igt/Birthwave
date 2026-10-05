@@ -2,6 +2,7 @@ import { randomUUID } from "crypto";
 import type { LeadInput, LeadSinkResult, NormalizedLead } from "./types";
 import { normalizePhone } from "./validation";
 import { sendToIgtLeadPanel } from "./sinks/igtLeadPanel";
+import { sendToGoogleSheets } from "./sinks/googleSheets";
 
 function buildNormalizedLead(input: LeadInput, clientIp?: string): NormalizedLead {
   return {
@@ -63,5 +64,14 @@ export async function submitLead(input: LeadInput, clientIp?: string): Promise<S
   if (result.ok) return { ok: true, lead_id: result.lead_id };
 
   console.error("[leads] IGT Lead Panel sink failed", { lead_id: lead.lead_id, error: result });
+
+  // Safety net: the panel did NOT receive this lead (so it hasn't mirrored it
+  // to the Sheet either) — write it to the Sheet directly rather than lose it.
+  // Only reached on panel failure, so it can't duplicate a panel-stored lead.
+  const fallback: LeadSinkResult = await sendToGoogleSheets(lead);
+  if (fallback.ok) {
+    console.error("[leads] saved via Google Sheet fallback only — check the IGT Lead Panel connection", { lead_id: lead.lead_id });
+    return { ok: true, lead_id: fallback.lead_id };
+  }
   return { ok: false, reason: result.reason === "sink_not_configured" ? "sink_not_configured" : "sink_error" };
 }

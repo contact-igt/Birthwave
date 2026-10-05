@@ -34,7 +34,7 @@ export function TeamAvatar({
           alt={`${member.name}, ${member.role}`}
           fill
           sizes="(min-width: 1280px) 320px, 60vw"
-          className={`object-cover ${
+          className={`object-cover ${member.imageScale ?? ""} ${
             member.imageFocal ?? (focal === "top" ? "object-top" : "object-center")
           }`}
         />

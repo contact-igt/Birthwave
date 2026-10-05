@@ -11,6 +11,7 @@ export type TeamMember = {
   group: "founder" | "clinical" | "allied";
   image?: string; // path under /public, when a verified portrait exists
   imageFocal?: string; // per-portrait object-position for consistent card framing
+  imageScale?: string; // per-portrait scale for consistent card framing
   bio?: string;
   expertiseHref?: string; // link to the most relevant service page
 };
@@ -59,7 +60,7 @@ export const team: readonly TeamMember[] = [
   {
     slug: "adithi-nair",
     name: "Dr. Adithi Nair",
-    role: "Pelvic Floor Therapy · Vaginismus Coach",
+    role: "Pelvic Floor Physiotherapy · Vaginismus Rehab Expert",
     // Academic credential intentionally withheld — the Practo profile supplied
     // as a source could not be verified (returned a bot-challenge page, no
     // content). Do not publish MPT/DPT/MS OBG until independently confirmed.
@@ -84,16 +85,18 @@ export const team: readonly TeamMember[] = [
     role: "Emotional Well-being Support",
     credential: "M.Sc Psychology",
     group: "allied",
-    image: "/images/team/Deepa.png",
-    imageFocal: "object-[center_45%]",
+    image: "/images/team/Deepa-new.png",
+    imageFocal: "object-[center_15%]",
+    imageScale: "scale-100",
   },
   {
     slug: "rakshitha",
     name: "Rakshitha",
     role: "School Psychology",
     group: "allied",
-    image: "/images/birthwave/dr-rakshitha.jpeg",
-    imageFocal: "object-top",
+    image: "/images/team/Rakshitha.png",
+    imageFocal: "object-[center_29%]",
+    imageScale: "scale-125",
   },
   {
     slug: "coach-tilak",
